@@ -83,7 +83,7 @@ const featured = [
   <section class="px-5 sm:px-8 md:px-12 py-20 md:py-28 hairline">
     <p class="eyebrow-num" data-reveal><span class="n">02</span><span class="rule"></span><span class="eyebrow text-accent">How we're built</span></p>
     <h2 class="display text-[clamp(1.7rem,4.5vw,4rem)] mt-7 max-w-5xl" style="line-height:1.04" data-reveal>Three distinct expert teams, operating independently.</h2>
-    <div class="mt-16 grid md:grid-cols-3 gap-8 lg:gap-12">
+    <div class="mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
       {teams.map((t, i) => (
         <div class="border-t-2 border-accent pt-6" data-reveal style={`transition-delay:${i * 0.1}s`}>
           <p class="text-[clamp(2rem,4vw,3rem)] font-semibold leading-none"><span class="num-accent">+</span>{t.n}</p>
