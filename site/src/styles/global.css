@@ -158,11 +158,13 @@ body {
 .fu { opacity: 0; animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 .word-line { display: block; overflow: hidden; }
 /* Tiếng Việt: dấu thanh chồng (mũ/móc trên, nặng dưới) cần line-height cao hơn
-   để không bị clip bởi overflow:hidden của hiệu ứng reveal */
-html[lang="vi"] .display { line-height: 1.32; }
+   để tiêu đề không chồng dòng khi xuống hàng.
+   !important để thắng các inline line-height (1.02–1.15) vốn đặt cho bản tiếng Anh
+   trên cùng các component/trang dùng chung. */
+html[lang="vi"] .display,
 html[lang="vi"] h1 .word-up,
 html[lang="vi"] h2,
-html[lang="vi"] h3 { line-height: 1.28; }
+html[lang="vi"] h3 { line-height: 1.3 !important; }
 .word-up {
   display: block;
   transform: translateY(110%);
