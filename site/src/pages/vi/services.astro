@@ -1,0 +1,126 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const capabilities = [
+  {
+    title: 'Xác định tầm nhìn rõ ràng cho tương lai',
+    text: 'Cho dù bạn là nhóm R&D tại Fortune 500 hay người sáng lập với bản phác thảo bằng khăn giấy, chúng tôi đều định hình, lên ý tưởng, tạo nguyên mẫu và hình thành các sản phẩm yêu thích cho tệp người dùng của bạn.',
+  },
+  {
+    title: 'Tạo sản phẩm mới từ đầu đến cuối',
+    text: 'Khi bạn cần thiết kế và xây dựng phần mềm từ đầu với đội ngũ làm sản phẩm có năng lực cao, chúng tôi sẵn sàng giúp bạn cung cấp MVP (Minimum Viable Product) tốt nhất cho nhu cầu hiện tại và phát triển cùng bạn trong tương lai.',
+  },
+  {
+    title: 'Đưa sức sống mới vào những trải nghiệm quen thuộc',
+    text: 'Nếu sản phẩm của bạn có hàng triệu người dùng hoạt động hàng ngày nhưng có dấu hiệu cũ kỹ, chúng tôi sẽ tái cấu trúc, xây dựng lại và thiết kế lại một cách chính xác và cẩn thận.',
+  },
+  {
+    title: 'Đồng hành từ những chiến dịch thương mại nhỏ nhất',
+    text: 'Chúng tôi hoạt động như một phần trong nhóm marketing nội bộ của bạn. Cung cấp các sản phẩm về hình ảnh cho các chiến dịch quảng bá. Các sản phẩm về in ấn và digital.',
+  },
+];
+
+const groups = [
+  { title: 'Design & UX Research', items: ['UX/UI Design', 'Design Systems', 'UX Research & Testing', 'Ideation & Protyping'] },
+  { title: 'Brand & Creative', items: ['Brand Audit & Positioning', 'Art Direction & Visual Identity', 'Motion Graphics & Video Production', 'Content Creation & Thought Leadership (blogs, whitepapers, case studies)'] },
+  { title: 'Marketing & Automation', items: ['Account-Based Marketing (ABM) Campaigns', 'Multi-channel paid media campaigns', 'Marketing Automation & CRM Integration', 'Customer Journey Optimization & Personalization', 'AI/ML-Driven Marketing Technology Implementation'] },
+  { title: 'Development & Product Strategy', items: ['Website & Landing Page Development', 'SCORM / Articulate 360 eLearning Packages', 'Analytics & BI Dashboard Setup', 'Product Roadmapping, Management & Strategic Workshops', 'User Engagement & Retention Programs'] },
+];
+
+const principles = [
+  { n: '01', title: 'Tập trung vào sản phẩm', text: 'Chúng tôi không cung cấp đầy đủ các dịch vụ. Chúng tôi làm một việc và làm tốt việc đó — xây dựng trải nghiệm người dùng hoàn hảo, định hướng người dùng đúng hướng. Mọi thứ chúng tôi làm đều nhằm mục đích phục vụ sản phẩm.' },
+  { n: '02', title: 'Tâm ý người sáng lập', text: 'Với tư cách là những đối tác thực sự trong công việc, chúng tôi sẽ thúc đẩy bạn và chính chúng tôi tìm ra kết quả tốt nhất. Không phải lúc nào chúng tôi cũng có thể giải quyết được vấn đề bạn yêu cầu nhưng chúng tôi sẽ giải quyết vấn đề mà sản phẩm của bạn cần.' },
+  { n: '03', title: 'Software not "vaporware"', text: 'Chúng tôi dị ứng với chi phí chung, sự quan liêu và quy trình của cơ quan. Chúng tôi chỉ thuê những người thực hành nghề của họ, những người đang làm việc, hợp tác chặt chẽ với khách hàng của chúng tôi hàng ngày.' },
+  { n: '04', title: 'Tốc độ cao', text: 'Chúng tôi hoạt động như một công ty khởi nghiệp nhanh nhẹn, có năng lực cao cùng với những người sáng lập ở giai đoạn đầu và hợp tác với các thương hiệu lớn nhất thế giới.' },
+  { n: '05', title: 'Các nhóm nhỏ xuất sắc', text: 'Chúng tôi thuê những người giỏi nhất từ mọi nơi trên thế giới và sẵn sàng để họ làm công việc của đời mình. Mỗi người trong nhóm của bạn đều được lựa chọn kỹ lưỡng dựa trên kiến thức chuyên môn và sự kết hợp giữa dự án để biến tầm nhìn sản phẩm của bạn thành hiện thực.' },
+];
+
+const quotes = [
+  {
+    img: '/img/a/s-800x800_v-fs_webp_76741bd0-ec48-4d95-98d1-388ce60136cf.jpg',
+    quote: '“Tôi luôn ngạc nhiên về chất lượng công việc mà 126Verse tạo ra. Ngay từ ngày đầu, 126Verse đã có được thương hiệu của chúng tôi, tạo ra một số thiết kế tuyệt đẹp và đảm bảo toàn bộ quá trình diễn ra suôn sẻ.”',
+    name: 'Linwei Deng',
+    role: 'Daesang Wellife Global Business Dept. Manager',
+  },
+  {
+    img: '/img/a/s-800x800_v-fs_webp_f0f2c13a-ede1-45b9-ba30-66ea4e5fcb0e.jpg',
+    quote: '" Thật vui khi được làm việc với 126VERSE. Họ thực sự đam mê những gì họ làm và họ mang đến nhiều kinh nghiệm và kiến ​​thức chuyên môn. "',
+    name: 'Yuki Sakai',
+    role: 'H1T',
+  },
+];
+---
+
+<Base title="Dịch vụ | 126Verse" lang="vi" alt="/services">
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
+    <h1>
+      <span class="word-line"><span class="word-up display text-[clamp(1.7rem,6vw,6rem)]" style="animation-delay:0.2s">Odds có thể bạn đã từng nhìn thấy</span></span>
+      <span class="word-line"><span class="word-up display text-[clamp(1.7rem,6vw,6rem)]" style="animation-delay:0.34s">các sản phẩm của chúng tôi</span></span>
+    </h1>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 pb-12" data-reveal>
+    <img src="/img/a/s-1801x907_v-frms_webp_be29bc18-27e9-4e3d-a401-2cc34900ef2b.png" alt="Sản phẩm 126Verse" class="w-full h-auto" />
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24" data-reveal>
+    <p class="font-semibold text-[clamp(1.25rem,3vw,2.25rem)] leading-snug max-w-5xl">Kể từ lúc thành lập, chúng tôi đã giúp tất cả mọi người từ các công ty khởi nghiệp nhỏ, từ giai đoạn đầu đến các tập đoàn lớn xây dựng ứng dụng mới, cải tiến ứng dụng cũ, tham gia hỗ trợ hình ảnh chất lượng cao cho các chiến dịch quảng cáo.</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
+    <p class="label opacity-50" data-reveal>Cái chúng tôi làm</p>
+    <div class="mt-10 flex flex-col">
+      {capabilities.map((c, i) => (
+        <div class={'py-10 md:py-14 grid md:grid-cols-2 gap-6 ' + (i > 0 ? 'hairline-soft' : '')} data-reveal>
+          <h2 class="display text-2xl sm:text-3xl md:text-4xl" style="line-height:1.1">{c.title}</h2>
+          <p class="label opacity-80 max-w-xl">{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline bg-ink text-white">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {groups.map((g, i) => (
+        <div data-reveal style={`transition-delay:${i * 0.1}s`}>
+          <p class="label" style="color:#a855f7">{g.title}</p>
+          <ul class="mt-6 flex flex-col gap-3 list-none p-0">
+            {g.items.map((it) => (
+              <li class="label text-white/80">{it}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24">
+    <h2 class="display text-[clamp(1.5rem,4vw,3.5rem)] max-w-6xl" style="line-height:1.05" data-reveal>Sau khi hoàn thành hàng trăm nhiệm vụ, chúng tôi đã học được một số điều quan trọng cần thiết để thực hiện công việc tốt nhất</h2>
+    <div class="mt-14 flex flex-col">
+      {principles.map((p) => (
+        <div class="py-10 grid md:grid-cols-[120px_1fr_1.2fr] gap-6 items-start hairline-soft" data-reveal>
+          <p class="text-[clamp(1.5rem,4vw,3rem)] font-semibold leading-none"><span class="num-accent">+</span>{p.n}</p>
+          <h3 class="display text-xl sm:text-2xl md:text-3xl" style="line-height:1.1">{p.title}</h3>
+          <p class="label opacity-80">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline">
+    <h2 class="display text-[clamp(1.8rem,5vw,4.5rem)]" data-reveal><span class="text-accent">●</span> Thành quả đến từ nội tại</h2>
+    <div class="mt-14 grid md:grid-cols-2 gap-10">
+      {quotes.map((q, i) => (
+        <figure class="m-0" data-reveal style={`transition-delay:${i * 0.12}s`}>
+          <img src={q.img} alt={q.name} class="w-full max-w-xs h-auto" loading="lazy" />
+          <blockquote class="m-0 mt-6 font-semibold text-lg md:text-xl leading-relaxed">{q.quote}</blockquote>
+          <figcaption class="mt-5">
+            <p class="label">{q.name}</p>
+            <p class="label opacity-50 mt-1">{q.role}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="label opacity-50 mt-12" data-reveal>Còn nữa</p>
+  </section>
+</Base>

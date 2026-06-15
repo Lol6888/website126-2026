@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import { jobs } from '../../data/jobs';
+
+export function getStaticPaths() {
+  return jobs.map((j) => ({ params: { slug: j.slug }, props: { j } }));
+}
+
+const { j } = Astro.props;
+---
+
+<Base title="Careers | 126Verse" lang="en" hideFooterCta>
+  <section class="bg-ink text-white px-5 sm:px-8 md:px-12 py-20 md:py-28">
+    <p class="fu label text-white/60" style="animation-delay:0.1s">{j.location}</p>
+    <h1 class="word-line mt-4"><span class="word-up display text-[clamp(1.8rem,6vw,5.5rem)]" style="animation-delay:0.3s;line-height:1.02">{j.title}</span></h1>
+    <a href="#apply" class="fu cta-link label mt-10" style="animation-delay:0.55s;color:#a855f7">
+      Apply Now
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+    </a>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16">
+    <p class="label opacity-80 max-w-3xl" style="white-space:pre-line" data-reveal>{j.intro}</p>
+    {j.sections.map((s) => (
+      <div class="mt-14" data-reveal>
+        <h2 class="display text-xl md:text-2xl">{s.h}</h2>
+        <p class="label opacity-70 mt-5 max-w-3xl" style="white-space:pre-line">{s.text}</p>
+      </div>
+    ))}
+  </section>
+
+  <section id="apply" class="px-5 sm:px-8 md:px-12 py-16 hairline">
+    <h2 class="display text-[clamp(1.6rem,4vw,3.2rem)]" data-reveal>Apply for this Job</h2>
+    <p class="label opacity-50 mt-3" data-reveal>* Required</p>
+
+    <form name={j.formName} method="POST" action="#" class="mt-12 max-w-2xl flex flex-col gap-7" data-reveal>
+      <div class="grid sm:grid-cols-2 gap-7">
+        <label class="flex flex-col gap-2">
+          <span class="label">First Name <em class="not-italic text-accent">*</em></span>
+          <input type="text" name="first_name" required class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+        </label>
+        <label class="flex flex-col gap-2">
+          <span class="label">Last Name <em class="not-italic text-accent">*</em></span>
+          <input type="text" name="last_name" required class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+        </label>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-7">
+        <label class="flex flex-col gap-2">
+          <span class="label">Email <em class="not-italic text-accent">*</em></span>
+          <input type="email" name="email" required class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+        </label>
+        <label class="flex flex-col gap-2">
+          <span class="label">Phone</span>
+          <input type="tel" name="phone" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+        </label>
+      </div>
+      <label class="flex flex-col gap-2">
+        <span class="label">Location (City) <em class="not-italic text-accent">*</em></span>
+        <input type="text" name="location" required class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Resume/CV <em class="not-italic text-accent">*</em></span>
+        <input type="file" name="resume" required class="label" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Cover Letter <em class="not-italic text-accent">*</em></span>
+        <input type="file" name="cover_letter" required class="label" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">LinkedIn URL</span>
+        <input type="url" name="linkedin" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Dribbble URL</span>
+        <input type="url" name="dribbble" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Portfolio URL</span>
+        <input type="url" name="portfolio" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Additional Work Samples.<br />Please attach any work samples you feel particularly proud of.</span>
+        <input type="file" name="work_samples" class="label" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Why 126Verse?<br />In a few sentences, let us know why you're interested in working here. No "To Whom It May Concern" cover letters, please!</span>
+        <textarea name="message" rows="5" class="border border-black/40 bg-transparent p-3 text-base focus:outline-none focus:border-accent"></textarea>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Are you based in Europe? <em class="not-italic text-accent">*</em></span>
+        <select name="based_europe" required class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent">
+          <option value="">--</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">How did you hear about 126Verse?<br />(feel free to select more than one)</span>
+        <input type="text" name="hear_about" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+      </label>
+
+      <div class="mt-6">
+        <h3 class="display text-lg md:text-xl">Voluntary Demographics</h3>
+        <p class="label opacity-60 mt-4" style="white-space:pre-line">At 126Verse, we hire based on raw talent and authenticity, not race, religion, gender, sexual orientation, or anything else.
+
+We conduct this voluntary demographic questionnaire to identify opportunities to promote a more inclusive hiring process.
+
+Your response, or choice to not respond, is entirely voluntary and will not affect or be linked to your application in any way. Should you choose to respond, your responses will be used in aggregate only and remain entirely anonymous.</p>
+        <div class="mt-6 flex flex-col gap-5">
+          <label class="flex flex-col gap-2">
+            <span class="label">I identify my gender as:</span>
+            <input type="text" name="gender" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">I identify as transgender:</span>
+            <input type="text" name="transgender" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">I identify my sexual orientation as:</span>
+            <input type="text" name="orientation" class="border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent" />
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="mt-6 self-start bg-ink text-white label !text-[13px] px-10 py-4 border-0 cursor-pointer hover:bg-accent transition-colors">Submit Application</button>
+    </form>
+  </section>
+</Base>

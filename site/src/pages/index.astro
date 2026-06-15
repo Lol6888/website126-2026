@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+
+const arrow = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>`;
+
+const teams = [
+  { n: '01', t: 'UI-UX Design', x: 'The UI-UX Design team specializes in crafting intuitive interfaces and smooth digital experiences.' },
+  { n: '02', t: 'Marketing & Solutions', x: 'The Marketing & Solutions team specializes in conducting market research, developing cross-channel strategies, and optimizing CRM systems.' },
+  { n: '03', t: '2D & 3D Design', x: 'The 2D & 3D Design team specializes in creating impactful visuals and printed materials for campaigns and events.' },
+];
+
+const services = [
+  'Design & UX Research',
+  'Brand & Creative',
+  'Marketing & Automation',
+  'Development & Product Strategy',
+];
+
+const logos = [
+  { src: '/img/a/s-320x62_webp_775752f5-9014-4a63-8cfc-27ea87ef2ef3.png', alt: 'FamilyMart' },
+  { src: '/img/a/s-2500x690_6bf9f35b-ba3d-48f5-bec1-847472f3c890.svg', alt: 'Yamaha' },
+  { src: '/img/a/s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png', alt: 'Daesang Wellife' },
+  { src: '/img/a/s-206x107_webp_d2a08c48-fac7-4df3-ba59-4dff56299e74.png', alt: 'H1T' },
+  { src: '/img/a/s-280x30_3cff06d8-c4b9-4d2d-89f6-47ffe75141e3.svg', alt: 'CHEER' },
+];
+
+const stats = [
+  { num: '+295', label: 'Projects completed' },
+  { num: '182', label: 'Global employees' },
+  { num: '4', label: 'Countries represented' },
+  { num: '86%', label: 'Remote employees' },
+];
+
+const featured = [
+  { name: 'Yamaha Music', tag: 'Brand marketing', href: '/work/yamaha-music', img: '/img/a/s-960x540_v-fs_webp_64bac0da-d9f2-4c7e-859e-21167dffb7f0.jpg' },
+  { name: 'CHEER', tag: 'Application Design', href: '/work/cheer', img: '/img/a/s-936x936_v-fs_webp_3d487d9b-a7ab-43f5-ae80-4b8b065989f4.png' },
+  { name: 'FamiPay', tag: 'Application Design', href: '/work/famipay', img: '/img/a/s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.png' },
+];
+---
+
+<Base
+  title="126Verse | We care about Brand"
+  description="126Verse provides high-quality web design and development services, helping top companies like FamilyMart, Yamaha, and Daesang create amazing product designs and services."
+  lang="en"
+  alt="/vi/"
+  navOverlay
+>
+  <!-- ===== HERO ===== -->
+  <section class="relative flex flex-col overflow-hidden bg-ink text-white" style="min-height:100vh;min-height:100dvh">
+    <video class="absolute inset-0 w-full h-full object-cover opacity-80" src="/media/hero-bg.mp4" autoplay loop muted playsinline></video>
+    <div class="absolute inset-0 z-[1] pointer-events-none" style="background:linear-gradient(to top, rgba(8,8,10,0.92) 0%, rgba(8,8,10,0.4) 50%, rgba(8,8,10,0.6) 100%)"></div>
+    <div class="relative z-10 flex flex-col grow px-5 sm:px-8 md:px-12 pt-28 pb-12 md:pb-16" style="min-height:100vh;min-height:100dvh">
+      <div class="grow"></div>
+      <p class="fu eyebrow text-white/70" style="animation-delay:0.4s">Creative Design &amp; Branding Agency</p>
+      <h1 class="mt-5">
+        {['We care', 'about Brand'].map((line, li) => (
+          <span class="word-line"><span class="word-up display text-[clamp(2.75rem,11vw,9rem)]" style={`animation-delay:${0.4 + li * 0.12}s`}>{line}</span></span>
+        ))}
+      </h1>
+      <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <p class="fu text-lg md:text-2xl leading-relaxed text-white/85 max-w-2xl" style="animation-delay:0.7s">126Verse provides high-quality web design and development services, helping top companies like FamilyMart, Yamaha, and Daesang create amazing product designs and services.</p>
+        <div class="fu flex flex-col gap-3 shrink-0" style="animation-delay:0.8s">
+          <a href="/work" class="cta-link text-lg sm:text-xl" style="color:#a855f7">See our work<Fragment set:html={arrow} /></a>
+          <a href="/contact" class="cta-link text-lg sm:text-xl" style="color:#a855f7">Work together<Fragment set:html={arrow} /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POSITIONING + CLIENT LOGOS ===== -->
+  <section class="px-5 sm:px-8 md:px-12 py-20 md:py-28">
+    <p class="eyebrow-num" data-reveal><span class="n">01</span><span class="rule"></span><span class="eyebrow text-accent">Who we are</span></p>
+    <h2 class="display text-[clamp(1.9rem,5.5vw,5rem)] mt-7 max-w-5xl" style="line-height:1.03" data-reveal>You've probably already used a product we helped build.</h2>
+    <p class="copy mt-8 max-w-3xl" data-reveal>For few years, we've helped everyone from small, early-stage startups to large companies build products and image marketing plans that are effective, beautiful, and easy to use.</p>
+    <div class="mt-14 pt-10 hairline-soft flex flex-wrap items-center gap-x-12 gap-y-8" data-reveal>
+      {logos.map((l) => (
+        <img src={l.src} alt={l.alt} class="h-7 md:h-9 w-auto opacity-70" loading="lazy" />
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== THREE EXPERT TEAMS ===== -->
+  <section class="px-5 sm:px-8 md:px-12 py-20 md:py-28 hairline">
+    <p class="eyebrow-num" data-reveal><span class="n">02</span><span class="rule"></span><span class="eyebrow text-accent">How we're built</span></p>
+    <h2 class="display text-[clamp(1.7rem,4.5vw,4rem)] mt-7 max-w-5xl" style="line-height:1.04" data-reveal>Three distinct expert teams, operating independently.</h2>
+    <div class="mt-16 grid md:grid-cols-3 gap-8 lg:gap-12">
+      {teams.map((t, i) => (
+        <div class="border-t-2 border-accent pt-6" data-reveal style={`transition-delay:${i * 0.1}s`}>
+          <p class="text-[clamp(2rem,4vw,3rem)] font-semibold leading-none"><span class="num-accent">+</span>{t.n}</p>
+          <h3 class="text-xl md:text-2xl font-medium mt-5">{t.t}</h3>
+          <p class="copy-sm mt-4">{t.x}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO (services) ===== -->
+  <section class="px-5 sm:px-8 md:px-12 py-20 md:py-28" style="background:#f2eefb">
+    <div class="flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <div>
+        <p class="eyebrow-num"><span class="n">03</span><span class="rule"></span><span class="eyebrow text-accent">What we do</span></p>
+        <h2 class="display text-[clamp(1.7rem,4.5vw,4rem)] mt-7 max-w-4xl" style="line-height:1.04">Everything your brand needs, under one roof.</h2>
+      </div>
+      <a href="/services" class="cta-link text-base sm:text-xl">All services<Fragment set:html={arrow} /></a>
+    </div>
+    <div class="mt-14 flex flex-col">
+      {services.map((s, i) => (
+        <div class="py-7 md:py-8 hairline-soft grid grid-cols-[auto_1fr] items-center gap-5" data-reveal>
+          <span class="eyebrow text-accent tabular-nums">{'0' + (i + 1)}</span>
+          <span class="display text-[clamp(1.4rem,3.5vw,2.75rem)]">{s}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== STATS (dark focal band) ===== -->
+  <section class="px-5 sm:px-8 md:px-12 py-20 md:py-28 bg-ink text-white">
+    <p class="eyebrow-num" data-reveal><span class="n">04</span><span class="rule"></span><span class="eyebrow" style="color:#a855f7">By the numbers</span></p>
+    <h2 class="display text-[clamp(1.7rem,4.5vw,4rem)] mt-7 max-w-4xl" style="line-height:1.04" data-reveal>Global talent, delivering work that performs.</h2>
+    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+      {stats.map((s, i) => (
+        <div class="border-t border-white/20 pt-5" data-reveal style={`transition-delay:${(i % 4) * 0.08}s`}>
+          <p class="text-[clamp(2.75rem,7vw,5.5rem)] font-semibold leading-none">
+            {s.num.startsWith('+') ? <><span style="color:#a855f7">+</span>{s.num.slice(1)}</> : s.num}
+          </p>
+          <p class="mt-5 text-base md:text-lg leading-snug text-white/65">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== SELECTED WORK TEASER ===== -->
+  <section class="px-5 sm:px-8 md:px-12 py-20 md:py-28 hairline">
+    <div class="flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <div>
+        <p class="eyebrow-num"><span class="n">05</span><span class="rule"></span><span class="eyebrow text-accent">Selected work</span></p>
+        <h2 class="display text-[clamp(1.9rem,5.5vw,5rem)] mt-7" style="line-height:1.03">Case Studies</h2>
+      </div>
+      <a href="/work" class="cta-link text-base sm:text-xl">View all<Fragment set:html={arrow} /></a>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {featured.map((f, i) => (
+        <a href={f.href} class="group block no-underline text-ink" data-reveal style={`transition-delay:${i * 0.1}s`}>
+          <div class="overflow-hidden bg-[#f1efe9]">
+            <img src={f.img} alt={f.name} class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <div>
+              <p class="text-xl md:text-2xl font-medium group-hover:text-accent transition-colors">{f.name}</p>
+              <p class="eyebrow opacity-50 mt-1.5">{f.tag}</p>
+            </div>
+            <svg class="w-6 h-6 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== INSIGHTS + AUDIT (eye-catching) ===== -->
+  <section class="px-5 sm:px-8 md:px-12 pb-2">
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="https://126insights.com/" target="_blank" rel="noopener" class="group relative overflow-hidden rounded-2xl bg-ink text-white p-8 md:p-10 flex flex-col justify-between min-h-[240px] no-underline" data-reveal>
+        <div class="flex items-start justify-between gap-4">
+          <img src="/img/a/s-387x116_webp_f7c14073-bce0-496f-b001-714ff78e94f3.png" alt="126INSIGHTS" class="h-9 md:h-11 w-auto" loading="lazy" />
+          <span class="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center shrink-0 transition-colors group-hover:bg-white group-hover:text-ink"><Fragment set:html={arrow} /></span>
+        </div>
+        <div>
+          <p class="text-2xl md:text-3xl font-medium leading-snug max-w-md">Expert deep-dive analyses from our team.</p>
+          <p class="eyebrow mt-5" style="color:#a855f7">Read insights</p>
+        </div>
+      </a>
+      <a href="/audit" class="group relative overflow-hidden rounded-2xl text-white p-8 md:p-10 flex flex-col justify-between min-h-[240px] no-underline" style="background:#5E0ED7;transition-delay:0.08s" data-reveal>
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow text-white/85">Free brand audit · $3,000 value</span>
+          <span class="w-11 h-11 rounded-full border border-white/45 flex items-center justify-center shrink-0 transition-colors group-hover:bg-white group-hover:text-accent"><Fragment set:html={arrow} /></span>
+        </div>
+        <div>
+          <p class="display text-[clamp(3rem,9vw,5.5rem)] leading-none">FREE</p>
+          <p class="text-xl md:text-2xl font-medium mt-3">Audit your brand, on us.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+</Base>

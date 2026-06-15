@@ -1,0 +1,189 @@
+---
+// Layout trang case study — style chuẩn homepage mới, đã tinh chỉnh UI/UX:
+// - Hero đặt trên nền đệm (heroBg cũ hoặc xám trung tính) để PNG trong suốt không bị "trống"
+// - Body text chữ thường 16-18px dễ đọc (label in hoa chỉ dùng cho nhãn nhỏ)
+// - Gallery đồng chiều cao: ảnh trong một hàng cao bằng nhau, rộng theo tỉ lệ thật
+//   (kích thước thật đọc từ tên file s-{w}x{h}_...), căn giữa — gọn mà không cắt xén ảnh
+import type { CaseStudy, CaseSection } from '../data/cases';
+
+interface Props { cs: CaseStudy }
+const { cs } = Astro.props;
+
+// đọc kích thước thật từ tên file
+const dim = (src: string) => {
+  const m = src.match(/s-(\d+)x(\d+)/);
+  return m ? { w: +m[1], h: +m[2] } : null;
+};
+
+// chiều cao hàng gallery theo số ảnh
+const rowH = (cols?: number) =>
+  cols === 4 ? 'h-44 sm:h-56 md:h-72' : cols === 3 ? 'h-52 sm:h-64 md:h-80' : 'h-60 sm:h-80 md:h-[26rem]';
+
+const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.text || s.items);
+---
+
+<article>
+  <!-- ===== HEADER ===== -->
+  <header class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2.2rem,8vw,8rem)]" style="animation-delay:0.2s">{cs.name}</span></h1>
+    <div class="mt-12 hairline-soft pt-8 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
+      <div class="fu" style="animation-delay:0.4s">
+        <p class="label opacity-50">{cs.meta.typeLabel}</p>
+        <p class="label mt-2">{cs.meta.type}</p>
+      </div>
+      <div class="fu" style="animation-delay:0.5s">
+        <p class="label opacity-50">{cs.meta.stageLabel}</p>
+        <p class="label mt-2">{cs.meta.stage}</p>
+      </div>
+      <div class="fu" style="animation-delay:0.6s">
+        <p class="label opacity-50">{cs.meta.deliverLabel}</p>
+        <p class="label mt-2">{cs.meta.deliver}</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  {cs.heroBgImage ? (
+    /* Yamaha: collage trên panel texture lưới (nền cũ #EEEEEE) */
+    <section class="px-5 sm:px-8 md:px-12 pb-8" data-reveal>
+      <div
+        class="flex flex-wrap items-center justify-center gap-5 md:gap-8 px-6 py-10 md:px-14 md:py-14"
+        style={`background:${cs.heroBg ?? '#ECEAE5'};background-image:url('${cs.heroBgImage}');background-size:cover;background-position:center`}
+      >
+        {cs.hero.map((im, i) => {
+          const d = dim(im.src);
+          const isLogo = d != null && d.w < 600 && d.h < 400;
+          return (
+            <img
+              src={im.src}
+              alt={im.alt ?? (i === 0 ? cs.name : '')}
+              class={isLogo ? 'h-10 md:h-14 w-full object-contain basis-full' : 'h-44 sm:h-56 md:h-72 w-auto max-w-full object-contain'}
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+          );
+        })}
+      </div>
+    </section>
+  ) : (
+    /* Các case khác: mỗi ảnh hiển thị theo tỉ lệ thật (logo nhỏ / ngang full / dọc giới hạn cao) */
+    <section class="px-5 sm:px-8 md:px-12 pb-8 flex flex-col items-center gap-6" data-reveal>
+      {cs.hero.map((im, i) => {
+        const d = dim(im.src);
+        const ratio = d ? d.w / d.h : 1.6;
+        const isLogo = d != null && d.w < 600 && d.h < 400;
+        return (
+          <img
+            src={im.src}
+            alt={im.alt ?? (i === 0 ? cs.name : '')}
+            class={isLogo ? 'h-10 md:h-12 w-auto object-contain' : ratio < 0.9 ? 'w-auto max-w-full object-contain' : 'w-full h-auto'}
+            style={!isLogo && ratio < 0.9 ? 'max-height:560px' : ''}
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        );
+      })}
+    </section>
+  )}
+
+  <!-- ===== SECTIONS ===== -->
+  {cs.sections.map((s: CaseSection) => (
+    <section class="px-5 sm:px-8 md:px-12 py-14 md:py-20 hairline-soft" data-reveal>
+      {s.label && <p class="label opacity-50 max-w-3xl">{s.label}</p>}
+
+      {!(s.iframe && (s.title || s.text)) && (
+        <>
+          {s.lead && <p class={'font-semibold text-[clamp(1.25rem,2.6vw,2rem)] leading-snug max-w-4xl ' + (s.label ? 'mt-5' : '')} style="white-space:pre-line">{s.lead}</p>}
+          {s.title && <h2 class={'display text-[clamp(1.5rem,4vw,3.5rem)] max-w-5xl ' + (s.label || s.lead ? 'mt-6' : '')} style="line-height:1.05;white-space:pre-line">{s.title}</h2>}
+          {s.text && <p class={'text-base md:text-lg leading-relaxed text-black/70 max-w-2xl ' + (s.label || s.lead || s.title ? 'mt-6' : '')} style="white-space:pre-line">{s.text}</p>}
+        </>
+      )}
+
+      {s.items && (
+        <div class="mt-10 flex flex-col gap-10 max-w-4xl">
+          {s.items.map((it) => (
+            <div class="grid md:grid-cols-[200px_1fr] gap-3 md:gap-8">
+              <p class="label text-accent">{it.label}</p>
+              <p class="text-base md:text-lg leading-relaxed text-black/70 m-0" style="white-space:pre-line">{it.text}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {s.images && s.cols === 1 && s.images.map((im) => {
+        const d = dim(im.src);
+        const wide = !d || d.w >= 1600;
+        return (
+          <div class={hasTextBefore(s) ? 'mt-10' : ''}>
+            <img
+              src={im.src}
+              alt={im.alt ?? ''}
+              class={wide ? 'w-full h-auto' : 'block mx-auto w-full h-auto'}
+              style={wide ? '' : `max-width:min(100%, ${Math.round((d?.w ?? 800) * 0.85)}px)`}
+              loading="lazy"
+            />
+          </div>
+        );
+      })}
+
+      {s.images && (s.cols ?? 1) > 1 && (
+        <div class={'flex flex-wrap items-center justify-center gap-4 md:gap-6 ' + (hasTextBefore(s) ? 'mt-10' : '')}>
+          {s.images.map((im) => (
+            <img src={im.src} alt={im.alt ?? ''} class={rowH(s.cols) + ' w-auto max-w-full object-contain'} loading="lazy" />
+          ))}
+        </div>
+      )}
+
+      {s.quote && (
+        <figure class="m-0 max-w-4xl">
+          <blockquote class="m-0 font-semibold text-[clamp(1.15rem,2.2vw,1.75rem)] leading-relaxed" style="white-space:pre-line">{s.quote.quote}</blockquote>
+          <figcaption class="mt-8 flex items-center gap-4">
+            {s.quote.img && <img src={s.quote.img} alt={s.quote.name} class="w-14 h-14 rounded-full object-cover" loading="lazy" />}
+            <span>
+              <span class="label block">{s.quote.name}</span>
+              <span class="label block opacity-50 mt-1">{s.quote.role}</span>
+            </span>
+          </figcaption>
+        </figure>
+      )}
+
+      {s.stats && (
+        <div class="flex flex-col">
+          {s.stats.map((st, i) => (
+            <div class={'py-8 md:py-10 flex items-baseline gap-6 md:gap-10 ' + (i > 0 ? 'hairline' : '')}>
+              <p class="text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-none m-0"><span class="num-accent">+</span>{st.num}</p>
+              <p class="label opacity-60 m-0">{st.label}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {s.iframe && (
+        (s.title || s.text) ? (
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              {s.title && <h2 class="display text-[clamp(1.3rem,2.6vw,2rem)]" style="line-height:1.15;white-space:pre-line">{s.title}</h2>}
+              {s.lead && <p class="font-semibold text-lg md:text-xl mt-4" style="white-space:pre-line">{s.lead}</p>}
+              {s.text && <p class="text-base md:text-lg leading-relaxed text-black/70 mt-5" style="white-space:pre-line">{s.text}</p>}
+            </div>
+            <div class="border border-black/10" style={`aspect-ratio:${s.iframeRatio ?? '16/9'}`}>
+              <iframe src={s.iframe} class="w-full h-full border-0 block" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </div>
+        ) : (
+          <div class={'mx-auto w-full max-w-4xl ' + ((s.label || s.lead) ? 'mt-10' : '')} style={`aspect-ratio:${s.iframeRatio ?? '16/9'}`}>
+            <iframe src={s.iframe} class="w-full h-full border-0 block" loading="lazy" allowfullscreen></iframe>
+          </div>
+        )
+      )}
+    </section>
+  ))}
+
+  <!-- ===== NEXT CASE ===== -->
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline" data-reveal>
+    <p class="label opacity-50">{cs.next.label}</p>
+    <a href={cs.next.href} class="group mt-8 grid grid-cols-[1fr_auto] md:grid-cols-[1fr_300px_auto] gap-6 md:gap-10 items-center no-underline text-ink">
+      <span class="display text-[clamp(1.8rem,6vw,5rem)] group-hover:text-accent transition-colors">{cs.next.name}</span>
+      <img src={cs.next.img} alt={cs.next.name} class="hidden md:block w-full h-44 object-cover" loading="lazy" />
+      <svg class="w-8 h-8 md:w-12 md:h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+    </a>
+  </section>
+</article>

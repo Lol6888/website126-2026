@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "126verse-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--prefix", "G:/126website2026/site", "--", "--port", "4321"],
+      "port": 4321
+    }
+  ]
+}

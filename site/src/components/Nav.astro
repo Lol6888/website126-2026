@@ -1,0 +1,131 @@
+---
+interface Props {
+  lang?: 'en' | 'vi';
+  alt?: string; // đường dẫn trang tương ứng ở ngôn ngữ còn lại
+  hero?: boolean; // nav nổi trên hero tối (chữ trắng khi ở đầu trang)
+}
+const { lang = 'en', alt, hero = false } = Astro.props;
+const p = lang === 'vi' ? '/vi' : '';
+
+const links =
+  lang === 'vi'
+    ? [
+        { label: 'Dịch Vụ', href: '/vi/services' },
+        { label: 'Giải pháp', href: '/solutions' },
+        { label: 'Dự án', href: '/vi/work' },
+        { label: 'Về chúng tôi', href: '/vi/about' },
+      ]
+    : [
+        { label: 'What We Do', href: '/services' },
+        { label: 'Solutions', href: '/solutions' },
+        { label: 'Case Studies', href: '/work' },
+        { label: 'About Us', href: '/about' },
+      ];
+
+const cases =
+  lang === 'vi'
+    ? [
+        { label: 'Web Design', href: '/work/web-design' },
+        { label: 'Human First Time', href: '/vi/work/human-first-time' },
+        { label: 'FamiPay', href: '/vi/work/famipay' },
+        { label: 'Knowlegd Japan', href: '/vi/work/knowledge-japan' },
+        { label: 'Mars Cats Voyage', href: '/vi/work/mars-cats-voyage' },
+        { label: 'CHEER', href: '/vi/work/cheer' },
+        { label: 'Daesang', href: '/vi/work/daesang' },
+        { label: 'Yamaha Music', href: '/vi/work/yamaha-music' },
+      ]
+    : [
+        { label: 'Web Design', href: '/work/web-design' },
+        { label: 'Human First Time', href: '/work/human-first-time' },
+        { label: 'FamiPay', href: '/work/famipay' },
+        { label: 'Knowlegd Japan', href: '/work/knowledge-japan' },
+        { label: 'Mars Cats Voyage', href: '/work/mars-cats-voyage' },
+        { label: 'CHEER', href: '/work/cheer' },
+        { label: 'Daesang', href: '/work/daesang' },
+        { label: 'Yamaha Music', href: '/work/yamaha-music' },
+      ];
+
+const contact = lang === 'vi' ? { label: 'Liên hệ', href: '/vi/contact' } : { label: 'Get in Touch', href: '/contact' };
+const hiring = lang === 'vi'
+  ? { tag: 'Tuyển dụng', roles: 'Senior Product Designer\nGraphic Designer\nUX Designer', cta: 'Gia nhập 126Verse!', href: '/vi/about#carreer' }
+  : { tag: "We're Hiring", roles: 'Senior Product Designer\nGraphic Designer\nUX Designer', cta: 'Join Our Team', href: '/about#carreer' };
+---
+
+<nav class="flex items-center justify-between px-5 sm:px-8 md:px-12 py-4 md:py-5">
+  <a href={p + '/'} class="fd flex items-center gap-3" style="animation-delay:0s" aria-label="126VERSE">
+    <span class="w-8 h-8 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
+      <span class="w-2.5 h-2.5 rounded-full bg-accent block"></span>
+    </span>
+    <span class="label !text-[13px]">126VERSE<sup class="text-accent">®</sup></span>
+  </a>
+
+  <div class="hidden md:flex gap-8 lg:gap-10">
+    {links.map((l, i) => (
+      <a href={l.href} class="fd label !text-[13px] no-underline hover:opacity-55 transition-opacity" style={`animation-delay:${(i + 1) * 0.1}s`}>{l.label}</a>
+    ))}
+  </div>
+
+  <div class="flex items-center gap-4">
+    {alt && (
+      <a href={alt} class="fd label !text-[11px] no-underline hover:opacity-55" style="animation-delay:0.45s">{lang === 'vi' ? 'ENG' : 'VN'}</a>
+    )}
+    <button id="nav-burger" class="fd w-9 h-9 rounded-full bg-accent border-0 cursor-pointer flex flex-col items-center justify-center gap-1" style="animation-delay:0.5s" aria-label={lang === 'vi' ? 'Mở menu' : 'Open menu'}>
+      <span class="w-4 h-0.5 bg-white block"></span>
+      <span class="w-4 h-0.5 bg-white block"></span>
+      <span class="w-4 h-0.5 bg-white block"></span>
+    </button>
+  </div>
+</nav>
+
+<div id="nav-menu" class="hidden fixed inset-0 z-50 bg-white flex-col overflow-y-auto">
+  <div class="flex items-center justify-between px-5 pt-5 sm:px-8 md:px-12 md:pt-6">
+    <a href={p + '/'} class="flex items-center gap-3" aria-label="126VERSE">
+      <span class="w-8 h-8 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
+        <span class="w-2.5 h-2.5 rounded-full bg-accent block"></span>
+      </span>
+      <span class="label !text-[13px]">126VERSE<sup class="text-accent">®</sup></span>
+    </a>
+    <button id="nav-close" class="w-9 h-9 rounded-full bg-ink border-0 cursor-pointer text-white flex items-center justify-center" aria-label={lang === 'vi' ? 'Đóng menu' : 'Close menu'}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="px-5 sm:px-8 md:px-12 mt-12 md:mt-16 pb-12 flex flex-col md:flex-row gap-12 md:gap-24 grow">
+    <div class="flex flex-col gap-6 md:gap-8">
+      {[...links, contact].map((l) => (
+        <a href={l.href} class="display text-3xl sm:text-4xl no-underline text-ink hover:text-accent transition-colors" style="letter-spacing:0.1em">{l.label}</a>
+      ))}
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <p class="label opacity-50">{lang === 'vi' ? 'Dự án' : 'Case Studies'}</p>
+      <div class="flex flex-col gap-3">
+        {cases.map((c) => (
+          <a href={c.href} class="label no-underline text-ink hover:text-accent transition-colors">{c.label}</a>
+        ))}
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-8 md:ml-auto">
+      <div>
+        <p class="label text-accent">{hiring.tag}</p>
+        <p class="label mt-3 opacity-70" style="white-space:pre-line">{hiring.roles}</p>
+        <a href={hiring.href} class="cta-link label mt-4">{hiring.cta}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <p class="label opacity-70">127 Farringdon Rd, London EC1R 3DA, UK<br />+44-79-1771-0126</p>
+        <p class="label opacity-70">57 street 60, TML, Ho Chi Minh, VN<br />+84-789-179-603</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const burger = document.getElementById('nav-burger');
+  const menu = document.getElementById('nav-menu');
+  const close = document.getElementById('nav-close');
+  burger?.addEventListener('click', () => { menu?.classList.remove('hidden'); menu?.classList.add('flex'); document.body.style.overflow = 'hidden'; });
+  close?.addEventListener('click', () => { menu?.classList.add('hidden'); menu?.classList.remove('flex'); document.body.style.overflow = ''; });
+</script>

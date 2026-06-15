@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const inputCls = 'border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent';
+---
+
+<Base title="Work together | 126Verse" lang="en" alt="/vi/contact" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-16 grid md:grid-cols-2 gap-16">
+    <div>
+      <h1 class="word-line"><span class="word-up display text-[clamp(2.5rem,8vw,8rem)]" style="animation-delay:0.2s">Say hey.</span></h1>
+      <p class="fu label opacity-80 mt-10 max-w-md" style="animation-delay:0.45s;white-space:pre-line">Not sure where to start?
+
+Tell us about your product, your timeline, how you heard about us, and where you’re located.
+
+We read every message. So, thanks in advance for making it a good one.
+
+If you'd prefer, feel free to email our support team directly at: sofia_phan@126verse.com</p>
+      <a href="/about#carreer" target="_blank" class="fu cta-link label mt-8" style="animation-delay:0.6s">
+        Looking for a job?
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+    </div>
+
+    <form name="Contact" method="POST" action="#" class="fu flex flex-col gap-7" style="animation-delay:0.4s">
+      <label class="flex flex-col gap-2">
+        <span class="label">Name <em class="not-italic text-accent">*</em></span>
+        <input type="text" name="name" placeholder="Enter your name" required class={inputCls} />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Email <em class="not-italic text-accent">*</em></span>
+        <input type="email" name="email" placeholder="Email Address" required class={inputCls} />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Service you're looking for <em class="not-italic text-accent">*</em></span>
+        <select name="service" required class={inputCls}>
+          <option value="">Select one</option>
+          <option>Landing Page</option>
+          <option>Website UX/UI</option>
+          <option>Website Development</option>
+          <option>Branding</option>
+          <option>Creative Production</option>
+          <option>Marketing Materials</option>
+          <option>E-commerce</option>
+          <option>Web App UI</option>
+          <option>CRO Optimization</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">What’s your expected timeline? <em class="not-italic text-accent">*</em></span>
+        <select name="timeline" required class={inputCls}>
+          <option value="">Select one</option>
+          <option>As soon as possible</option>
+          <option>Within 2 weeks</option>
+          <option>3–6 weeks</option>
+          <option>Flexible timeline</option>
+          <option>Not sure</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">What’s your budget range? <em class="not-italic text-accent">*</em></span>
+        <select name="budget" required class={inputCls}>
+          <option value="">Select one</option>
+          <option>Under $1,000</option>
+          <option>$1,000 – $3,000</option>
+          <option>$3,000 – $5,000</option>
+          <option>$5,000 – $10,000</option>
+          <option>$10,000+</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Message <em class="not-italic text-accent">*</em></span>
+        <textarea name="message" rows="5" placeholder="Your message here" required class="border border-black/40 bg-transparent p-3 text-base focus:outline-none focus:border-accent"></textarea>
+      </label>
+      <label class="flex items-center gap-3 cursor-pointer">
+        <input type="checkbox" name="confirm" required class="w-4 h-4 accent-[#5E0ED7]" />
+        <span class="label">I agree to the Privacy Policy.</span>
+      </label>
+      <button type="submit" class="self-start bg-ink text-white label !text-[13px] px-12 py-4 border-0 cursor-pointer hover:bg-accent transition-colors">Send</button>
+    </form>
+  </section>
+</Base>

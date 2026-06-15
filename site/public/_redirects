@@ -1,0 +1,47 @@
+# Redirect 301 từ URL cũ (Studio.Design) sang cấu trúc mới — giữ SEO
+# Định dạng tương thích Cloudflare Pages / Netlify
+
+/HomeVN              /vi/                                   301
+/Whatwedo-Eng        /services                              301
+/Whatwedo-VN         /vi/services                           301
+/pricing             /solutions                             301
+/AboutUs-Eng         /about                                 301
+/AboutUs-VN          /vi/about                              301
+/Worktogether-Eng    /contact                               301
+/Worktogether-VN     /vi/contact                            301
+/Taskorder-Eng       /contact/urgent                        301
+/Taskorder-VN        /vi/contact/urgent                     301
+/AuditBrand-Form     /audit                                 301
+/webdesignshowcase   /work/web-design                       301
+/projects/02         /work/web-design/newtown-products      301
+/projects/02-1       /work/web-design/dance-event-mobi      301
+/projects/02-2       /work/web-design/munch-pizza           301
+/projects/02-3       /work/web-design/first-event           301
+/projects/02-4       /work/web-design/simple-market         301
+/projects/02-5       /work/web-design/cron                  301
+/projects/02-6       /work/web-design/riverside             301
+/YamahaMusicEng      /work/yamaha-music                     301
+/YamahamusicVN       /vi/work/yamaha-music                  301
+/DAESANG-Eng         /work/daesang                          301
+/DAESANG-VN          /vi/work/daesang                       301
+/MCV-Eng             /work/mars-cats-voyage                 301
+/MCV-VN              /vi/work/mars-cats-voyage              301
+/KnowlegdJP-Eng      /work/knowledge-japan                  301
+/KnowlegdJP-VN       /vi/work/knowledge-japan               301
+/CHEER-Eng           /work/cheer                            301
+/CHEER-VN            /vi/work/cheer                         301
+/H1T-Eng             /work/human-first-time                 301
+/H1T-VN              /vi/work/human-first-time              301
+/FamiPay-Eng         /work/famipay                          301
+/FamiPay-VN          /vi/work/famipay                       301
+/PrivacyPolicy-Eng   /privacy                               301
+/PrivacyPolicy-VN    /vi/privacy                            301
+/AccessibilityPolicy-Eng  /accessibility                    301
+/AccessibilityPolicy-VN   /vi/accessibility                 301
+/PrincipalDesignerJD          /careers/principal-designer               301
+/Juniorbranddesigner          /careers/junior-brand-designer            301
+/GraphicDesignIntern          /careers/graphic-design-intern            301
+/MultimediaGraphicDesign      /careers/multimedia-designer              301
+/SocialMediaCoordinatorIntern /careers/social-media-coordinator-intern  301
+/comingsoon          /coming-soon                           301
+/comingsoon-1        /coming-soon                           301

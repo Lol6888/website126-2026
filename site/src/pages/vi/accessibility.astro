@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const sections = [
+  {
+    h: '',
+    text: 'Hi\n\nInternet phải là nơi dành cho tất cả mọi người và chúng tôi cố gắng đảm bảo rằng tất cả mọi người đều có thể truy cập trang web của mình, bất kể sự khác biệt về thể chất hoặc nhận thức.\n\nCần có tài năng tốt nhất để tạo ra những sản phẩm tốt nhất. Điều đó có nghĩa là làm việc với những người đầy nhiệt huyết từ khắp nơi trên thế giới với những bản sắc, câu chuyện và trải nghiệm đa dạng.\n\nCam kết của chúng tôi về Sự đa dạng, Công bằng và Hòa nhập→\n\nNhững nỗ lực không ngừng của chúng tôi nhằm giúp trang web của chúng tôi có thể truy cập được bao gồm hướng dẫn từ Nguyên tắc truy cập nội dung web (WCAG) và kiến thức chuyên môn của chúng tôi:\n\nThiết kế thân thiện với người dùng - Chúng tôi thiết kế trang web của mình chú trọng đến trải nghiệm người dùng, đảm bảo điều hướng dễ dàng và rõ ràng trong cách trình bày nội dung.\nVăn bản thay thế cho hình ảnh - Chúng tôi cung cấp văn bản thay thế mang tính mô tả cho hình ảnh, cho phép những người sử dụng trình đọc màn hình hiểu được nội dung.\nĐiều hướng bằng bàn phím - Trang web của chúng tôi được xây dựng để có thể điều hướng chỉ bằng bàn phím, giúp những cá nhân không thể sử dụng chuột truyền thống có thể truy cập được.\nPhông chữ và độ tương phản có thể đọc được - Chúng tôi duy trì kích thước phông chữ có thể đọc được và đảm bảo đủ độ tương phản màu sắc để giúp những người khiếm thị có thể tiếp cận nội dung của chúng tôi.\nKhả năng tương thích với Công nghệ hỗ trợ - Trang web của chúng tôi được thiết kế để hoạt động trơn tru với các công nghệ hỗ trợ, đảm bảo khả năng tương thích với nhiều công cụ khác nhau mà các cá nhân có thể sử dụng.',
+  },
+  {
+    h: 'Nội dung của bên thứ ba',
+    text: 'Mặc dù chúng tôi cố gắng đảm bảo khả năng truy cập nội dung của bên thứ ba trên trang web của mình nhưng chúng tôi có thể có quyền kiểm soát hạn chế đối với khả năng truy cập nội dung đó. Chúng tôi khuyến khích người dùng liên hệ trực tiếp với nhà cung cấp bên thứ ba để giải quyết những lo ngại về khả năng truy cập.',
+  },
+  {
+    h: 'Tuân thủ pháp luật',
+    text: 'Tuyên bố về khả năng tiếp cận này nhằm đáp ứng các yêu cầu của luật và quy định hiện hành, bao gồm nhưng không giới hạn ở Đạo luật Người khuyết tật Hoa Kỳ (ADA) và Mục 508 của Đạo luật Phục hồi chức năng. Chúng tôi sẽ tiếp tục xem xét và nâng cao các biện pháp tiếp cận của mình để đảm bảo tuân thủ các tiêu chuẩn ngày càng phát triển.',
+  },
+  {
+    h: 'Cảm ơn phản hôi của bạn',
+    text: 'Chúng tôi thiết kế và xây dựng các sản phẩm kỹ thuật số. Chúng tôi cam kết cải tiến liên tục và đảm bảo rằng trang web của chúng tôi vẫn là không gian hòa nhập cho tất cả mọi người. Chúng tôi hoan nghênh phản hồi về khả năng truy cập trang web của chúng tôi. Nếu bạn gặp bất kỳ khó khăn nào hoặc có đề xuất cải tiến, vui lòng liên hệ với chúng tôi. Nếu bạn gửi phản hồi, chúng tôi cảm ơn bạn vì điều đó.',
+  },
+];
+---
+
+<Base title="Accessibility Policy | 126Verse" lang="vi" alt="/accessibility" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-16 max-w-4xl">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2rem,6vw,5.5rem)]" style="animation-delay:0.2s">Chính sách</span></h1>
+    <div class="mt-12 prose-plain">
+      {sections.map((s) => (
+        <div data-reveal>
+          {s.h && <h2>{s.h}</h2>}
+          <p style="white-space:pre-line">{s.text}</p>
+        </div>
+      ))}
+      <p data-reveal><a href="mailto:feedback@126verse.com" class="text-accent no-underline font-semibold">feedback@126verse.com</a></p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+
+const capabilities = [
+  {
+    title: 'Define a clear vision for the future',
+    text: "Whether you're part of a Fortune 500 R&D team or a visionary founder with a simple sketch on a napkin, we specialize in shaping, ideating, prototyping, and bringing to life beloved products tailored for your users.",
+  },
+  {
+    title: 'Ship new products from zero-to-one',
+    text: "When you require the creation of software from scratch, alongside a high-caliber product team, we're poised to assist you in delivering a remarkable Minimum Viable Product (MVP) engineered for both present success and future growth.",
+  },
+  {
+    title: 'Inject fresh life into legacy experiences',
+    text: 'If your product, boasting millions of daily active users, is displaying signs of fatigue, our team steps in with precision and meticulous care to rearchitect, rebuild, and redesign for optimal performance.',
+  },
+  {
+    title: 'Accompany even the smallest commercial campaigns',
+    text: 'We work as part of your internal marketing team. Providing image products for promotional campaigns. Print and digital products.',
+  },
+];
+
+const groups = [
+  { title: 'Design & UX Research', items: ['UX/UI Design', 'Design Systems', 'UX Research & Testing', 'Ideation & Protyping'] },
+  { title: 'Brand & Creative', items: ['Brand Audit & Positioning', 'Art Direction & Visual Identity', 'Motion Graphics & Video Production', 'Content Creation & Thought Leadership (blogs, whitepapers, case studies)'] },
+  { title: 'Marketing & Automation', items: ['Account-Based Marketing (ABM) Campaigns', 'Multi-channel paid media campaigns', 'Marketing Automation & CRM Integration', 'Customer Journey Optimization & Personalization', 'AI/ML-Driven Marketing Technology Implementation'] },
+  { title: 'Development & Product Strategy', items: ['Website & Landing Page Development', 'SCORM / Articulate 360 eLearning Packages', 'Analytics & BI Dashboard Setup', 'Product Roadmapping, Management & Strategic Workshops', 'User Engagement & Retention Programs'] },
+];
+
+const principles = [
+  { n: '01', title: 'Product focus', text: 'We’re not full-service. We do one thing and do it well — build incredible user experiences. Everything we do is in the service of product.' },
+  { n: '02', title: 'Co-founder mentality', text: 'As true partners in the work, we’ll push you and ourselves to find the best outcome. We may not always solve the problem you ask for, but we’ll solve the problem your product needs.' },
+  { n: '03', title: 'Software not vaporware', text: 'We’re allergic to agency overhead, bureaucracy, and process. We only hire practitioners of their craft who are in the work, partnering closely with our clients on a daily basis.' },
+  { n: '04', title: 'Startup pace', text: "We operate like a nimble, high-powered startup alongside early-stage founders and exp with the world's biggest brands." },
+  { n: '05', title: 'Small, awesome teams', text: 'We hire the best from every corner of the world and get out of their way to let them do their life’s work. Each person on your team is hand-selected based on expertise and project chemistry to bring your product vision to life.' },
+];
+
+const quotes = [
+  {
+    img: '/img/a/s-800x800_v-fs_webp_76741bd0-ec48-4d95-98d1-388ce60136cf.jpg',
+    quote: '“I am always amazed at the quality of work that 126Verse produces. From day one, 126 Verse has our brand, created some stunning designs, and ensured the entire process ran smoothly.”',
+    name: 'Linwei Deng',
+    role: 'Daesang Wellife Global Business Dept. Manager',
+  },
+  {
+    img: '/img/a/s-800x800_v-fs_webp_f0f2c13a-ede1-45b9-ba30-66ea4e5fcb0e.jpg',
+    quote: '"It\'s been a pleasure collaborating with 126VERSE. Their genuine passion for their work shines through, and they bring a wealth of experience and expertise to the table."',
+    name: 'Yuki Sakai',
+    role: 'H1T',
+  },
+];
+---
+
+<Base title="What we do | 126Verse" lang="en" alt="/vi/services">
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
+    <h1>
+      <span class="word-line"><span class="word-up display text-[clamp(2rem,7.5vw,7.5rem)]" style="animation-delay:0.2s">Odds are you've used a</span></span>
+      <span class="word-line"><span class="word-up display text-[clamp(2rem,7.5vw,7.5rem)]" style="animation-delay:0.34s">product we've built</span></span>
+    </h1>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 pb-12" data-reveal>
+    <img src="/img/a/s-1801x907_v-frms_webp_be29bc18-27e9-4e3d-a401-2cc34900ef2b.png" alt="126Verse products" class="w-full h-auto" />
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24" data-reveal>
+    <p class="font-semibold text-[clamp(1.25rem,3vw,2.25rem)] leading-snug max-w-5xl">For few years, we've helped everyone from small, early-stage startups to large companies build products and image marketing plans that are effective, beautiful, and easy to use.</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
+    <p class="label opacity-50" data-reveal>What we do</p>
+    <div class="mt-10 flex flex-col">
+      {capabilities.map((c, i) => (
+        <div class={'py-10 md:py-14 grid md:grid-cols-2 gap-6 ' + (i > 0 ? 'hairline-soft' : '')} data-reveal>
+          <h2 class="display text-2xl sm:text-3xl md:text-4xl" style="line-height:1.1">{c.title}</h2>
+          <p class="label opacity-80 max-w-xl">{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline bg-ink text-white">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {groups.map((g, i) => (
+        <div data-reveal style={`transition-delay:${i * 0.1}s`}>
+          <p class="label" style="color:#a855f7">{g.title}</p>
+          <ul class="mt-6 flex flex-col gap-3 list-none p-0">
+            {g.items.map((it) => (
+              <li class="label text-white/80">{it}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24">
+    <h2 class="display text-[clamp(1.6rem,4.5vw,4rem)] max-w-6xl" style="line-height:1.05" data-reveal>After shipping hundreds of products, there are a few key things we’ve learned are needed to do the best work</h2>
+    <div class="mt-14 flex flex-col">
+      {principles.map((p) => (
+        <div class="py-10 grid md:grid-cols-[120px_1fr_1.2fr] gap-6 items-start hairline-soft" data-reveal>
+          <p class="text-[clamp(1.5rem,4vw,3rem)] font-semibold leading-none"><span class="num-accent">+</span>{p.n}</p>
+          <h3 class="display text-xl sm:text-2xl md:text-3xl" style="line-height:1.1">{p.title}</h3>
+          <p class="label opacity-80">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline">
+    <h2 class="display text-[clamp(1.8rem,5vw,4.5rem)]" data-reveal><span class="text-accent">●</span> Achievements stem from within</h2>
+    <div class="mt-14 grid md:grid-cols-2 gap-10">
+      {quotes.map((q, i) => (
+        <figure class="m-0" data-reveal style={`transition-delay:${i * 0.12}s`}>
+          <img src={q.img} alt={q.name} class="w-full max-w-xs h-auto" loading="lazy" />
+          <blockquote class="m-0 mt-6 font-semibold text-lg md:text-xl leading-relaxed">{q.quote}</blockquote>
+          <figcaption class="mt-5">
+            <p class="label">{q.name}</p>
+            <p class="label opacity-50 mt-1">{q.role}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="label opacity-50 mt-12" data-reveal>And more</p>
+  </section>
+</Base>

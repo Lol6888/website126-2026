@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'en' | 'vi';
+  alt?: string;
+  hideFooterCta?: boolean;
+  bare?: boolean; // không nav/footer (vd: coming soon)
+  navOverlay?: boolean; // nav nổi trên hero video
+}
+const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare = false, navOverlay = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    {alt && <link rel="alternate" hreflang={lang === 'vi' ? 'en' : 'vi'} href={alt} />}
+  </head>
+  <body>
+    {!bare && (
+      <header id="site-header" class={(navOverlay ? 'fixed site-header-hero' : 'sticky site-header-solid') + ' top-0 inset-x-0 z-50'}>
+        <Nav lang={lang} alt={alt} hero={navOverlay} />
+      </header>
+    )}
+    <slot />
+    {!bare && <Footer lang={lang} hideCta={hideFooterCta} />}
+
+    <script>
+      // header neo: trang hero (fixed) đổi nền khi cuộn qua hero
+      const header = document.getElementById('site-header');
+      if (header && header.classList.contains('site-header-hero')) {
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-in');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

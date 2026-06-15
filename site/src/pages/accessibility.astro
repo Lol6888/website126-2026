@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+
+const sections = [
+  {
+    h: '',
+    text: "Hey, hi, hello!\n\nThe internet should be a place for everyone, and we strive to ensure that our website is accessible to all, regardless of physical or cognitive differences.\n\nIt takes the best talent to build the best products. That means working with passionate people from all over the world with diverse identities, stories, and experiences.\n\nOur commitment to Diversity, Equity, & Inclusion→\n\nOur ongoing efforts to make our website accessible include guidance from the Web Content Accessibility Guidelines (WCAG) and our expertise:\n\nUser-Friendly Design - We designed our website with user experience in mind, ensuring easy navigation and clarity in content presentation.\nAlternative Text for Images - We provide descriptive alternative text for images, enabling those who use screen readers to understand the content.\nKeyboard Navigation - Our website is built to be navigable using only a keyboard, making it accessible to individuals who may not use a traditional mouse.\nReadable Font and Contrast - We maintain a readable font size and ensure sufficient color contrast to make our content accessible to those with visual impairments.\nCompatibility with Assistive Technologies - Our website is designed to work seamlessly with assistive technologies, ensuring compatibility with various tools that individuals may use.",
+  },
+  {
+    h: 'Third-Party Content',
+    text: 'While we strive to ensure the accessibility of third-party content on our site, we may have limited control over the accessibility of such content. We encourage users to contact the third-party providers directly to address accessibility concerns.',
+  },
+  {
+    h: 'Legal Compliance',
+    text: 'This accessibility statement is intended to meet the requirements of applicable laws and regulations, including but not limited to the Americans with Disabilities Act (ADA) and Section 508 of the Rehabilitation Act. We will continue to review and enhance our accessibility measures to ensure compliance with evolving standards.',
+  },
+  {
+    h: 'Thank You for Your Feedback',
+    text: 'We design and build digital products. We’re committed to continuous improvement and ensuring that our website remains an inclusive space for everyone. We welcome feedback on the accessibility of our website. If you encounter any difficulties or have suggestions for improvement, please reach out to us. If you send feedback, we thank you for it.',
+  },
+];
+---
+
+<Base title="Accessibility Policy | 126Verse" lang="en" alt="/vi/accessibility" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-16 max-w-4xl">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2rem,6vw,5.5rem)]" style="animation-delay:0.2s">Accessibility Policy</span></h1>
+    <div class="mt-12 prose-plain">
+      {sections.map((s) => (
+        <div data-reveal>
+          {s.h && <h2>{s.h}</h2>}
+          <p style="white-space:pre-line">{s.text}</p>
+        </div>
+      ))}
+      <p data-reveal><a href="mailto:feedback@126verse.com" class="text-accent no-underline font-semibold">feedback@126verse.com</a></p>
+    </div>
+  </section>
+</Base>

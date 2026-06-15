@@ -1,0 +1,126 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const stats = [
+  { num: '4', label: 'Quốc gia đại diện' },
+  { num: '182', label: 'Nhân viên đa quốc gia' },
+  { num: '+295', label: 'Dự án hoàn thành' },
+  { num: '86%', label: 'Làm việc từ xa' },
+];
+
+const logos = [
+  { src: '/img/a/s-320x62_webp_775752f5-9014-4a63-8cfc-27ea87ef2ef3.png', alt: 'FamilyMart' },
+  { src: '/img/a/s-2500x690_6bf9f35b-ba3d-48f5-bec1-847472f3c890.svg', alt: 'Yamaha' },
+  { src: '/img/a/s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png', alt: 'Daesang Wellife' },
+  { src: '/img/a/s-206x107_webp_d2a08c48-fac7-4df3-ba59-4dff56299e74.png', alt: 'H1T' },
+  { src: '/img/a/s-280x30_3cff06d8-c4b9-4d2d-89f6-47ffe75141e3.svg', alt: 'CHEER' },
+];
+
+const gallery = [
+  '/img/a/s-1152x648_18da1484-842f-477e-ab1b-bff908670989.gif',
+  '/img/a/s-2400x1600_v-frms_webp_08dbed17-57c5-4e3f-847e-de1e690c0f8c.jpg',
+  '/img/a/s-1152x648_b7ee7941-baee-45af-ac45-d342490898a5.gif',
+  '/img/a/s-1604x2400_v-frms_webp_4be14636-603b-45e3-a026-73ba0de2a718.jpg',
+  '/img/a/s-1152x648_e9008ef6-be1f-40e8-a59b-c77d23dfec34.gif',
+  '/img/a/s-2400x1600_v-frms_webp_2e704a1f-7f96-45fb-b28f-cbb55fb31c36.jpg',
+];
+
+const benefits = [
+  { title: 'Remote & IRL', text: 'Chúng tôi đã thực hiện công việc từ xa kể từ khi thành lập và không có cách nào khác — đồng thời tạo không gian cho thời gian gặp nhau trực tiếp chất lượng để duy trì kết nối.' },
+  { title: '4.5 ngày làm việc trong tuần', text: 'Chúng tôi nghỉ nửa ngày thứ Sáu vì còn có cuộc sống ngoài công việc.' },
+  { title: 'Không giới hạn thời gian nghỉ', text: 'Chúng tôi muốn mọi người được khỏe mạnh và có thời gian để cống hiến.' },
+  { title: 'Không bảng chấm công', text: 'Chúng tôi tập trung vào kết quả và chất lượng công việc của mình - không phải tính giờ.' },
+  { title: 'Học tập & Phát triển', text: 'Cơ hội học tập linh hoạt để đầu tư vào sự phát triển nghề nghiệp của bạn.' },
+  { title: 'Thời gian & Địa điểm linh hoạt', text: 'Tất cả cho sự sắp xếp phù hợp với bạn.' },
+  { title: 'Chương trình cổ phần', text: 'Tạo ảnh hưởng lên những sản phẩm hàng đầu thế giới và đôi khi còn có cổ phần trong đó.' },
+  { title: 'Health & wellness coverage', text: 'Mạnh khỏe về tinh thần và thể chất để bạn có thể thể hiện tốt nhất trong và ngoài màn hình.' },
+];
+
+const roles = [
+  { name: 'Principal Designer', where: 'Remote', dept: 'Design', href: '/careers/principal-designer' },
+  { name: 'Junior Brand Designer', where: 'Remote', dept: 'Design', href: '/careers/junior-brand-designer' },
+  { name: 'Graphic Design Intern', where: 'Remote', dept: 'Design', href: '/careers/graphic-design-intern' },
+  { name: 'Social Media Coordinator Intern', where: 'Remote', dept: 'Marketing', href: '/careers/social-media-coordinator-intern' },
+  { name: 'Multimedia Designer (Branding & Marketing) - Mid Level', where: 'Remote', dept: 'Design', href: '/careers/multimedia-designer' },
+];
+---
+
+<Base title="Về chúng tôi | 126Verse" lang="vi" alt="/about">
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
+    <h1>
+      <span class="word-line"><span class="word-up display text-[clamp(2.5rem,9vw,9rem)]" style="animation-delay:0.2s">Global talent,</span></span>
+      <span class="word-line"><span class="word-up display text-[clamp(2.5rem,9vw,9rem)]" style="animation-delay:0.34s">Global work</span></span>
+    </h1>
+    <a href="#carreer" class="fu cta-link text-base sm:text-xl mt-10" style="animation-delay:0.6s">
+      Các vị trí đang tuyển
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+    </a>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
+    <div class="flex flex-wrap justify-between gap-8">
+      {stats.map((s, i) => (
+        <div class="text-right" data-reveal style={`transition-delay:${i * 0.1}s`}>
+          <p class="text-[clamp(1.5rem,5vw,3.5rem)] font-semibold leading-none">{s.num.startsWith('+') ? <><span class="num-accent">+</span>{s.num.slice(1)}</> : s.num}</p>
+          <p class="label opacity-60 mt-3">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24" data-reveal>
+    <p class="font-semibold text-[clamp(1.4rem,3.2vw,2.5rem)] leading-snug max-w-5xl">Được thành lập tại Sydney-Australia, chúng tôi luôn tuyển dụng những tài năng tốt nhất có thể tìm được từ mọi nơi trên thế giới. Chúng tôi tin rằng việc trao cho nhóm của mình quyền tự chủ để làm việc mọi lúc, mọi nơi họ muốn sẽ mang lại kết quả tốt nhất.</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline-soft" data-reveal>
+    <p class="label opacity-80 max-w-2xl">Kể từ lúc thành lập, chúng tôi đã giúp tất cả mọi người từ các công ty khởi nghiệp nhỏ, từ giai đoạn đầu đến các tập đoàn lớn xây dựng ứng dụng mới, cải tiến ứng dụng cũ, tham gia hỗ trợ hình ảnh chất lượng cao cho các chiến dịch quảng cáo.</p>
+    <p class="font-semibold text-xl md:text-2xl mt-6 max-w-3xl">Rất có thể bạn đã nhìn thấy đâu đó sản phẩm của chúng tôi đã làm!</p>
+    <div class="mt-12 flex flex-wrap items-center gap-x-14 gap-y-8">
+      {logos.map((l) => (
+        <img src={l.src} alt={l.alt} class="h-8 md:h-10 w-auto" loading="lazy" />
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline">
+    <div class="grid md:grid-cols-2 gap-8 items-start" data-reveal>
+      <h2 class="display text-[clamp(1.8rem,5vw,4.5rem)]" style="line-height:1.02">Đa dạng quan điểm<br />- Tối đa hiệu quả</h2>
+      <p class="label opacity-80 max-w-xl">Cần có tài năng tốt nhất để tạo ra những sản phẩm tốt nhất. Điều đó có nghĩa là làm việc với những người thông minh và có kỹ năng bất kể họ là ai, họ yêu ai hay họ đến từ đâu.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4" data-reveal>
+      {gallery.map((g) => (
+        <img src={g} alt="" class="w-full h-48 md:h-64 object-cover" loading="lazy" />
+      ))}
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline">
+    <h2 class="display text-[clamp(1.8rem,5vw,4.5rem)]" data-reveal>Công việc / Cuộc sống<br />— Cân bằng</h2>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+      {benefits.map((b, i) => (
+        <div data-reveal style={`transition-delay:${(i % 4) * 0.08}s`}>
+          <p class="label text-accent">{b.title}</p>
+          <p class="label opacity-70 mt-3">{b.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="carreer" class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline">
+    <h2 class="display text-[clamp(1.8rem,5vw,4.5rem)]" data-reveal>Công việc —<br />Các vị trí còn thiếu</h2>
+    <div class="mt-12 flex flex-col">
+      {roles.map((r) => (
+        <a href={r.href} target="_blank" class="group py-7 hairline grid grid-cols-[1fr_auto] md:grid-cols-[1fr_120px_120px_auto] gap-4 items-center no-underline text-ink" data-reveal>
+          <p class="font-semibold text-lg md:text-2xl group-hover:text-accent transition-colors">{r.name}</p>
+          <p class="label opacity-50 hidden md:block">{r.where}</p>
+          <p class="label opacity-50 hidden md:block">{r.dept}</p>
+          <svg class="w-7 h-7 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      ))}
+    </div>
+    <div class="mt-12" data-reveal>
+      <p class="label opacity-60">Không có vị trí phù hợp với bạn ư?</p>
+      <p class="label mt-2">Email cho chúng tôi <a href="mailto:careers@126verse.com" class="text-accent no-underline">careers@126verse.com</a></p>
+    </div>
+  </section>
+</Base>

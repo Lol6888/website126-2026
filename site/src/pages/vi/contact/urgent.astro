@@ -1,0 +1,113 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const inputCls = 'border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent';
+
+const steps = [
+  { n: 'Bước 1 :', t: 'Điền form yêu cầu công việc' },
+  { n: 'Bước 2 :', t: 'Đợi 126Verse xác nhận yêu cầu' },
+  { n: 'Bước 3 :', t: 'Nhận kết quả công việc' },
+];
+---
+
+<Base title="Nhiệm vụ khẩn cấp | 126Verse" lang="vi" alt="/contact/urgent" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
+    <h1>
+      <span class="word-line"><span class="word-up display text-[clamp(2.5rem,8vw,8rem)]" style="animation-delay:0.2s">Nhiệm vụ</span></span>
+      <span class="word-line"><span class="word-up display text-[clamp(2.5rem,8vw,8rem)]" style="animation-delay:0.34s">Khẩn cấp</span></span>
+    </h1>
+    <p class="fu font-semibold text-[clamp(1.2rem,2.6vw,2rem)] leading-snug max-w-4xl mt-8" style="animation-delay:0.5s">Bạn đang chỉ còn 48h cho việc thiết kế Key Visual, poster hay banner cho chiến dịch quảng cáo sắp tới?</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
+    <div class="grid sm:grid-cols-3 gap-8">
+      {steps.map((s) => (
+        <div data-reveal>
+          <p class="label text-accent">{s.n}</p>
+          <p class="label mt-3">{s.t}</p>
+        </div>
+      ))}
+    </div>
+    <p class="label opacity-50 mt-10" data-reveal>(Đối với các sản phẩm POSM, Social post chúng tôi có thể hoàn thành sớm nhất trong 48 giờ làm việc)</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline-soft grid md:grid-cols-2 gap-10" data-reveal>
+    <p class="label opacity-80">Chúng tôi phục vụ cả những khách hàng nhỏ nhất cùng yêu cầu nhỏ nhất với hy vọng đi cùng nhau trong giai đoạn phát triển ban đầu.</p>
+    <p class="label opacity-80">Với kinh nghiệm và đội ngũ hiện tại, 126Verse có đủ khả năng hoạt động như một phần nội bộ của bạn để giải quyết các công việc liên quan đến thiết kế.</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline-soft" data-reveal>
+    <h2 class="display text-2xl md:text-3xl">Hợp nhất - Tối đa hiệu quả !</h2>
+    <p class="label opacity-80 mt-6 max-w-3xl" style="white-space:pre-line">- Chi phí duy trì nhóm thiết kế nội bộ của bạn quá lớn so với hiệu quả công việc.
+
+- Doanh nghiệp của bạn luôn bị động khi cần những sản phẩm thiết kế chất lượng cao cho chiến dịch quảng cáo như POSM, Social media, các sản phẩm liên quan đến hình ảnh thương hiệu.</p>
+    <p class="label opacity-80 mt-6 max-w-3xl" style="white-space:pre-line">Trở thành đối tác để chúng tôi có thể trở thành một phần của bạn, mang lại hiệu quả công việc và lợi ích lâu dài.
+
+Tham khảo công việc của 126Verse về hình ảnh cho các chiến dịch của :</p>
+    <div class="mt-5 flex gap-8">
+      <a href="/vi/work/yamaha-music" class="cta-link label">Yamaha Music</a>
+      <a href="/vi/work/daesang" class="cta-link label">Daesang</a>
+    </div>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-16 hairline">
+    <form name="Task request" method="POST" action="#" class="max-w-2xl flex flex-col gap-7" data-reveal>
+      <label class="flex flex-col gap-2">
+        <span class="label">Tên của bạn <em class="not-italic text-accent">*</em></span>
+        <input type="text" name="name" placeholder="Nhập tên của bạn" required class={inputCls} />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Email <em class="not-italic text-accent">*</em></span>
+        <input type="email" name="email" placeholder="Email Address" required class={inputCls} />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Bạn biết đến 126VERSE từ đâu?</span>
+        <input type="text" name="source" placeholder="Từ bạn bè, mạng xã hội..." class={inputCls} />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Bạn thiết kế sản phẩm gì? <em class="not-italic text-accent">*</em></span>
+        <select name="product" required class={inputCls}>
+          <option value="">Vui lòng chọn</option>
+          <option>Banner</option>
+          <option>Leaflet</option>
+          <option>brochure</option>
+          <option>Standee</option>
+          <option>Video ads</option>
+          <option>Gif ads</option>
+          <option>Social post</option>
+          <option>Sản phẩm khác</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Mô tả yêu cầu về thiết kế <em class="not-italic text-accent">*</em></span>
+        <span class="label opacity-50">Thông điệp bạn muốn truyền tải, màu chủ đạo, phong cách hướng tới.. càng nhiều yêu cầu sản phẩm sẽ càng đúng ý bạn!</span>
+        <textarea name="description" rows="5" placeholder="Your message here" required class="border border-black/40 bg-transparent p-3 text-base focus:outline-none focus:border-accent"></textarea>
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Đính kèm File <em class="not-italic text-accent">*</em></span>
+        <span class="label opacity-50">Mẫu thiết kế tương tự bạn muốn hướng tới, logo, font chữ.. chúng tôi sử dụng tất cả những thứ bạn gửi!</span>
+        <input type="file" name="file" required class="label" />
+      </label>
+      <label class="flex flex-col gap-2">
+        <span class="label">Bạn muốn nhận kết quả lần 1 vào khi nào? <em class="not-italic text-accent">*</em></span>
+        <span class="label opacity-50" style="white-space:pre-line">Sau khi xác nhận yêu cầu, chúng tôi có thể gửi kết quả cho bạn sớm nhất sau 48h làm việc.
+Đừng lo chúng tôi kiểm tra và trả lời email mọi lúc!</span>
+        <input type="text" name="deadline" placeholder="Enter your answer" required class={inputCls} />
+      </label>
+      <label class="flex items-center gap-3 cursor-pointer">
+        <input type="checkbox" name="confirm" required class="w-4 h-4 accent-[#5E0ED7]" />
+        <span class="label">Tôi đã đọc và đồng ý với các điều khoản.</span>
+      </label>
+      <button type="submit" class="self-start bg-ink text-white label !text-[13px] px-12 py-4 border-0 cursor-pointer hover:bg-accent transition-colors">Gửi</button>
+    </form>
+
+    <p class="label opacity-60 mt-14 max-w-3xl" style="white-space:pre-line" data-reveal>- Chi phí thanh toán sẽ được gửi cùng trong email xác nhận công việc.
+
+- Đối tác cần thanh toán trước 30%-50% tùy vào yêu cầu công việc. Phần còn lại sẽ thanh toán khi hoàn thành công việc.
+
+- Các sửa đổi, điều chỉnh thiết kế sẽ tính phí sau lần sửa đầu tiên. Mong đối tác sẽ chia sẽ thật rõ điều các bạn cần để có được sản phẩm ưng ý trong lần đầu hay lần hai nhé.
+
+- Phương thức nhận thanh toán hiện tại : Chuyển khoản Ngân hàng, Paypal.
+Các trường hợp thanh toán khác xin vui lòng liên hệ, chúng tôi có thể giúp bạn với cách khác!</p>
+  </section>
+</Base>

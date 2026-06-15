@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { privacyEn } from '../data/privacy-en';
+---
+
+<Base title="Privacy Policy | 126Verse" lang="en" alt="/vi/privacy" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-16 max-w-4xl">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2rem,6vw,5.5rem)]" style="animation-delay:0.2s">{privacyEn.title}</span></h1>
+    <div class="mt-12 prose-plain">
+      {privacyEn.sections.map((s) => (
+        <div data-reveal>
+          <h2>{s.h}</h2>
+          <p style="white-space:pre-line">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

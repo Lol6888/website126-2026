@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const items = [
+  { name: 'Web Design', tag: "Selected Websites We've Crafted", href: '/work/web-design', img: '/img/a/s-1231x884_v-fms_webp_c9d174ed-82ab-4aaa-91c1-b4164d885a4c.png' },
+  { name: 'Yamaha Music', tag: 'Brand marketing', href: '/work/yamaha-music', img: '/img/a/s-960x540_v-fs_webp_64bac0da-d9f2-4c7e-859e-21167dffb7f0.jpg' },
+  { name: 'CHEER', tag: 'Application Design', href: '/work/cheer', img: '/img/a/s-936x936_v-fs_webp_3d487d9b-a7ab-43f5-ae80-4b8b065989f4.png' },
+  { name: 'Mars Cats Voyage', tag: 'Creative, hand-draw', href: '/work/mars-cats-voyage', img: '/img/a/s-643x471_v-fs_webp_188155c0-fa96-4b20-b860-5c94072f9d3d.png' },
+  { name: 'DAESANG', tag: 'Brand marketing', href: '/work/daesang', img: '/img/a/s-1000x1000_v-fs_webp_d837f0bf-8686-46ab-92df-a94d59a68539.png' },
+  { name: 'Human First Time', tag: 'Application Design', href: '/work/human-first-time', img: '/img/a/s-480x480_ade8ef34-d7e2-47f8-b833-563eb7bcbc96.gif' },
+  { name: 'FamiPay', tag: 'Application Design', href: '/work/famipay', img: '/img/a/s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.png' },
+  { name: 'Knowledge Japan', tag: 'Improve UI-UX', href: '/work/knowledge-japan', img: '/img/a/s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.png' },
+];
+---
+
+<Base title="Case Studies | 126Verse" lang="en" alt="/vi/work">
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2.5rem,9vw,9rem)]" style="animation-delay:0.2s">Case Studies</span></h1>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 pb-12">
+    <div class="flex flex-col">
+      {items.map((it, i) => (
+        <a href={it.href} class="group py-8 md:py-10 hairline grid grid-cols-[1fr_auto] md:grid-cols-[80px_1fr_280px_auto] gap-4 md:gap-8 items-center no-underline text-ink" data-reveal>
+          <p class="hidden md:block text-2xl font-semibold leading-none"><span class="num-accent">0</span>{i + 1}</p>
+          <div>
+            <p class="display text-[clamp(1.5rem,4.5vw,3.6rem)] group-hover:text-accent transition-colors">{it.name}</p>
+            <p class="label opacity-50 mt-2">{it.tag}</p>
+          </div>
+          <img src={it.img} alt={it.name} class="hidden md:block w-full h-36 object-cover" loading="lazy" />
+          <svg class="w-8 h-8 md:w-12 md:h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

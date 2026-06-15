@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+
+const inputCls = 'border-0 border-b border-black/40 bg-transparent py-2 text-base focus:outline-none focus:border-accent';
+---
+
+<Base title="Audit Brand Form | 126Verse" lang="en" hideFooterCta>
+  <section class="bg-ink text-white px-5 sm:px-8 md:px-12 py-20 md:py-28">
+    <p class="fu label text-white/60" style="animation-delay:0.1s">in 7-Minute</p>
+    <h1 class="word-line mt-4"><span class="word-up display text-[clamp(1.8rem,6vw,5.5rem)]" style="animation-delay:0.3s;line-height:1.02">Brand Performance Audit Form</span></h1>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12" data-reveal>
+    <p class="label opacity-80 max-w-3xl" style="white-space:pre-line">This audit will be conducted personally by our in-house design & marketing team — not AI — to ensure you receive real, brand-specific insights.
+
+Valued at $3,000, this audit helps you identify positioning gaps, growth opportunities, and brand performance benchmarks before we start working together.</p>
+    <p class="label text-accent mt-6">Note: We only provide this free audit as long as this link remains active.</p>
+  </section>
+
+  <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
+    <form name="AUDIT BRAND FREE" method="POST" action="#" class="max-w-2xl flex flex-col gap-10" data-reveal>
+      <div>
+        <h2 class="display text-xl md:text-2xl">Brand & Marketing Priorities</h2>
+        <div class="mt-6 flex flex-col gap-6">
+          <label class="flex flex-col gap-2">
+            <span class="label">What are your top priorities right now? (checkbox, multiple choice) <em class="not-italic text-accent">*</em></span>
+            <input type="text" name="priorities" required class={inputCls} />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">Priority level <em class="not-italic text-accent">*</em></span>
+            <select name="priority_level" required class={inputCls}>
+              <option value="">Please select</option>
+              <option>Urgent (1–3 months)</option>
+              <option>Mid-term (3–6 months)</option>
+              <option>Long-term (&gt;6 months)</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="display text-xl md:text-2xl">Company Profile</h2>
+        <div class="mt-6 flex flex-col gap-6">
+          <label class="flex flex-col gap-2">
+            <span class="label">Industry / Sector <em class="not-italic text-accent">*</em></span>
+            <select name="industry" required class={inputCls}>
+              <option value="">Please select</option>
+              <option>Manufacturing</option>
+              <option>OEM</option>
+              <option>Technology</option>
+              <option>Services</option>
+              <option>E-commerce</option>
+              <option>Personal Branding</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">Company Size <em class="not-italic text-accent">*</em></span>
+            <input type="text" name="company_size" required class={inputCls} />
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="display text-xl md:text-2xl">Report Delivery</h2>
+        <div class="mt-6">
+          <label class="flex flex-col gap-2">
+            <span class="label">How would you like to receive your audit report? <em class="not-italic text-accent">*</em></span>
+            <select name="report_delivery" required class={inputCls}>
+              <option value="">Please select</option>
+              <option>Email</option>
+              <option>Call</option>
+              <option>Both</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="display text-xl md:text-2xl">Contact Information</h2>
+        <div class="mt-6 flex flex-col gap-6">
+          <label class="flex flex-col gap-2">
+            <span class="label">Full Name <em class="not-italic text-accent">*</em></span>
+            <input type="text" name="full_name" required class={inputCls} />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">Work Email <em class="not-italic text-accent">*</em></span>
+            <input type="email" name="work_email" required class={inputCls} />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">Company Name <em class="not-italic text-accent">*</em></span>
+            <input type="text" name="company_name" required class={inputCls} />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="label">Company Website (optional)</span>
+            <input type="text" name="company_website" class={inputCls} />
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="self-start bg-accent text-white label !text-[13px] px-12 py-4 border-0 cursor-pointer hover:opacity-80 transition-opacity">Get My Free Brand Audit Report</button>
+      <p class="label opacity-50">Your responses are confidential and used solely to provide personalized insights. We never share your data with third parties.</p>
+    </form>
+  </section>
+</Base>

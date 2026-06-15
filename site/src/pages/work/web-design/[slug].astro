@@ -1,0 +1,69 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { webProjects } from '../../../data/webprojects';
+
+export function getStaticPaths() {
+  return webProjects.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props;
+---
+
+<Base title={p.name + ' | 126Verse'} lang="en" hideFooterCta>
+  <article class="bg-ink text-white">
+    <header class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-10">
+      <div class="flex items-baseline justify-between gap-4 flex-wrap">
+        <p class="fu label text-white/60" style="animation-delay:0.1s">Selected Websites We’ve Crafted</p>
+        <p class="fu label text-white/40" style="animation-delay:0.2s">Last updated 11-2025</p>
+      </div>
+      <a href="/work/web-design" class="fu cta-link label mt-8" style="animation-delay:0.3s;color:#a855f7">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back
+      </a>
+      <p class="fu label text-white/50 mt-10" style="animation-delay:0.35s">Website</p>
+      <h1 class="word-line mt-2"><span class="word-up display text-[clamp(2rem,7vw,7rem)]" style="animation-delay:0.45s">{p.name}</span></h1>
+      <p class="fu label text-white/80 max-w-2xl mt-6" style="animation-delay:0.6s">{p.desc}</p>
+    </header>
+
+    <section class="px-5 sm:px-8 md:px-12 pb-12" data-reveal>
+      <div class="bg-white" style="height:75vh;min-height:600px">
+        <iframe id="myIframe" src={p.iframe} class="w-full h-full border-0 block" title="Trang web Studio.site nhúng" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="px-5 sm:px-8 md:px-12 py-12 grid md:grid-cols-2 gap-12" data-reveal>
+      <div>
+        <h2 class="display text-2xl md:text-3xl" style="line-height:1.15">{p.durationTitle}</h2>
+        <p class="label text-white/70 mt-6" style="white-space:pre-line">{p.durationText}</p>
+      </div>
+      <div class="flex flex-col gap-10">
+        <div>
+          <h2 class="display text-2xl md:text-3xl">{p.didLabel}</h2>
+          <ul class="mt-5 flex flex-col gap-2 list-none p-0">
+            {p.did.map((d) => (
+              <li class="label text-white/70">{d}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="display text-2xl md:text-3xl">{p.costTitle}</h2>
+          <p class="label text-white/70 mt-5" style="white-space:pre-line">{p.costText}</p>
+        </div>
+        <div>
+          <h2 class="display text-2xl md:text-3xl">{p.outcomeTitle}</h2>
+          <p class="label text-white/70 mt-5" style="white-space:pre-line">{p.outcomeText}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 sm:px-8 md:px-12 py-16 border-t border-white/20" data-reveal>
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <p class="font-semibold text-[clamp(1.25rem,3vw,2.25rem)] leading-snug max-w-2xl">Receive your custom cost breakdown within 24 hours</p>
+        <a href="/contact" class="cta-link text-base sm:text-xl" style="color:#a855f7">
+          GET QUOTE
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </section>
+  </article>
+</Base>

@@ -1,0 +1,18 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CaseBody from '../../../components/CaseBody.astro';
+import { cases } from '../../../data/cases';
+import { cases2 } from '../../../data/cases2';
+import { cases3 } from '../../../data/cases3';
+
+export function getStaticPaths() {
+  const all = [...cases, ...cases2, ...cases3].filter((c) => c.lang === 'vi');
+  return all.map((cs) => ({ params: { slug: cs.slug }, props: { cs } }));
+}
+
+const { cs } = Astro.props;
+---
+
+<Base title={cs.pageTitle} lang="vi" alt={'/work/' + cs.slug}>
+  <CaseBody cs={cs} />
+</Base>
