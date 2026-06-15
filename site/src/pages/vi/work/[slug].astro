@@ -13,6 +13,6 @@ export function getStaticPaths() {
 const { cs } = Astro.props;
 ---
 
-<Base title={cs.pageTitle} lang="vi" alt={'/work/' + cs.slug}>
+<Base title={cs.pageTitle} lang="vi" alt={'/work/' + cs.slug} dark={cs.dark}>
   <CaseBody cs={cs} />
 </Base>

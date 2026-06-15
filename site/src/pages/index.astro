@@ -141,7 +141,7 @@ const featured = [
     <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {featured.map((f, i) => (
         <a href={f.href} class="group block no-underline text-ink" data-reveal style={`transition-delay:${i * 0.1}s`}>
-          <div class="overflow-hidden bg-[#f1efe9]">
+          <div class="overflow-hidden bg-[#f1efe9] img-shadow">
             <img src={f.img} alt={f.name} class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <div class="mt-5 flex items-center justify-between gap-3">

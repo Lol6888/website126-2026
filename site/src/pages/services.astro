@@ -60,7 +60,7 @@ const quotes = [
   </section>
 
   <section class="px-5 sm:px-8 md:px-12 pb-12" data-reveal>
-    <img src="/img/a/s-1801x907_v-frms_webp_be29bc18-27e9-4e3d-a401-2cc34900ef2b.png" alt="126Verse products" class="w-full h-auto" />
+    <img src="/img/a/s-1801x907_v-frms_webp_be29bc18-27e9-4e3d-a401-2cc34900ef2b.png" alt="126Verse products" class="img-shadow w-full h-auto" />
   </section>
 
   <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24" data-reveal>
@@ -112,7 +112,7 @@ const quotes = [
     <div class="mt-14 grid md:grid-cols-2 gap-10">
       {quotes.map((q, i) => (
         <figure class="m-0" data-reveal style={`transition-delay:${i * 0.12}s`}>
-          <img src={q.img} alt={q.name} class="w-full max-w-xs h-auto" loading="lazy" />
+          <img src={q.img} alt={q.name} class="img-shadow w-full max-w-xs h-auto" loading="lazy" />
           <blockquote class="m-0 mt-6 font-semibold text-lg md:text-xl leading-relaxed">{q.quote}</blockquote>
           <figcaption class="mt-5">
             <p class="label">{q.name}</p>

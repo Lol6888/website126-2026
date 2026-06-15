@@ -11,8 +11,9 @@ interface Props {
   hideFooterCta?: boolean;
   bare?: boolean; // không nav/footer (vd: coming soon)
   navOverlay?: boolean; // nav nổi trên hero video
+  dark?: boolean; // nền tối cho cả trang (vd: Mars Cats Voyage)
 }
-const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare = false, navOverlay = false } = Astro.props;
+const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare = false, navOverlay = false, dark = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,7 +29,7 @@ const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare =
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     {alt && <link rel="alternate" hreflang={lang === 'vi' ? 'en' : 'vi'} href={alt} />}
   </head>
-  <body>
+  <body class={dark ? 'theme-dark' : undefined}>
     {!bare && (
       <a href="#main" class="skip-link label">{lang === 'vi' ? 'Bỏ qua, tới nội dung chính' : 'Skip to main content'}</a>
     )}

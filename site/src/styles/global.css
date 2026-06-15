@@ -2,7 +2,7 @@
 
 @theme {
   --color-accent: #5E0ED7;
-  --color-paper: #f5f4f2;
+  --color-paper: #ffffff;
   --color-ink: #000000;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -43,7 +43,7 @@ html {
 /* Trang hero: trong suốt + chữ trắng khi ở đầu, đặc lại khi cuộn */
 .site-header-hero { color: #ffffff; border-bottom: 1px solid transparent; }
 .site-header-hero.scrolled {
-  background: rgba(245, 244, 242, 0.88);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--color-ink);
@@ -51,7 +51,7 @@ html {
 }
 /* Trang nội dung: thanh nền sáng cố định */
 .site-header-solid {
-  background: rgba(245, 244, 242, 0.88);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--color-ink);
@@ -106,6 +106,27 @@ body {
 
 .hairline { border-top: 1px solid rgba(0, 0, 0, 0.85); }
 .hairline-soft { border-top: 1px solid rgba(0, 0, 0, 0.15); }
+
+/* ===== Bóng đổ nhẹ cho ảnh nội dung — nổi trên nền trắng ===== */
+.img-shadow { box-shadow: 0 8px 28px -10px rgba(0, 0, 0, 0.18), 0 2px 8px -4px rgba(0, 0, 0, 0.1); }
+/* Trên nền tối, bóng đổ đậm hơn để ảnh vẫn tách khỏi nền */
+.bg-ink .img-shadow,
+.theme-dark .img-shadow { box-shadow: 0 10px 34px -8px rgba(0, 0, 0, 0.6); }
+
+/* ===== Trang nền tối (vd: Mars Cats Voyage) ===== */
+.theme-dark { background: var(--color-ink); color: #ffffff; }
+.theme-dark .hairline { border-top-color: rgba(255, 255, 255, 0.85); }
+.theme-dark .hairline-soft { border-top-color: rgba(255, 255, 255, 0.18); }
+.theme-dark .copy,
+.theme-dark .copy-sm { color: rgba(255, 255, 255, 0.74); }
+/* đoạn văn body trong CaseBody dùng text-black/70 → đảo sang sáng */
+.theme-dark .text-black\/70 { color: rgba(255, 255, 255, 0.72); }
+/* header thanh nội dung trên trang tối: nền tối, chữ sáng */
+.theme-dark .site-header-solid {
+  background: rgba(10, 10, 12, 0.85);
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
 
 /* ===== Readable body copy (chữ thường, dễ đọc) ===== */
 .copy {
