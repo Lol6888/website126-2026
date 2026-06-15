@@ -39,7 +39,7 @@ const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare =
       </header>
     )}
     <main id="main"><slot /></main>
-    {!bare && <Footer lang={lang} hideCta={hideFooterCta} />}
+    {!bare && <Footer lang={lang} hideCta={hideFooterCta} dark={dark} />}
 
     <script>
       // header neo: trang hero (fixed) đổi nền khi cuộn qua hero

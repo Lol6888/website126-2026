@@ -2,8 +2,9 @@
 interface Props {
   lang?: 'en' | 'vi';
   hideCta?: boolean;
+  dark?: boolean;
 }
-const { lang = 'en', hideCta = false } = Astro.props;
+const { lang = 'en', hideCta = false, dark = false } = Astro.props;
 const p = lang === 'vi' ? '/vi' : '';
 
 const cta =
@@ -56,7 +57,7 @@ const bottom = [
   <section class="px-5 sm:px-8 md:px-12 py-8 hairline">
     <div class="flex flex-wrap gap-x-6 gap-y-3">
       {bottom.map((l) => (
-        <a href={l.href} class="label no-underline text-ink hover:text-accent transition-colors" target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noopener' : undefined}>{l.label}</a>
+        <a href={l.href} class={'label no-underline hover:text-accent transition-colors ' + (dark ? 'text-white' : 'text-ink')} target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noopener' : undefined}>{l.label}</a>
       ))}
     </div>
     <p class="display text-[clamp(3rem,12vw,11rem)] mt-10 text-center select-none" aria-hidden="true">126VERSE</p>
