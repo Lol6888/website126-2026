@@ -30,11 +30,14 @@ const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare =
   </head>
   <body>
     {!bare && (
+      <a href="#main" class="skip-link label">{lang === 'vi' ? 'Bỏ qua, tới nội dung chính' : 'Skip to main content'}</a>
+    )}
+    {!bare && (
       <header id="site-header" class={(navOverlay ? 'fixed site-header-hero' : 'sticky site-header-solid') + ' top-0 inset-x-0 z-50'}>
         <Nav lang={lang} alt={alt} hero={navOverlay} />
       </header>
     )}
-    <slot />
+    <main id="main"><slot /></main>
     {!bare && <Footer lang={lang} hideCta={hideFooterCta} />}
 
     <script>
@@ -58,6 +61,14 @@ const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare =
         { threshold: 0.12 }
       );
       document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+
+      // Tôn trọng giảm chuyển động: dừng video nền autoplay
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('video[autoplay]').forEach((v) => {
+          v.removeAttribute('autoplay');
+          v.pause();
+        });
+      }
     </script>
   </body>
 </html>

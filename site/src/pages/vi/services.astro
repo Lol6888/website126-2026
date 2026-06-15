@@ -73,7 +73,7 @@ const quotes = [
       {capabilities.map((c, i) => (
         <div class={'py-10 md:py-14 grid md:grid-cols-2 gap-6 ' + (i > 0 ? 'hairline-soft' : '')} data-reveal>
           <h2 class="display text-2xl sm:text-3xl md:text-4xl" style="line-height:1.1">{c.title}</h2>
-          <p class="label opacity-80 max-w-xl">{c.text}</p>
+          <p class="copy-sm max-w-xl">{c.text}</p>
         </div>
       ))}
     </div>
@@ -101,7 +101,7 @@ const quotes = [
         <div class="py-10 grid md:grid-cols-[120px_1fr_1.2fr] gap-6 items-start hairline-soft" data-reveal>
           <p class="text-[clamp(1.5rem,4vw,3rem)] font-semibold leading-none"><span class="num-accent">+</span>{p.n}</p>
           <h3 class="display text-xl sm:text-2xl md:text-3xl" style="line-height:1.1">{p.title}</h3>
-          <p class="label opacity-80">{p.text}</p>
+          <p class="copy-sm">{p.text}</p>
         </div>
       ))}
     </div>
