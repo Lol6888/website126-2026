@@ -3,7 +3,7 @@ const A = (f: string) => '/img/a/' + f;
 
 export const hero = {
   announce: "This month!🎉 we're prioritizing new client onboarding for the North American market,\nwhile continuing to serve other regions with our full support.",
-  words: ["Build", "a", "Brand", "That's", "Seen,", "Trusted,", "and Remembered"],
+  headlineLines: ['Build a Brand', "That's Seen, Trusted,", 'and Remembered'],
   sub: 'We combine brand strategy, design, and digital execution to help your business look, feel, and perform better online.',
   cta: 'See Our Work',
   marquee: ['Zero Risk Partnership', 'Branding', 'Digital Presence', 'Creative Strategy'],

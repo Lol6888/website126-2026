@@ -26,15 +26,26 @@ const cta =
         ],
       };
 
-const bottom = [
-  { label: 'Linkedin', href: 'https://www.linkedin.com/company/126verse', ext: true },
-  { label: 'Facebook', href: 'https://www.facebook.com/126verse', ext: true },
-  { label: 'Twitter', href: 'https://twitter.com/126Verse', ext: true },
-  { label: 'Careers', href: p + '/about#carreer' },
-  { label: 'Contact', href: p + '/contact' },
-  { label: 'Privacy', href: p + '/privacy' },
-  { label: 'Accessibility', href: p + '/accessibility' },
-];
+const bottom =
+  lang === 'vi'
+    ? [
+        { label: 'Linkedin', href: 'https://www.linkedin.com/company/126verse', ext: true },
+        { label: 'Facebook', href: 'https://www.facebook.com/126verse', ext: true },
+        { label: 'Twitter', href: 'https://twitter.com/126Verse', ext: true },
+        { label: 'Tuyển dụng', href: p + '/about#carreer' },
+        { label: 'Liên hệ', href: p + '/contact' },
+        { label: 'Quyền riêng tư', href: p + '/privacy' },
+        { label: 'Khả năng tiếp cận', href: p + '/accessibility' },
+      ]
+    : [
+        { label: 'Linkedin', href: 'https://www.linkedin.com/company/126verse', ext: true },
+        { label: 'Facebook', href: 'https://www.facebook.com/126verse', ext: true },
+        { label: 'Twitter', href: 'https://twitter.com/126Verse', ext: true },
+        { label: 'Careers', href: p + '/about#carreer' },
+        { label: 'Contact', href: p + '/contact' },
+        { label: 'Privacy', href: p + '/privacy' },
+        { label: 'Accessibility', href: p + '/accessibility' },
+      ];
 ---
 
 <footer class="mt-24">

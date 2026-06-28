@@ -1,0 +1,147 @@
+---
+// Menu overlay toàn màn — render ở cấp body (NGOÀI <header>) để position:fixed
+// không bị backdrop-filter của header tạo containing block làm hỏng.
+interface Props {
+  lang?: 'en' | 'vi';
+}
+const { lang = 'en' } = Astro.props;
+const p = lang === 'vi' ? '/vi' : '';
+
+const links =
+  lang === 'vi'
+    ? [
+        { label: 'Dịch Vụ', href: '/vi/services' },
+        { label: 'Giải pháp', href: '/vi/solutions' },
+        { label: 'Dự án', href: '/vi/work' },
+        { label: 'Về chúng tôi', href: '/vi/about' },
+      ]
+    : [
+        { label: 'What We Do', href: '/services' },
+        { label: 'Solutions', href: '/solutions' },
+        { label: 'Case Studies', href: '/work' },
+        { label: 'About Us', href: '/about' },
+      ];
+
+const cases =
+  lang === 'vi'
+    ? [
+        { label: 'Web Design', href: '/work/web-design' },
+        { label: 'Human First Time', href: '/vi/work/human-first-time' },
+        { label: 'FamiPay', href: '/vi/work/famipay' },
+        { label: 'Knowlegd Japan', href: '/vi/work/knowledge-japan' },
+        { label: 'Mars Cats Voyage', href: '/vi/work/mars-cats-voyage' },
+        { label: 'CHEER', href: '/vi/work/cheer' },
+        { label: 'Daesang', href: '/vi/work/daesang' },
+        { label: 'Yamaha Music', href: '/vi/work/yamaha-music' },
+      ]
+    : [
+        { label: 'Web Design', href: '/work/web-design' },
+        { label: 'Human First Time', href: '/work/human-first-time' },
+        { label: 'FamiPay', href: '/work/famipay' },
+        { label: 'Knowlegd Japan', href: '/work/knowledge-japan' },
+        { label: 'Mars Cats Voyage', href: '/work/mars-cats-voyage' },
+        { label: 'CHEER', href: '/work/cheer' },
+        { label: 'Daesang', href: '/work/daesang' },
+        { label: 'Yamaha Music', href: '/work/yamaha-music' },
+      ];
+
+const contact = lang === 'vi' ? { label: 'Liên hệ', href: '/vi/contact' } : { label: 'Get in Touch', href: '/contact' };
+const hiring = lang === 'vi'
+  ? { tag: 'Tuyển dụng', roles: 'Senior Product Designer\nGraphic Designer\nUX Designer', cta: 'Gia nhập 126Verse!', href: '/vi/about#carreer' }
+  : { tag: "We're Hiring", roles: 'Senior Product Designer\nGraphic Designer\nUX Designer', cta: 'Join Our Team', href: '/about#carreer' };
+---
+
+<div id="nav-menu" class="hidden fixed inset-0 z-[60] bg-white flex-col overflow-y-auto" aria-hidden="true">
+  <div class="flex items-center justify-between px-5 py-4 sm:px-8 md:px-12 md:py-5">
+    <a href={p + '/'} class="flex items-center gap-3" aria-label="126VERSE">
+      <span class="w-8 h-8 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
+        <span class="w-2.5 h-2.5 rounded-full bg-accent block"></span>
+      </span>
+      <span class="label !text-[13px]">126VERSE<sup class="text-accent">®</sup></span>
+    </a>
+    <button id="nav-close" class="w-9 h-9 rounded-full bg-accent border-0 cursor-pointer text-white flex items-center justify-center" aria-label={lang === 'vi' ? 'Đóng menu' : 'Close menu'}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="px-5 sm:px-8 md:px-12 mt-12 md:mt-16 pb-12 flex flex-col md:flex-row gap-12 md:gap-24 grow">
+    <div class="flex flex-col gap-6 md:gap-8">
+      {[...links, contact].map((l) => (
+        <a href={l.href} class="display text-3xl sm:text-4xl no-underline text-ink hover:text-accent transition-colors" style="letter-spacing:0.1em">{l.label}</a>
+      ))}
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <p class="label opacity-50">{lang === 'vi' ? 'Dự án' : 'Case Studies'}</p>
+      <div class="flex flex-col gap-3">
+        {cases.map((c) => (
+          <a href={c.href} class="label no-underline text-ink hover:text-accent transition-colors">{c.label}</a>
+        ))}
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-8 md:ml-auto">
+      <div>
+        <p class="label text-accent">{hiring.tag}</p>
+        <p class="label mt-3 opacity-70" style="white-space:pre-line">{hiring.roles}</p>
+        <a href={hiring.href} class="cta-link label mt-4">{hiring.cta}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <p class="label opacity-70">127 Farringdon Rd, London EC1R 3DA, UK<br />+44-79-1771-0126</p>
+        <p class="label opacity-70">57 street 60, TML, Ho Chi Minh, VN<br />+84-789-179-603</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menu = document.getElementById('nav-menu');
+  const closeBtn = document.getElementById('nav-close');
+  const focusableSel = 'a[href], button:not([disabled])';
+
+  function getBurger() {
+    return document.getElementById('nav-burger');
+  }
+
+  function onKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') { closeMenu(); return; }
+    if (e.key !== 'Tab' || !menu) return;
+    const items = Array.from(menu.querySelectorAll<HTMLElement>(focusableSel));
+    if (items.length === 0) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  function openMenu() {
+    if (!menu) return;
+    menu.classList.remove('hidden');
+    menu.classList.add('flex');
+    menu.setAttribute('aria-hidden', 'false');
+    getBurger()?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeydown);
+    (menu.querySelector(focusableSel) as HTMLElement | null)?.focus();
+  }
+
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.add('hidden');
+    menu.classList.remove('flex');
+    menu.setAttribute('aria-hidden', 'true');
+    getBurger()?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKeydown);
+  }
+
+  // burger nằm trong <header>, dùng event delegation để chắc chắn bắt được click
+  document.addEventListener('click', (e) => {
+    const t = e.target as HTMLElement;
+    if (t.closest('#nav-burger')) { e.preventDefault(); openMenu(); }
+  });
+  closeBtn?.addEventListener('click', closeMenu);
+  menu?.querySelectorAll('a[href]').forEach((a) => a.addEventListener('click', closeMenu));
+</script>

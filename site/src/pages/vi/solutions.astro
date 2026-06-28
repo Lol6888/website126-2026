@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import SolutionsBody from '../../components/SolutionsBody.astro';
+import { hero, why, testimonials, pricing, modals, compare, versus, faq, addons, finalCta } from '../../data/solutions-vi';
+---
+
+<Base title="Giải pháp & Báo giá | 126Verse" lang="vi" alt="/solutions" navOverlay hideFooterCta>
+  <SolutionsBody lang="vi" {hero} {why} {testimonials} {pricing} {modals} {compare} {versus} {faq} {addons} {finalCta} />
+</Base>
