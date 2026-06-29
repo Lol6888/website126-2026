@@ -72,6 +72,67 @@ const { title, description = '', lang = 'en', alt, hideFooterCta = false, bare =
           v.pause();
         });
       }
+
+      // ─── Gửi form qua /api/submit (không tải lại trang) ──────────────────
+      const isVI = document.documentElement.lang === 'vi';
+      const T = isVI
+        ? {
+            sending: 'Đang gửi…',
+            ok: 'Cảm ơn bạn! Chúng tôi đã nhận được thông tin và sẽ phản hồi sớm nhất.',
+            err: 'Rất tiếc, gửi chưa thành công. Vui lòng thử lại hoặc email tới 126verse@gmail.com.',
+          }
+        : {
+            sending: 'Sending…',
+            ok: "Thank you! We've received your message and will be in touch shortly.",
+            err: 'Sorry, something went wrong. Please try again or email 126verse@gmail.com.',
+          };
+
+      document.querySelectorAll('form[data-mailer]').forEach((form) => {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const f = e.currentTarget as HTMLFormElement;
+          const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+          // Dọn thông báo lỗi cũ (nếu có)
+          f.querySelector('[data-form-error]')?.remove();
+
+          const original = btn?.textContent || '';
+          if (btn) {
+            btn.disabled = true;
+            btn.textContent = T.sending;
+            btn.style.opacity = '0.6';
+          }
+
+          try {
+            const res = await fetch('/api/submit', { method: 'POST', body: new FormData(f) });
+            const data = await res.json().catch(() => ({ success: res.ok }));
+
+            if (res.ok && data.success) {
+              f.innerHTML =
+                '<div style="border:1px solid var(--accent,#5E0ED7);border-left-width:3px;padding:22px 24px;background:#f6f4fb">' +
+                '<p style="font-weight:600;font-size:17px;margin:0 0 6px">✓ ' +
+                (isVI ? 'Đã gửi thành công' : 'Sent successfully') +
+                '</p><p style="margin:0;opacity:.8;line-height:1.5">' +
+                T.ok +
+                '</p></div>';
+              f.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              return;
+            }
+            throw new Error(data.message || T.err);
+          } catch (err) {
+            const msg = document.createElement('p');
+            msg.setAttribute('data-form-error', '');
+            msg.style.cssText = 'color:#c0152f;font-size:14px;margin:0';
+            msg.textContent = (err as Error)?.message || T.err;
+            btn?.insertAdjacentElement('afterend', msg);
+            if (btn) {
+              btn.disabled = false;
+              btn.textContent = original;
+              btn.style.opacity = '';
+            }
+          }
+        });
+      });
     </script>
   </body>
 </html>

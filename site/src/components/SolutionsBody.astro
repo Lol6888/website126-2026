@@ -255,7 +255,10 @@ const contactHref = `${p}/contact`;
     <div class="bg-ink text-white px-8 py-6">
       <h3 class="display text-xl md:text-2xl" style="white-space:pre-line">{m.title}</h3>
     </div>
-    <form name={m.id} method="POST" action="#" class="bg-white p-8 flex flex-col gap-6">
+    <form name={m.id} method="POST" action="/api/submit" data-mailer class="bg-white p-8 flex flex-col gap-6">
+      <input type="hidden" name="_form" value={`Pricing Plan — ${m.title.replace(/\n/g, ' ')}`} />
+      <input type="hidden" name="_lang" value={lang} />
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <p class="copy-sm opacity-70">{ui.modalIntro}</p>
       <label class="flex flex-col gap-2">
         <span class="eyebrow">{ui.fullName} <em class="not-italic text-accent">*</em></span>

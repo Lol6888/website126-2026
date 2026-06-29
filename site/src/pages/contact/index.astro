@@ -21,7 +21,10 @@ If you'd prefer, feel free to email our support team directly at: sofia_phan@126
       </a>
     </div>
 
-    <form name="Contact" method="POST" action="#" class="fu flex flex-col gap-7" style="animation-delay:0.4s">
+    <form name="Contact" method="POST" action="/api/submit" data-mailer class="fu flex flex-col gap-7" style="animation-delay:0.4s">
+      <input type="hidden" name="_form" value="Contact (EN)" />
+      <input type="hidden" name="_lang" value="en" />
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <label class="flex flex-col gap-2">
         <span class="label">Name <em class="not-italic text-accent">*</em></span>
         <input type="text" name="name" placeholder="Enter your name" required class={inputCls} />

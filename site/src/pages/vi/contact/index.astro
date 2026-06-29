@@ -22,7 +22,10 @@ Nếu cần hỗ trợ cụ thể hơn bạn có thể email đến: Sofia_phan@
       </a>
     </div>
 
-    <form name="Contact" method="POST" action="#" class="fu flex flex-col gap-7" style="animation-delay:0.4s">
+    <form name="Contact" method="POST" action="/api/submit" data-mailer class="fu flex flex-col gap-7" style="animation-delay:0.4s">
+      <input type="hidden" name="_form" value="Liên hệ (VI)" />
+      <input type="hidden" name="_lang" value="vi" />
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <label class="flex flex-col gap-2">
         <span class="label">Tên của bạn <em class="not-italic text-accent">*</em></span>
         <input type="text" name="name" placeholder="Nhập tên của bạn" required class={inputCls} />

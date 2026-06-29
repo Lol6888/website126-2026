@@ -18,7 +18,10 @@ Valued at $3,000, this audit helps you identify positioning gaps, growth opportu
   </section>
 
   <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
-    <form name="AUDIT BRAND FREE" method="POST" action="#" class="max-w-2xl flex flex-col gap-10" data-reveal>
+    <form name="AUDIT BRAND FREE" method="POST" action="/api/submit" data-mailer class="max-w-2xl flex flex-col gap-10" data-reveal>
+      <input type="hidden" name="_form" value="Brand Performance Audit" />
+      <input type="hidden" name="_lang" value="en" />
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <div>
         <h2 class="display text-xl md:text-2xl">Brand & Marketing Priorities</h2>
         <div class="mt-6 flex flex-col gap-6">

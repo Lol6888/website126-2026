@@ -33,7 +33,10 @@ const { j } = Astro.props;
     <h2 class="display text-[clamp(1.6rem,4vw,3.2rem)]" data-reveal>Apply for this Job</h2>
     <p class="label opacity-50 mt-3" data-reveal>* Required</p>
 
-    <form name={j.formName} method="POST" action="#" class="mt-12 max-w-2xl flex flex-col gap-7" data-reveal>
+    <form name={j.formName} method="POST" action="/api/submit" data-mailer enctype="multipart/form-data" class="mt-12 max-w-2xl flex flex-col gap-7" data-reveal>
+      <input type="hidden" name="_form" value={`Job Application — ${j.title}`} />
+      <input type="hidden" name="_lang" value="en" />
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <div class="grid sm:grid-cols-2 gap-7">
         <label class="flex flex-col gap-2">
           <span class="label">First Name <em class="not-italic text-accent">*</em></span>
