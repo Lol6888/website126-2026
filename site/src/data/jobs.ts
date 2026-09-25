@@ -89,7 +89,7 @@ export const jobs: Job[] = [
       },
       {
         h: 'Bonus & Allowances',
-        text: '- Competitive salary, commensurate with experience.\n\n- 2-month probation at 50% of base salary.\n\n- Full social-insurance benefits upon confirmation.\n\n- A creative, collaborative environment—with workshops and training to sharpen your skills.\n\n- Career-growth opportunities and the chance to lead future design projects.',
+        text: '- Competitive salary, commensurate with experience.\n\n- 2-month probation at 80% of base salary.\n\n- Full social-insurance benefits upon confirmation.\n\n- A creative, collaborative environment—with workshops and training to sharpen your skills.\n\n- Career-growth opportunities and the chance to lead future design projects.',
       },
       { h: 'Nice to haves:', text: '-   Strong English language skills are advantageous, facilitating clear communication and collaboration within our international team.' },
       { h: 'Equal opportunity employer', text: EQUAL },
