@@ -17,3 +17,6 @@ Thumbs.db
 .env.*
 
 .vercel
+
+# handoff doc (chế độ P: không commit)
+HANDOFF.md
