@@ -44,7 +44,7 @@ const ogImage = new URL(image, site).href;
     <title>{title}</title>
     <meta name="description" content={desc} />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={canonical} />
+    {!noindex && <link rel="canonical" href={canonical} />}
     {viHref && (
       <>
         <link rel="alternate" hreflang="en" href={enHref} />
