@@ -10,7 +10,7 @@ export const cases3: CaseStudy[] = [
     lang: 'en',
     name: 'CHEER',
     pageTitle: 'CHEER | 126Verse',
-    meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
+    meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.webp'), alt: 'CHEER' }],
     sections: [
       { label: 'Introduction', lead: 'CHEER approached us with an unconventional request. Rather than assigning us the entire product or a specific set of features, they sought our collaboration as an extension of their internal design team. This allowed us to push boundaries, challenge existing perspectives, and provide innovative insights.' },
@@ -152,7 +152,7 @@ export const cases3: CaseStudy[] = [
     lang: 'en',
     name: 'Human First Time',
     pageTitle: 'Human First Time | 126Verse',
-    meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
+    meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.webp'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.mp4') }],
     sections: [
       { label: 'Introduction', lead: 'With hourly workplaces distributed nationwide and operational around the clock, serving hundreds of customers daily, H1T sought our assistance in developing a user-friendly booking interface. They emphasized the importance of centralizing all essential information and streamlining the booking process to be the shortest step possible, with a focus on displaying statuses using easily understandable imagery.' },
@@ -254,7 +254,7 @@ export const cases3: CaseStudy[] = [
     lang: 'en',
     name: 'FamiPay',
     pageTitle: 'FamiPay | 126Verse',
-    meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
+    meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-840x400_v-fs_webp_f524ecdf-b5f5-4b04-97ba-b88dc21b7a15.jpg'), alt: 'FamiPay' }, { src: A('s-240x240_webp_2ab18cb0-4bdd-448c-aaeb-5efe44cfcfea.png') }],
     sections: [
       { label: 'Introduction', lead: "We've collaborated to co-develop the interface for the FamiPay payment application, catering to over 17,000 FamilyMart stores nationwide, as well as pharmacies and home electronics retailers in the region. FamilyMart's reliance on our expertise underscores the significance of this project." },

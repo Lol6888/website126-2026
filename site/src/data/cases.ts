@@ -41,7 +41,7 @@ export const cases: CaseStudy[] = [
     pageTitle: 'Yamaha Music | 126Verse',
     heroBg: '#EEEEEE',
     heroBgImage: A('s-2400x1202_v-frms_webp_dd2155bb-6464-496a-8542-b35bb77df04e.webp'),
-    meta: { typeLabel: 'Project Type', type: 'Brand marketing', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM products, Social media posts, Video ads' },
+    meta: { typeLabel: 'Project Type', type: 'Brand Marketing', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM Products, Social Media Posts, Video Ads' },
     hero: [
       { src: A('s-282x111_webp_4c854a05-1120-405f-a474-ec8dbdf2813b.png'), alt: 'Yamaha' },
       { src: A('s-1359x903_v-fms_webp_3e76943e-50c5-4ec2-a5c6-09260d6e2b67.webp') },
@@ -100,7 +100,7 @@ export const cases: CaseStudy[] = [
     pageTitle: 'Yamaha Music | 126Verse',
     heroBg: '#EEEEEE',
     heroBgImage: A('s-2400x1202_v-frms_webp_dd2155bb-6464-496a-8542-b35bb77df04e.webp'),
-    meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Các sản phẩm POSM, Social post, Video quảng cáo' },
+    meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Sản phẩm POSM, Social post, Video quảng cáo' },
     hero: [
       { src: A('s-282x111_webp_4c854a05-1120-405f-a474-ec8dbdf2813b.png'), alt: 'Yamaha' },
       { src: A('s-1359x903_v-fms_webp_3e76943e-50c5-4ec2-a5c6-09260d6e2b67.webp') },
@@ -157,7 +157,7 @@ export const cases: CaseStudy[] = [
     lang: 'en',
     name: 'DAESANG',
     pageTitle: 'DAESANG | 126Verse',
-    meta: { typeLabel: 'Project Type', type: 'Brand marketing', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM products, Social media posts, Video ads' },
+    meta: { typeLabel: 'Project Type', type: 'Brand Marketing', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM Products, Social Media Posts, Video Ads' },
     hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
       { label: 'Introduction', lead: "Daesang is revolutionizing the health food industry network by creating products and imagery that are readily accessible, promote engagement, and instill trust within the health-conscious community. We work hand in hand with DAESANG's internal teams, collaborating on product design, branding, strategy, and engineering to elevate their digital presence and service offerings." },
@@ -231,7 +231,7 @@ export const cases: CaseStudy[] = [
     lang: 'vi',
     name: 'DAESANG',
     pageTitle: 'DAESANG | 126Verse',
-    meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Các sản phẩm POSM, Social post, Video quảng cáo' },
+    meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Sản phẩm POSM, Social post, Video quảng cáo' },
     hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
       { label: 'Bối cảnh', lead: 'Daesang đang cách mạng hóa ngành thực phẩm sức khỏe bằng cách xây dựng sản phẩm và hình ảnh dễ tiếp cận, mang lại sự tác động và lòng tin với cộng đồng yêu sức khỏe. Chúng tôi đã cộng tác chặt chẽ với các nhóm nội bộ của Daesang về thiết kế sản phẩm, thương hiệu, chiến lược và kỹ thuật để nâng cao hình ảnh và dịch vụ kỹ thuật số của họ.' },

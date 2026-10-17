@@ -1,4 +1,5 @@
 ---
+import { caseList } from '../../data/caseList';
 import Media from '../../components/Media.astro';
 import Base from '../../layouts/Base.astro';
 
@@ -38,11 +39,11 @@ const stats = [
   { num: '86%', label: 'Làm việc từ xa' },
 ];
 
-const featured = [
-  { name: 'Yamaha Music', tag: 'Thương hiệu sản phẩm', href: '/vi/work/yamaha-music', img: '/img/a/s-960x540_v-fs_webp_64bac0da-d9f2-4c7e-859e-21167dffb7f0.jpg' },
-  { name: 'CHEER', tag: 'Ứng dụng di động', href: '/vi/work/cheer', img: '/img/a/s-936x936_v-fs_webp_3d487d9b-a7ab-43f5-ae80-4b8b065989f4.png' },
-  { name: 'FamiPay', tag: 'Ứng dụng di động', href: '/vi/work/famipay', img: '/img/a/s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.webp' },
-];
+// 3 case nổi bật — tên/nhãn/ảnh lấy từ data/caseList.ts để luôn khớp trang /work
+const featured = ['yamaha-music', 'cheer', 'famipay'].map((slug) => {
+  const c = caseList('vi').find((x) => x.slug === slug)!;
+  return { name: c.name, tag: c.type, href: c.href, img: c.img };
+});
 ---
 
 <Base

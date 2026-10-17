@@ -11,7 +11,7 @@ export const cases2: CaseStudy[] = [
     name: 'Mars Cats Voyage',
     pageTitle: 'Mars Cats Voyage | 126Verse',
     dark: true,
-    meta: { typeLabel: 'Project Type', type: 'Creative, hand-draw', stageLabel: 'Stage', stage: 'Partner', deliverLabel: 'Deliverables', deliver: 'NFTs design' },
+    meta: { typeLabel: 'Project Type', type: 'Creative, Hand-drawn', stageLabel: 'Role', stage: 'Partner', deliverLabel: 'Deliverables', deliver: 'NFT Design' },
     hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
     sections: [
       { label: 'Introduction', lead: 'Our team was brought together to create the Mars Alien Cats collection - one of six Mars Cats Voyage collections.' },
@@ -63,7 +63,7 @@ export const cases2: CaseStudy[] = [
     name: 'Mars Cats Voyage',
     pageTitle: 'Mars Cats Voyage | 126Verse',
     dark: true,
-    meta: { typeLabel: 'Loại dự án', type: 'Sáng tạo, vẽ tay', stageLabel: 'Vai trò', stage: 'Nhóm thiết kế mở rộng', deliverLabel: 'Bàn giao', deliver: 'Bộ sưu tập NFTs' },
+    meta: { typeLabel: 'Loại dự án', type: 'Sáng tạo, vẽ tay', stageLabel: 'Vai trò', stage: 'Nhóm thiết kế mở rộng', deliverLabel: 'Bàn giao', deliver: 'Bộ sưu tập NFT' },
     hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
     sections: [
       { label: 'Bối cảnh', lead: 'Nhóm chúng tôi đã được hợp tác để tạo ra bộ sưu tập Mars Alien Cats - là một trong sáu bộ sưu tập của Mars Cats Voyage.' },
@@ -114,7 +114,7 @@ export const cases2: CaseStudy[] = [
     lang: 'en',
     name: 'Knowledge Japan',
     pageTitle: 'Knowledge Japan | 126Verse',
-    meta: { typeLabel: 'Project Type', type: 'Improve UI-UX', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX design and planing' },
+    meta: { typeLabel: 'Project Type', type: 'UI-UX Improvement', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design & Planning' },
     hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge Japan' }],
     sections: [
       { label: 'Introduction', lead: 'KNOWLEDGE wanted to find a way to create a fresh look that truly reflected its brand values. Their goal is to improve the image and enhance the user experience in line with these values.' },
@@ -190,7 +190,7 @@ export const cases2: CaseStudy[] = [
     lang: 'vi',
     name: 'Knowledge Japan',
     pageTitle: 'Knowledge Japan | 126Verse',
-    meta: { typeLabel: 'Loại dự án', type: 'Cải thiện UI UX', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Bản thiết kế UI UX, Kế hoạch định hướng hình ảnh mới' },
+    meta: { typeLabel: 'Loại dự án', type: 'Cải thiện UI-UX', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Bản thiết kế UI-UX, Kế hoạch định hướng hình ảnh mới' },
     hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge Japan' }],
     sections: [
       { label: 'Bối cảnh', lead: 'KNOWLEDGE muốn mang đến một giao diện mới phản ánh đúng giá trị thương hiệu của mình, họ muốn thiết kế lại hình ảnh và trải nghiệm người dùng của mình cho phù hợp.' },
