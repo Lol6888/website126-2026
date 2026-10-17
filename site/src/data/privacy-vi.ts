@@ -64,7 +64,7 @@ export const privacyVi = {
     },
     {
       h: 'Liên hệ chúng tôi',
-      text: 'Nếu bạn có bất kỳ câu hỏi hoặc nhận xét nào về Chính sách quyền riêng tư này hoặc thông tin cá nhân của bạn, để đưa ra yêu cầu truy cập hoặc chỉnh sửa, thực hiện bất kỳ quyền hiện hành nào, khiếu nại hoặc lấy thông tin về chính sách và thực tiễn của chúng tôi đối với bất kỳ nhà cung cấp dịch vụ nào bên ngoài Việt Nam, bạn có thể liên hệ với Nhân viên Bảo mật (hoặc Nhân viên Bảo vệ Dữ liệu) của chúng tôi qua đường bưu điện hoặc email bằng thông tin liên hệ sau: qua email theo địa chỉ Privacy@126verse.com.',
+      text: 'Nếu bạn có bất kỳ câu hỏi hoặc nhận xét nào về Chính sách quyền riêng tư này hoặc thông tin cá nhân của bạn, để đưa ra yêu cầu truy cập hoặc chỉnh sửa, thực hiện bất kỳ quyền hiện hành nào, khiếu nại hoặc lấy thông tin về chính sách và thực tiễn của chúng tôi đối với bất kỳ nhà cung cấp dịch vụ nào bên ngoài Việt Nam, bạn có thể liên hệ với Nhân viên Bảo mật (hoặc Nhân viên Bảo vệ Dữ liệu) của chúng tôi qua đường bưu điện hoặc email bằng thông tin liên hệ sau: qua email theo địa chỉ sofia_phan@126verse.com.',
     },
   ],
 };
