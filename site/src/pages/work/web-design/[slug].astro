@@ -25,9 +25,17 @@ const { p } = Astro.props;
       <p class="fu text-base md:text-lg leading-relaxed text-white/80 max-w-2xl mt-6" style="animation-delay:0.6s">{p.desc}</p>
     </header>
 
+    <!-- Ảnh chụp tĩnh (public/img/webdesign/{slug}.webp) hiện mặc định — không phụ thuộc Studio.Design;
+         bấm nút mới nạp iframe bản live. -->
     <section class="px-5 sm:px-8 md:px-12 pb-12" data-reveal>
-      <div class="bg-white" style="height:75vh;min-height:600px">
-        <iframe id="myIframe" src={p.iframe} class="w-full h-full border-0 block" title={p.name + ' website preview'} loading="lazy"></iframe>
+      <div class="relative bg-white" data-preview={p.iframe} data-title={p.name + ' website preview'}>
+        <div class="overflow-y-auto" style="max-height:max(75vh,600px)" data-shot tabindex="0" aria-label={p.name + ' website screenshot (scrollable)'}>
+          <img src={`/img/webdesign/${p.slug}.webp`} alt={p.name + ' website – full page screenshot'} class="block w-full h-auto" loading="lazy" decoding="async" />
+        </div>
+        <button type="button" data-live class="absolute bottom-5 right-5 bg-accent text-white label !text-[12px] px-6 py-3.5 rounded-full border-0 cursor-pointer shadow-lg hover:opacity-90 transition-opacity inline-flex items-center gap-2">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+          View interactive preview
+        </button>
       </div>
     </section>
 
@@ -67,3 +75,19 @@ const { p } = Astro.props;
     </section>
   </article>
 </Base>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-preview]').forEach((box) => {
+    const btn = box.querySelector<HTMLButtonElement>('[data-live]');
+    btn?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = box.dataset.preview!;
+      f.title = box.dataset.title || '';
+      f.className = 'w-full h-full border-0 block';
+      box.style.height = 'max(75vh, 600px)'; // khung cố định chiều cao cho bản live
+      box.querySelector('[data-shot]')?.replaceWith(f);
+      btn.remove();
+      f.focus({ preventScroll: true });
+    });
+  });
+</script>
