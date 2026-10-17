@@ -18,9 +18,9 @@ export const cases2: CaseStudy[] = [
       { text: 'Mars Cats Voyage Collection :\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
       {
         images: [
-          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.png'), alt: 'cat3' },
-          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.png'), alt: 'cat2' },
-          { src: A('s-720x720_v-fs_webp_dec173ab-8fb4-47a8-ad66-c6c5a0cae97d.png') },
+          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.webp'), alt: 'cat3' },
+          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.webp'), alt: 'cat2' },
+          { src: A('s-720x720_v-fs_webp_dec173ab-8fb4-47a8-ad66-c6c5a0cae97d.webp') },
           { src: A('s-500x500_webp_4a915d7c-be0d-4294-bd76-06cc766bedf5.png'), alt: 'catt' },
         ],
         cols: 4,
@@ -28,7 +28,7 @@ export const cases2: CaseStudy[] = [
       {
         title: 'Welcome to\nMars Cats Voyage',
         text: 'The first limited collection of NFTs giving holders the ability to follow cats on a voyage to Mars, their eventual meeting with Aliens, the build-out of their colony and all the discoveries along the way.',
-        images: [{ src: A('s-1286x910_v-fms_webp_45738851-1dfd-4ddf-bada-8f62bbd2e6bf.png') }],
+        images: [{ src: A('s-1286x910_v-fms_webp_45738851-1dfd-4ddf-bada-8f62bbd2e6bf.webp') }],
         cols: 1,
       },
       { label: 'Every idea in sight holds potential.', lead: 'MCV aims for an extensively detailed collection with distinctiveness among each NFT. Achieving creativity for such a vast array demands the collective high imagination of each member and meticulous calculation of the required layers for every NFT. This ensures a satisfying collection delivered within the shortest timeframe possible.' },
@@ -36,7 +36,7 @@ export const cases2: CaseStudy[] = [
       {
         images: [
           { src: A('s-285x657_v-fs_webp_dfb88da1-49da-4956-96a3-2c8355b858a0.png') },
-          { src: A('s-857x633_v-fs_webp_b15c95d6-d872-43fa-b27b-18dc112ba9cd.png') },
+          { src: A('s-857x633_v-fs_webp_b15c95d6-d872-43fa-b27b-18dc112ba9cd.webp') },
         ],
         cols: 2,
       },
@@ -54,7 +54,7 @@ export const cases2: CaseStudy[] = [
         ],
       },
     ],
-    next: { label: 'Next case study', name: 'Knowlegd JP', href: '/work/knowledge-japan', img: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.png') },
+    next: { label: 'Next case study', name: 'Knowlegd JP', href: '/work/knowledge-japan', img: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp') },
   },
   // ============================================================ MARS CATS VOYAGE — VI
   {
@@ -70,9 +70,9 @@ export const cases2: CaseStudy[] = [
       { text: 'Bộ sưu tập Mars Cats Voyage :\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
       {
         images: [
-          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.png'), alt: 'cat3' },
-          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.png'), alt: 'cat2' },
-          { src: A('s-720x720_v-fs_webp_dec173ab-8fb4-47a8-ad66-c6c5a0cae97d.png') },
+          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.webp'), alt: 'cat3' },
+          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.webp'), alt: 'cat2' },
+          { src: A('s-720x720_v-fs_webp_dec173ab-8fb4-47a8-ad66-c6c5a0cae97d.webp') },
           { src: A('s-500x500_webp_4a915d7c-be0d-4294-bd76-06cc766bedf5.png'), alt: 'catt' },
         ],
         cols: 4,
@@ -80,7 +80,7 @@ export const cases2: CaseStudy[] = [
       {
         title: 'Welcome to\nMars Cats Voyage',
         text: 'Bộ sưu tập NFT giới hạn đầu tiên mang đến cho người sở hữu khả năng theo dõi những chú mèo trong chuyến hành trình tới Sao Hỏa, cuộc gặp gỡ cuối cùng của họ với Người ngoài hành tinh, quá trình xây dựng thuộc địa của họ và tất cả những khám phá trên đường đi.',
-        images: [{ src: A('s-1286x910_v-fms_webp_45738851-1dfd-4ddf-bada-8f62bbd2e6bf.png') }],
+        images: [{ src: A('s-1286x910_v-fms_webp_45738851-1dfd-4ddf-bada-8f62bbd2e6bf.webp') }],
         cols: 1,
       },
       { label: 'Mọi thứ trước mắt đều là một ý tưởng tốt', lead: 'MCV muốn 1 bộ sưu tập thật chi tiết và tính độc lập giữa mỗi NFT, nên tính sáng tạo cho số lượng lớn NFT như vậy đòi hỏi khả năng tưởng tượng cao của mỗi thành viên và tính toán cẩn thận số lượng layer cần có trên mỗi NFT để có được bộ sưu tập ưng ý với thời gian hoàn thành sớm nhất.' },
@@ -88,7 +88,7 @@ export const cases2: CaseStudy[] = [
       {
         images: [
           { src: A('s-285x657_v-fs_webp_dfb88da1-49da-4956-96a3-2c8355b858a0.png') },
-          { src: A('s-857x633_v-fs_webp_b15c95d6-d872-43fa-b27b-18dc112ba9cd.png') },
+          { src: A('s-857x633_v-fs_webp_b15c95d6-d872-43fa-b27b-18dc112ba9cd.webp') },
         ],
         cols: 2,
       },
@@ -106,7 +106,7 @@ export const cases2: CaseStudy[] = [
         ],
       },
     ],
-    next: { label: 'Tiếp theo', name: 'Knowlegd JP', href: '/vi/work/knowledge-japan', img: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.png') },
+    next: { label: 'Tiếp theo', name: 'Knowlegd JP', href: '/vi/work/knowledge-japan', img: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp') },
   },
   // ============================================================ KNOWLEDGE JAPAN — EN
   {
@@ -134,8 +134,8 @@ export const cases2: CaseStudy[] = [
       },
       {
         images: [
-          { src: A('s-2400x1500_v-frms_webp_20e4ae96-1bcc-480f-b80a-1f77c36090b2.png') },
-          { src: A('s-2400x2400_v-frms_webp_ff39e0b4-f84c-4153-9321-c76f8b365226.png') },
+          { src: A('s-2400x1500_v-frms_webp_20e4ae96-1bcc-480f-b80a-1f77c36090b2.webp') },
+          { src: A('s-2400x2400_v-frms_webp_ff39e0b4-f84c-4153-9321-c76f8b365226.webp') },
         ],
         cols: 2,
       },
@@ -150,15 +150,15 @@ export const cases2: CaseStudy[] = [
       {
         title: 'Tailored content curated to your preferences',
         text: "People enjoy customizing the content they consume to align with their individual tastes. While many personalization platforms adopt a passive approach by offering a broad spectrum of topics, KNOWLEDGE takes a more interactive approach. Users are prompted to browse sample posts on various topics and express their preferences by upvoting or downvoting using emojis, thereby curating their feed.\n\nFollowing this initial onboarding process, users can further engage with the content they've selected, enabling KNOWLEDGE to gain deeper insights into their browsing habits and provide more intelligent recommendations going forward.",
-        images: [{ src: A('s-1435x1018_v-fms_webp_8017adca-08a1-4ae9-942f-bb4982c2718f.png') }],
+        images: [{ src: A('s-1435x1018_v-fms_webp_8017adca-08a1-4ae9-942f-bb4982c2718f.webp') }],
         cols: 1,
       },
       {
         label: 'Categories for managing purchased articles and current works are also optimized for access.',
         images: [
-          { src: A('s-1438x1023_v-fms_webp_1337ee00-a3e1-403a-8905-4218ac22ac47.png') },
-          { src: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.png') },
-          { src: A('s-1436x1022_v-fms_webp_40f55c56-d0bb-43c8-afee-746953619b4d.png') },
+          { src: A('s-1438x1023_v-fms_webp_1337ee00-a3e1-403a-8905-4218ac22ac47.webp') },
+          { src: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp') },
+          { src: A('s-1436x1022_v-fms_webp_40f55c56-d0bb-43c8-afee-746953619b4d.webp') },
         ],
         cols: 3,
       },
@@ -210,8 +210,8 @@ export const cases2: CaseStudy[] = [
       },
       {
         images: [
-          { src: A('s-2400x1500_v-frms_webp_20e4ae96-1bcc-480f-b80a-1f77c36090b2.png') },
-          { src: A('s-2400x2400_v-frms_webp_ff39e0b4-f84c-4153-9321-c76f8b365226.png') },
+          { src: A('s-2400x1500_v-frms_webp_20e4ae96-1bcc-480f-b80a-1f77c36090b2.webp') },
+          { src: A('s-2400x2400_v-frms_webp_ff39e0b4-f84c-4153-9321-c76f8b365226.webp') },
         ],
         cols: 2,
       },
@@ -226,15 +226,15 @@ export const cases2: CaseStudy[] = [
       {
         title: 'Nội dung cá nhân hóa do bạn lựa chọn',
         text: 'Mọi người thích điều chỉnh nội dung họ xem theo cách đáp ứng sở thích riêng của họ. Hầu hết các luồng cá nhân hóa đều áp dụng cách tiếp cận thụ động đối với vấn đề này, phục vụ rất nhiều chủ đề để bạn lựa chọn. Đối với KNOWLEDGE, chúng tôi đã làm cho trải nghiệm trở nên tương tác hơn. Người đọc được khuyến khích xem qua các bài viết mẫu về từng chủ đề và tán thành hoặc phản đối (thông qua biểu tượng cảm xúc) để quản lý nguồn cấp dữ liệu của họ.\n\nSau lần giới thiệu đầu tiên này, mọi người có thể tiếp tục tương tác với nội dung họ đã chọn giúp KNOWLEDGE tìm hiểu thêm về sở thích duyệt web của họ và đưa ra những đề xuất thông minh hơn trong tương lai.',
-        images: [{ src: A('s-1435x1018_v-fms_webp_8017adca-08a1-4ae9-942f-bb4982c2718f.png') }],
+        images: [{ src: A('s-1435x1018_v-fms_webp_8017adca-08a1-4ae9-942f-bb4982c2718f.webp') }],
         cols: 1,
       },
       {
         label: 'Các danh mục quản lý bài viết được mua, tác phẩm hiện tại cũng được tối ưu hóa thao tác truy cập.',
         images: [
-          { src: A('s-1438x1023_v-fms_webp_1337ee00-a3e1-403a-8905-4218ac22ac47.png') },
-          { src: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.png') },
-          { src: A('s-1436x1022_v-fms_webp_40f55c56-d0bb-43c8-afee-746953619b4d.png') },
+          { src: A('s-1438x1023_v-fms_webp_1337ee00-a3e1-403a-8905-4218ac22ac47.webp') },
+          { src: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp') },
+          { src: A('s-1436x1022_v-fms_webp_40f55c56-d0bb-43c8-afee-746953619b4d.webp') },
         ],
         cols: 3,
       },

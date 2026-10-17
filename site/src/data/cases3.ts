@@ -11,7 +11,7 @@ export const cases3: CaseStudy[] = [
     name: 'CHEER',
     pageTitle: 'CHEER | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
-    hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.png'), alt: 'CHEER' }],
+    hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.webp'), alt: 'CHEER' }],
     sections: [
       { label: 'Introduction', lead: 'CHEER approached us with an unconventional request. Rather than assigning us the entire product or a specific set of features, they sought our collaboration as an extension of their internal design team. This allowed us to push boundaries, challenge existing perspectives, and provide innovative insights.' },
       { text: 'They desire a straightforward design and seamless operability that simplifies tasks for users.' },
@@ -82,7 +82,7 @@ export const cases3: CaseStudy[] = [
     name: 'CHEER',
     pageTitle: 'CHEER | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Ứng dụng di động', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'UI-UX Design, UI Library, Framework' },
-    hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.png'), alt: 'CHEER' }],
+    hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.webp'), alt: 'CHEER' }],
     sections: [
       { label: 'Bối cảnh', lead: 'CHEER yêu cầu chúng tôi có một chút khác thường. Thay vì yêu cầu chúng tôi giải quyết toàn bộ sản phẩm hoặc phụ trách một bộ tính năng xác định, họ muốn chúng tôi hoạt động như một phần mở rộng của nhóm thiết kế nội bộ của họ để có thể thử thách dẫn dắt suy nghĩ của họ và đưa ra những góc nhìn mới mẻ.' },
       { text: 'Họ muốn Thiết kế đơn giản và khả năng hoạt động dễ hiểu giúp người dùng dễ dàng thực hiện mọi tác vụ.' },
@@ -153,7 +153,7 @@ export const cases3: CaseStudy[] = [
     name: 'Human First Time',
     pageTitle: 'Human First Time | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
-    hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.png'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.gif') }],
+    hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.webp'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.mp4') }],
     sections: [
       { label: 'Introduction', lead: 'With hourly workplaces distributed nationwide and operational around the clock, serving hundreds of customers daily, H1T sought our assistance in developing a user-friendly booking interface. They emphasized the importance of centralizing all essential information and streamlining the booking process to be the shortest step possible, with a focus on displaying statuses using easily understandable imagery.' },
       {
@@ -191,11 +191,11 @@ export const cases3: CaseStudy[] = [
           quote: '"It\'s been a pleasure collaborating with 126VERSE. Their genuine passion for their work shines through, and they bring a wealth of experience and expertise to the table."',
           name: 'Yuki Sakai',
           role: 'Head of marketing department (H1T)',
-          img: A('s-371x480_4be4e71c-df10-4764-97e2-1c14df714054.gif'),
+          img: A('s-371x480_4be4e71c-df10-4764-97e2-1c14df714054.mp4'),
         },
       },
     ],
-    next: { label: 'Next case study', name: 'FamiPay', href: '/work/famipay', img: A('s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.png') },
+    next: { label: 'Next case study', name: 'FamiPay', href: '/work/famipay', img: A('s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.webp') },
   },
   // ============================================================ H1T — VI
   {
@@ -204,7 +204,7 @@ export const cases3: CaseStudy[] = [
     name: 'Human First Time',
     pageTitle: 'Human First Time | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Ứng dụng di động', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'UI-UX Design, UI Library, Framework' },
-    hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.png'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.gif') }],
+    hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.webp'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.mp4') }],
     sections: [
       { label: 'Bối cảnh', lead: 'Với hệ thống chỗ làm việc theo giờ khắp cả nước và thời gian hoạt động gần như toàn bộ thời gian trong ngày, phục vụ hàng trăm khách hàng mỗi ngày. H1T muốn chúng tôi giúp họ có 1 bản thiết kế thật dễ sử dụng cho việc đặt chỗ. Tất cả các thông tin cần thiết cần được tập trung vào trung tâm. Tác vụ đặt chỗ ngắn bước nhất, đặc biệt tìm cách hiển thị các trạng thái bằng hình ảnh dễ hiểu.' },
       {
@@ -242,11 +242,11 @@ export const cases3: CaseStudy[] = [
           quote: '" Thật vui khi được làm việc với 126VERSE. Họ thực sự đam mê những gì họ làm và họ mang đến nhiều kinh nghiệm và kiến ​​thức chuyên môn. "',
           name: 'Yuki Sakai',
           role: 'Head of marketing department (H1T)',
-          img: A('s-371x480_4be4e71c-df10-4764-97e2-1c14df714054.gif'),
+          img: A('s-371x480_4be4e71c-df10-4764-97e2-1c14df714054.mp4'),
         },
       },
     ],
-    next: { label: 'Tiếp theo', name: 'FamiPay', href: '/vi/work/famipay', img: A('s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.png') },
+    next: { label: 'Tiếp theo', name: 'FamiPay', href: '/vi/work/famipay', img: A('s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.webp') },
   },
   // ============================================================ FAMIPAY — EN
   {
@@ -271,7 +271,7 @@ export const cases3: CaseStudy[] = [
       {
         title: 'Main functions at FamiPay:',
         text: '- Mobile payment service accessible not only at FamilyMart but also at other physical and online stores.\n\n- Convenient access to purchase history.\n\n- Integration of FamiPay coupons and reward point system',
-        images: [{ src: A('s-1051x765_v-fs_webp_a34296bc-8654-4a31-87ca-a17e97d0acd7.png') }],
+        images: [{ src: A('s-1051x765_v-fs_webp_a34296bc-8654-4a31-87ca-a17e97d0acd7.webp') }],
         cols: 1,
       },
       { lead: 'Our task is to streamline the process of reaching the target from the home screen, presenting content concisely with the aid of illustrative icons.' },
@@ -346,7 +346,7 @@ export const cases3: CaseStudy[] = [
       {
         title: 'Chức năng chính ở FamiPay :',
         text: '- Dịch vụ thanh toán trên điện thoại. Việc thanh toán có thể được thực hiện không chỉ tại FamilyMart mà còn tại các cửa hàng và cửa hàng trực tuyến khác.\n\n- Kiểm tra lịch sử mua hàng.\n\n- Các chức năng của phiếu giảm giá FamiPay, tích điểm.',
-        images: [{ src: A('s-1051x765_v-fs_webp_a34296bc-8654-4a31-87ca-a17e97d0acd7.png') }],
+        images: [{ src: A('s-1051x765_v-fs_webp_a34296bc-8654-4a31-87ca-a17e97d0acd7.webp') }],
         cols: 1,
       },
       { lead: 'Công việc của chúng tôi là làm tối giản các thao tác để đến các trang đích từ màn hình chính, thể hiện nội dung chính xác bằng icon minh họa.' },
