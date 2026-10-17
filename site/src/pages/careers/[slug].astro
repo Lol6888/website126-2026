@@ -9,7 +9,7 @@ export function getStaticPaths() {
 const { j } = Astro.props;
 ---
 
-<Base title="Careers | 126Verse" lang="en" hideFooterCta>
+<Base title={j.title + ' | Careers | 126Verse'} description={j.intro.split('\n\n').find((p) => p.length > 80)} lang="en" hideFooterCta>
   <section class="bg-ink text-white px-5 sm:px-8 md:px-12 py-20 md:py-28">
     <p class="fu label text-white/60" style="animation-delay:0.1s">{j.location}</p>
     <h1 class="word-line mt-4"><span class="word-up display text-[clamp(1.8rem,6vw,5.5rem)]" style="animation-delay:0.3s;line-height:1.02">{j.title}</span></h1>

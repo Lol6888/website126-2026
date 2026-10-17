@@ -137,7 +137,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (!apiKey) {
     console.error('Thiếu RESEND_API_KEY');
     return json(
-      { success: false, message: 'Server chưa cấu hình email (RESEND_API_KEY).' },
+      { success: false, message: lang === 'en' ? 'Something went wrong.' : 'Có lỗi xảy ra.' },
       500,
     );
   }

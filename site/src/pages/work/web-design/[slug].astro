@@ -9,7 +9,7 @@ export function getStaticPaths() {
 const { p } = Astro.props;
 ---
 
-<Base title={p.name + ' | 126Verse'} lang="en" hideFooterCta>
+<Base title={p.name + ' | 126Verse'} description={p.desc} lang="en" hideFooterCta>
   <article class="bg-ink text-white">
     <header class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-10">
       <div class="flex items-baseline justify-between gap-4 flex-wrap">

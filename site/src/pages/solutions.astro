@@ -4,6 +4,6 @@ import SolutionsBody from '../components/SolutionsBody.astro';
 import { hero, why, testimonials, pricing, modals, compare, versus, faq, addons, finalCta } from '../data/solutions';
 ---
 
-<Base title="Solutions & Pricing | 126Verse" lang="en" alt="/vi/solutions" navOverlay hideFooterCta>
+<Base title="Solutions & Pricing | 126Verse" description={why.intro} lang="en" alt="/vi/solutions" navOverlay hideFooterCta>
   <SolutionsBody lang="en" {hero} {why} {testimonials} {pricing} {modals} {compare} {versus} {faq} {addons} {finalCta} />
 </Base>
