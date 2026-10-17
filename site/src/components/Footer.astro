@@ -15,7 +15,7 @@ const cta =
         links: [
           { label: 'Liên hệ', href: '/vi/contact' },
           { label: 'Về chúng tôi', href: '/vi/about' },
-          { label: 'Just say hello', href: 'mailto:126verse@gmail.com' },
+          { label: 'Just say hello', href: 'mailto:sofia_phan@126verse.com' },
         ],
       }
     : {
@@ -23,7 +23,7 @@ const cta =
         links: [
           { label: 'Work together', href: '/contact' },
           { label: 'Join our team', href: '/about#carreer' },
-          { label: 'Just say hello', href: 'mailto:126verse@gmail.com' },
+          { label: 'Just say hello', href: 'mailto:sofia_phan@126verse.com' },
         ],
       };
 
@@ -67,9 +67,9 @@ const bottom =
   )}
 
   <section class="px-5 sm:px-8 md:px-12 py-8 hairline">
-    <div class="flex flex-wrap gap-x-6 gap-y-3">
+    <div class="flex flex-wrap gap-x-6 gap-y-1">
       {bottom.map((l) => (
-        <a href={l.href} class={'label no-underline hover:text-accent transition-colors ' + (dark ? 'text-white' : 'text-ink')} target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noopener' : undefined}>{l.label}</a>
+        <a href={l.href} class={'label inline-block py-1.5 no-underline hover:text-accent transition-colors ' + (dark ? 'text-white' : 'text-ink')} target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noopener' : undefined}>{l.label}</a>
       ))}
     </div>
     <Logo variant="word" class="block w-full max-w-[1100px] h-auto mx-auto mt-12" />

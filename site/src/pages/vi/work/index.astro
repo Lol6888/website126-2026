@@ -1,4 +1,5 @@
 ---
+import Media from '../../../components/Media.astro';
 import Base from '../../../layouts/Base.astro';
 
 const items = [
@@ -25,9 +26,9 @@ const items = [
           <p class="hidden md:block text-2xl font-semibold leading-none"><span class="num-accent">0</span>{i + 1}</p>
           <div>
             <p class="display text-[clamp(1.5rem,4.5vw,3.6rem)] group-hover:text-accent transition-colors">{it.name}</p>
-            <p class="label opacity-50 mt-2">{it.tag}</p>
+            <p class="label opacity-60 mt-2">{it.tag}</p>
           </div>
-          <img src={it.img} alt={it.name} class="img-shadow hidden md:block w-full h-36 object-cover" loading="lazy" />
+          <Media src={it.img} alt={it.name} class="img-shadow hidden md:block w-full h-36 object-cover" />
           <svg class="w-8 h-8 md:w-12 md:h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
         </a>
       ))}

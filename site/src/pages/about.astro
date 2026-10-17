@@ -78,7 +78,7 @@ const roles = [
     <p class="font-semibold text-xl md:text-2xl mt-6 max-w-3xl">You probably didn’t know it at the time, but odds are you’ve saw a product we helped build.</p>
     <div class="mt-12 flex flex-wrap items-center gap-x-14 gap-y-8">
       {logos.map((l) => (
-        <img src={l.src} alt={l.alt} class="h-8 md:h-10 w-auto" loading="lazy" />
+        <Media src={l.src} alt={l.alt} class="h-8 md:h-10 w-auto" />
       ))}
     </div>
   </section>
@@ -111,10 +111,10 @@ const roles = [
     <h2 class="display text-[clamp(1.8rem,5vw,4.5rem)]" data-reveal>Your career —<br />our open roles</h2>
     <div class="mt-12 flex flex-col">
       {roles.map((r) => (
-        <a href={r.href} target="_blank" class="group py-7 hairline grid grid-cols-[1fr_auto] md:grid-cols-[1fr_120px_120px_auto] gap-4 items-center no-underline text-ink" data-reveal>
+        <a href={r.href} class="group py-7 hairline grid grid-cols-[1fr_auto] md:grid-cols-[1fr_120px_120px_auto] gap-4 items-center no-underline text-ink" data-reveal>
           <p class="font-semibold text-lg md:text-2xl group-hover:text-accent transition-colors">{r.name}</p>
-          <p class="label opacity-50 hidden md:block">{r.where}</p>
-          <p class="label opacity-50 hidden md:block">{r.dept}</p>
+          <p class="label opacity-60 hidden md:block">{r.where}</p>
+          <p class="label opacity-60 hidden md:block">{r.dept}</p>
           <svg class="w-7 h-7 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
         </a>
       ))}

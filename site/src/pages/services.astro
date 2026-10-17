@@ -1,4 +1,5 @@
 ---
+import Media from '../components/Media.astro';
 import Base from '../layouts/Base.astro';
 
 const capabilities = [
@@ -54,13 +55,13 @@ const quotes = [
 <Base title="What we do | 126Verse" description={"For few years, we've helped everyone from small, early-stage startups to large companies build products and image marketing plans that are effective, beautiful, and easy to use."} lang="en" alt="/vi/services">
   <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-12">
     <h1>
-      <span class="word-line"><span class="word-up display text-[clamp(2rem,7.5vw,7.5rem)]" style="animation-delay:0.2s">Odds are you've used a</span></span>
-      <span class="word-line"><span class="word-up display text-[clamp(2rem,7.5vw,7.5rem)]" style="animation-delay:0.34s">product we've built</span></span>
+      <span class="word-line"><span class="word-up display text-[clamp(2rem,6.6vw,7.5rem)] [text-wrap:balance]" style="animation-delay:0.2s">Odds are you've used a</span></span>
+      <span class="word-line"><span class="word-up display text-[clamp(2rem,6.6vw,7.5rem)] [text-wrap:balance]" style="animation-delay:0.34s">product we've built</span></span>
     </h1>
   </section>
 
   <section class="px-5 sm:px-8 md:px-12 pb-12" data-reveal>
-    <img src="/img/a/s-1801x907_v-frms_webp_be29bc18-27e9-4e3d-a401-2cc34900ef2b.png" alt="126Verse products" class="img-shadow w-full h-auto" />
+    <Media src="/img/a/s-1801x907_v-frms_webp_be29bc18-27e9-4e3d-a401-2cc34900ef2b.png" alt="126Verse products" class="img-shadow w-full h-auto" loading="eager" />
   </section>
 
   <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24" data-reveal>
@@ -68,7 +69,7 @@ const quotes = [
   </section>
 
   <section class="px-5 sm:px-8 md:px-12 py-12 hairline">
-    <p class="label opacity-50" data-reveal>What we do</p>
+    <p class="label opacity-60" data-reveal>What we do</p>
     <div class="mt-10 flex flex-col">
       {capabilities.map((c, i) => (
         <div class={'py-10 md:py-14 grid md:grid-cols-2 gap-6 ' + (i > 0 ? 'hairline-soft' : '')} data-reveal>
@@ -112,15 +113,15 @@ const quotes = [
     <div class="mt-14 grid md:grid-cols-2 gap-10">
       {quotes.map((q, i) => (
         <figure class="m-0" data-reveal style={`transition-delay:${i * 0.12}s`}>
-          <img src={q.img} alt={q.name} class="img-shadow w-full max-w-xs h-auto" loading="lazy" />
+          <Media src={q.img} alt={q.name} class="img-shadow w-full max-w-xs h-auto" />
           <blockquote class="m-0 mt-6 font-semibold text-lg md:text-xl leading-relaxed">{q.quote}</blockquote>
           <figcaption class="mt-5">
             <p class="label">{q.name}</p>
-            <p class="label opacity-50 mt-1">{q.role}</p>
+            <p class="label opacity-60 mt-1">{q.role}</p>
           </figcaption>
         </figure>
       ))}
     </div>
-    <p class="label opacity-50 mt-12" data-reveal>And more</p>
+    <p class="label opacity-60 mt-12" data-reveal>And more</p>
   </section>
 </Base>

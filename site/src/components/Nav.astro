@@ -38,7 +38,7 @@ const links =
 
   <div class="flex items-center gap-4">
     {alt && (
-      <a href={alt} class="fd label !text-[11px] no-underline hover:opacity-55" style="animation-delay:0.45s">{lang === 'vi' ? 'ENG' : 'VN'}</a>
+      <a href={alt} class="fd label !text-[11px] inline-block px-1.5 py-2 no-underline hover:opacity-55" hreflang={lang === 'vi' ? 'en' : 'vi'} aria-label={lang === 'vi' ? 'English' : 'Tiếng Việt'} style="animation-delay:0.45s">{lang === 'vi' ? 'ENG' : 'VN'}</a>
     )}
     <button id="nav-burger" type="button" class="fd w-9 h-9 rounded-full bg-accent border-0 cursor-pointer flex flex-col items-center justify-center gap-1" style="animation-delay:0.5s" aria-label={lang === 'vi' ? 'Mở menu' : 'Open menu'} aria-expanded="false" aria-controls="nav-menu">
       <span class="w-4 h-0.5 bg-white block pointer-events-none"></span>

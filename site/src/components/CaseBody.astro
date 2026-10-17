@@ -20,6 +20,13 @@ const dim = (src: string) => {
 const rowH = (cols?: number) =>
   cols === 4 ? 'h-44 sm:h-56 md:h-72' : cols === 3 ? 'h-52 sm:h-64 md:h-80' : 'h-60 sm:h-80 md:h-[26rem]';
 
+// alt mặc định khi data không có: "Tên case – nhãn section (số thứ tự)" — tránh alt rỗng cho ảnh portfolio
+const altFor = (s: CaseSection | null, i: number, total: number) => {
+  const ctx = (s?.label || s?.title || '').replace(/\s+/g, ' ').trim();
+  const base = ctx ? `${cs.name} – ${ctx}` : cs.name;
+  return total > 1 ? `${base} (${i + 1})` : base;
+};
+
 const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.text || s.items);
 ---
 
@@ -29,15 +36,15 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
     <h1 class="word-line"><span class="word-up display text-[clamp(2.2rem,8vw,8rem)]" style="animation-delay:0.2s">{cs.name}</span></h1>
     <div class="mt-12 hairline-soft pt-8 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
       <div class="fu" style="animation-delay:0.4s">
-        <p class="label opacity-50">{cs.meta.typeLabel}</p>
+        <p class="label opacity-60">{cs.meta.typeLabel}</p>
         <p class="label mt-2">{cs.meta.type}</p>
       </div>
       <div class="fu" style="animation-delay:0.5s">
-        <p class="label opacity-50">{cs.meta.stageLabel}</p>
+        <p class="label opacity-60">{cs.meta.stageLabel}</p>
         <p class="label mt-2">{cs.meta.stage}</p>
       </div>
       <div class="fu" style="animation-delay:0.6s">
-        <p class="label opacity-50">{cs.meta.deliverLabel}</p>
+        <p class="label opacity-60">{cs.meta.deliverLabel}</p>
         <p class="label mt-2">{cs.meta.deliver}</p>
       </div>
     </div>
@@ -57,7 +64,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
           return (
             <Media
               src={im.src}
-              alt={im.alt ?? (i === 0 ? cs.name : '')}
+              alt={im.alt ?? altFor(null, i, cs.hero.length)}
               class={isLogo ? 'h-10 md:h-14 w-full object-contain basis-full' : 'h-44 sm:h-56 md:h-72 w-auto max-w-full object-contain'}
               loading={i === 0 ? 'eager' : 'lazy'}
             />
@@ -75,7 +82,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
         return (
           <Media
             src={im.src}
-            alt={im.alt ?? (i === 0 ? cs.name : '')}
+            alt={im.alt ?? altFor(null, i, cs.hero.length)}
             class={isLogo ? 'h-10 md:h-12 w-auto object-contain' : ratio < 0.9 ? 'w-auto max-w-full object-contain' : 'w-full h-auto'}
             style={!isLogo && ratio < 0.9 ? 'max-height:560px' : ''}
             loading={i === 0 ? 'eager' : 'lazy'}
@@ -88,7 +95,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
   <!-- ===== SECTIONS ===== -->
   {cs.sections.map((s: CaseSection) => (
     <section class="px-5 sm:px-8 md:px-12 py-14 md:py-20 hairline-soft" data-reveal>
-      {s.label && <p class="label opacity-50 max-w-3xl">{s.label}</p>}
+      {s.label && <p class="label opacity-60 max-w-3xl">{s.label}</p>}
 
       {!(s.iframe && (s.title || s.text)) && (
         <>
@@ -109,14 +116,14 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
         </div>
       )}
 
-      {s.images && s.cols === 1 && s.images.map((im) => {
+      {s.images && s.cols === 1 && s.images.map((im, i) => {
         const d = dim(im.src);
         const wide = !d || d.w >= 1600;
         return (
           <div class={hasTextBefore(s) ? 'mt-10' : ''}>
             <Media
               src={im.src}
-              alt={im.alt ?? ''}
+              alt={im.alt ?? altFor(s, i, s.images!.length)}
               class={wide ? 'w-full h-auto' : 'block mx-auto w-full h-auto'}
               style={wide ? '' : `max-width:min(100%, ${Math.round((d?.w ?? 800) * 0.85)}px)`}
               loading="lazy"
@@ -127,8 +134,8 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
 
       {s.images && (s.cols ?? 1) > 1 && (
         <div class={'flex flex-wrap items-center justify-center gap-4 md:gap-6 ' + (hasTextBefore(s) ? 'mt-10' : '')}>
-          {s.images.map((im) => (
-            <Media src={im.src} alt={im.alt ?? ''} class={rowH(s.cols) + ' w-auto max-w-full object-contain'} />
+          {s.images.map((im, i) => (
+            <Media src={im.src} alt={im.alt ?? altFor(s, i, s.images!.length)} class={rowH(s.cols) + ' w-auto max-w-full object-contain'} />
           ))}
         </div>
       )}
@@ -137,10 +144,10 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
         <figure class="m-0 max-w-4xl">
           <blockquote class="m-0 font-semibold text-[clamp(1.15rem,2.2vw,1.75rem)] leading-relaxed" style="white-space:pre-line">{s.quote.quote}</blockquote>
           <figcaption class="mt-8 flex items-center gap-4">
-            {s.quote.img && <img src={s.quote.img} alt={s.quote.name} class="w-14 h-14 rounded-full object-cover" loading="lazy" />}
+            {s.quote.img && <Media src={s.quote.img} alt={s.quote.name} class="w-14 h-14 rounded-full object-cover" />}
             <span>
               <span class="label block">{s.quote.name}</span>
-              <span class="label block opacity-50 mt-1">{s.quote.role}</span>
+              <span class="label block opacity-60 mt-1">{s.quote.role}</span>
             </span>
           </figcaption>
         </figure>
@@ -166,12 +173,12 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
               {s.text && <p class="text-base md:text-lg leading-relaxed text-black/70 mt-5" style="white-space:pre-line">{s.text}</p>}
             </div>
             <div class="border border-black/10" style={`aspect-ratio:${s.iframeRatio ?? '16/9'}`}>
-              <iframe src={s.iframe} class="w-full h-full border-0 block" loading="lazy" allowfullscreen></iframe>
+              <iframe src={s.iframe} title={s.title || s.label || cs.name} class="w-full h-full border-0 block" loading="lazy" allowfullscreen></iframe>
             </div>
           </div>
         ) : (
           <div class={'mx-auto w-full max-w-4xl ' + ((s.label || s.lead) ? 'mt-10' : '')} style={`aspect-ratio:${s.iframeRatio ?? '16/9'}`}>
-            <iframe src={s.iframe} class="w-full h-full border-0 block" loading="lazy" allowfullscreen></iframe>
+            <iframe src={s.iframe} title={s.title || s.label || cs.name} class="w-full h-full border-0 block" loading="lazy" allowfullscreen></iframe>
           </div>
         )
       )}
@@ -180,7 +187,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
 
   <!-- ===== NEXT CASE ===== -->
   <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline" data-reveal>
-    <p class="label opacity-50">{cs.next.label}</p>
+    <p class="label opacity-60">{cs.next.label}</p>
     <a href={cs.next.href} class={'group mt-8 grid grid-cols-[1fr_auto] md:grid-cols-[1fr_300px_auto] gap-6 md:gap-10 items-center no-underline ' + (cs.dark ? 'text-white' : 'text-ink')}>
       <span class="display text-[clamp(1.8rem,6vw,5rem)] group-hover:text-accent transition-colors">{cs.next.name}</span>
       <Media src={cs.next.img} alt={cs.next.name} class="img-shadow hidden md:block w-full h-44 object-cover" />

@@ -1,4 +1,5 @@
 ---
+import Media from './Media.astro';
 // Thân trang Giải pháp dùng chung cho EN + VI. Nhận dữ liệu theo ngôn ngữ.
 interface Props {
   lang?: 'en' | 'vi';
@@ -18,7 +19,7 @@ const ui = lang === 'vi'
       company: 'Công ty / Tổ chức', companyPh: 'Tên công ty',
       email: 'Email', emailPh: 'Địa chỉ email của bạn',
       needs: 'Nhu cầu của bạn', needsPh: 'Ghi chú thêm (không bắt buộc)',
-      agree: 'Tôi đồng ý với Chính sách bảo mật.',
+      agree: 'Tôi đồng ý với <a href="/vi/privacy" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-accent">Chính sách bảo mật</a>.',
     }
   : {
       goal: 'Goal', contact: 'Contact', close: 'Close',
@@ -27,7 +28,7 @@ const ui = lang === 'vi'
       company: 'Your Company / Organization', companyPh: 'Company Name',
       email: 'Your Email', emailPh: 'Your email address',
       needs: 'Tell Us About Your Needs', needsPh: 'Additional Notes (optional)',
-      agree: 'I agree to the Privacy Policy.',
+      agree: 'I agree to the <a href="/privacy" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-accent">Privacy Policy</a>.',
     };
 
 const workHref = `${p}/work`;
@@ -54,8 +55,8 @@ const contactHref = `${p}/contact`;
 <!-- MARQUEE -->
 <div class="bg-accent text-white overflow-hidden py-3.5">
   <div class="mq-row flex gap-12 w-max">
-    {[...hero.marquee, ...hero.marquee, ...hero.marquee].map((m: string) => (
-      <span class="eyebrow !text-[13px] whitespace-nowrap flex items-center gap-12"><span>{m}</span><span aria-hidden="true">✦</span></span>
+    {[...hero.marquee, ...hero.marquee, ...hero.marquee].map((m: string, i: number) => (
+      <span class="eyebrow !text-[13px] whitespace-nowrap flex items-center gap-12" aria-hidden={i >= hero.marquee.length ? 'true' : undefined}><span>{m}</span><span aria-hidden="true">✦</span></span>
     ))}
   </div>
 </div>
@@ -76,7 +77,7 @@ const contactHref = `${p}/contact`;
   <div class="mt-24 grid md:grid-cols-2 gap-12 lg:gap-20">
     {why.quotes.map((q: any) => (
       <figure class="m-0" data-reveal>
-        <img src={q.img} alt="" class="img-shadow w-full max-w-sm h-auto" loading="lazy" />
+        <Media src={q.img} alt="" class="img-shadow w-full max-w-sm h-auto" />
         <blockquote class="m-0 mt-8 font-semibold text-xl md:text-2xl leading-relaxed" style="white-space:pre-line">{q.q}</blockquote>
         <figcaption class="copy-sm opacity-80 mt-5" style="white-space:pre-line">{q.by}</figcaption>
       </figure>
@@ -95,7 +96,7 @@ const contactHref = `${p}/contact`;
         <p class="text-accent text-lg tracking-[0.25em]" aria-hidden="true">★★★★★</p>
         <blockquote class="m-0 mt-5 copy-sm grow" style="white-space:pre-line">{t.q}</blockquote>
         <figcaption class="mt-7 flex items-center gap-3">
-          <img src={t.img} alt="" class="w-11 h-11 rounded-full object-cover" loading="lazy" />
+          <Media src={t.img} alt="" class="w-11 h-11 rounded-full object-cover" />
           <span class="text-sm leading-snug font-medium" style="white-space:pre-line">{t.by}</span>
         </figcaption>
       </figure>
@@ -105,7 +106,7 @@ const contactHref = `${p}/contact`;
     <video class="absolute inset-0 w-full h-full object-cover opacity-40" src="/media/pricing-marquee.mp4" poster="/media/pricing-marquee.jpg" autoplay loop muted playsinline></video>
     <div class="relative z-10">
       <p class="display text-[clamp(1.6rem,4.5vw,4rem)] max-w-4xl" style="line-height:1.08">{testimonials.midMarquee}</p>
-      <a href="/audit" target="_blank" class="cta-link text-base sm:text-xl mt-8" style="color:#a855f7">{testimonials.midCta}<Fragment set:html={arrow} /></a>
+      <a href="/audit" class="cta-link text-base sm:text-xl mt-8" style="color:#a855f7">{testimonials.midCta}<Fragment set:html={arrow} /></a>
     </div>
   </div>
 </section>
@@ -262,15 +263,15 @@ const contactHref = `${p}/contact`;
       <p class="copy-sm opacity-70">{ui.modalIntro}</p>
       <label class="flex flex-col gap-2">
         <span class="eyebrow">{ui.fullName} <em class="not-italic text-accent">*</em></span>
-        <input type="text" name="name" placeholder={ui.namePh} required class={inputCls} />
+        <input type="text" name="name" autocomplete="name" placeholder={ui.namePh} required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="eyebrow">{ui.company} <em class="not-italic text-accent">*</em></span>
-        <input type="text" name="company" placeholder={ui.companyPh} required class={inputCls} />
+        <input type="text" name="company" autocomplete="organization" placeholder={ui.companyPh} required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="eyebrow">{ui.email} <em class="not-italic text-accent">*</em></span>
-        <input type="email" name="email" placeholder={ui.emailPh} required class={inputCls} />
+        <input type="email" name="email" autocomplete="email" placeholder={ui.emailPh} required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="eyebrow">{ui.needs}</span>
@@ -278,11 +279,11 @@ const contactHref = `${p}/contact`;
       </label>
       <label class="flex items-center gap-3 cursor-pointer">
         <input type="checkbox" name="confirm" required class="w-4 h-4 accent-[#5E0ED7]" />
-        <span class="copy-sm">{ui.agree}</span>
+        <span class="copy-sm" set:html={ui.agree} />
       </label>
       <div class="flex items-center gap-4">
         <button type="submit" class="bg-accent text-white text-sm font-medium px-8 py-3.5 rounded-md border-0 cursor-pointer hover:opacity-80 transition-opacity">{m.submit}</button>
-        <button type="button" data-close class="eyebrow opacity-50 bg-transparent border-0 cursor-pointer">{ui.close}</button>
+        <button type="button" data-close class="eyebrow opacity-60 bg-transparent border-0 cursor-pointer">{ui.close}</button>
       </div>
     </form>
   </dialog>
@@ -291,6 +292,7 @@ const contactHref = `${p}/contact`;
 <style>
   @keyframes mqx { to { transform: translateX(-33.333%); } }
   .mq-row { animation: mqx 18s linear infinite; }
+  @media (prefers-reduced-motion: reduce) { .mq-row { animation: none; } }
   details summary::-webkit-details-marker { display: none; }
 </style>
 

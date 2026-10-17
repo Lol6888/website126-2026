@@ -14,8 +14,8 @@ Tell us about your product, your timeline, how you heard about us, and where you
 
 We read every message. So, thanks in advance for making it a good one.
 
-If you'd prefer, feel free to email our support team directly at: sofia_phan@126verse.com</p>
-      <a href="/about#carreer" target="_blank" class="fu cta-link label mt-8" style="animation-delay:0.6s">
+If you'd prefer, feel free to email our support team directly at: <a href="mailto:sofia_phan@126verse.com" class="text-accent underline underline-offset-2">sofia_phan@126verse.com</a></p>
+      <a href="/about#carreer" class="fu cta-link label mt-8" style="animation-delay:0.6s">
         Looking for a job?
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
       </a>
@@ -27,11 +27,11 @@ If you'd prefer, feel free to email our support team directly at: sofia_phan@126
       <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <label class="flex flex-col gap-2">
         <span class="label">Name <em class="not-italic text-accent">*</em></span>
-        <input type="text" name="name" placeholder="Enter your name" required class={inputCls} />
+        <input type="text" name="name" autocomplete="name" placeholder="Enter your name" required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="label">Email <em class="not-italic text-accent">*</em></span>
-        <input type="email" name="email" placeholder="Email Address" required class={inputCls} />
+        <input type="email" name="email" autocomplete="email" placeholder="Email Address" required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="label">Service you're looking for <em class="not-italic text-accent">*</em></span>
@@ -78,7 +78,7 @@ If you'd prefer, feel free to email our support team directly at: sofia_phan@126
       </label>
       <label class="flex items-center gap-3 cursor-pointer">
         <input type="checkbox" name="confirm" required class="w-4 h-4 accent-[#5E0ED7]" />
-        <span class="label">I agree to the Privacy Policy.</span>
+        <span class="label">I agree to the <a href="/privacy" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-accent">Privacy Policy</a>.</span>
       </label>
       <button type="submit" class="self-start bg-ink text-white label !text-[13px] px-12 py-4 border-0 cursor-pointer hover:bg-accent transition-colors">Send</button>
     </form>

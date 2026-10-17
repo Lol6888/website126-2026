@@ -84,25 +84,25 @@ Valued at $3,000, this audit helps you identify positioning gaps, growth opportu
         <div class="mt-6 flex flex-col gap-6">
           <label class="flex flex-col gap-2">
             <span class="label">Full Name <em class="not-italic text-accent">*</em></span>
-            <input type="text" name="full_name" required class={inputCls} />
+            <input type="text" name="full_name" autocomplete="name" required class={inputCls} />
           </label>
           <label class="flex flex-col gap-2">
             <span class="label">Work Email <em class="not-italic text-accent">*</em></span>
-            <input type="email" name="work_email" required class={inputCls} />
+            <input type="email" name="work_email" autocomplete="email" required class={inputCls} />
           </label>
           <label class="flex flex-col gap-2">
             <span class="label">Company Name <em class="not-italic text-accent">*</em></span>
-            <input type="text" name="company_name" required class={inputCls} />
+            <input type="text" name="company_name" autocomplete="organization" required class={inputCls} />
           </label>
           <label class="flex flex-col gap-2">
             <span class="label">Company Website (optional)</span>
-            <input type="text" name="company_website" class={inputCls} />
+            <input type="text" name="company_website" autocomplete="url" class={inputCls} />
           </label>
         </div>
       </div>
 
       <button type="submit" class="self-start bg-accent text-white label !text-[13px] px-12 py-4 border-0 cursor-pointer hover:opacity-80 transition-opacity">Get My Free Brand Audit Report</button>
-      <p class="label opacity-50">Your responses are confidential and used solely to provide personalized insights. We never share your data with third parties.</p>
+      <p class="label opacity-60">Your responses are confidential and used solely to provide personalized insights. We never share your data with third parties.</p>
     </form>
   </section>
 </Base>

@@ -15,8 +15,8 @@ Hãy cho chúng tôi biết về sản phẩm, kế hoạch thời gian của b�
 Chúng tôi đọc mọi tin nhắn và phản hồi.
 Cám ơn bạn vì sự tin tưởng của bạn cho việc liên hệ!
 
-Nếu cần hỗ trợ cụ thể hơn bạn có thể email đến: Sofia_phan@126verse.com</p>
-      <a href="/vi/about#carreer" target="_blank" class="fu cta-link label mt-8" style="animation-delay:0.6s">
+Nếu cần hỗ trợ cụ thể hơn bạn có thể email đến: <a href="mailto:sofia_phan@126verse.com" class="text-accent underline underline-offset-2">sofia_phan@126verse.com</a></p>
+      <a href="/vi/about#carreer" class="fu cta-link label mt-8" style="animation-delay:0.6s">
         Bạn đang tìm việc ư?
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
       </a>
@@ -28,11 +28,11 @@ Nếu cần hỗ trợ cụ thể hơn bạn có thể email đến: Sofia_phan@
       <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <label class="flex flex-col gap-2">
         <span class="label">Tên của bạn <em class="not-italic text-accent">*</em></span>
-        <input type="text" name="name" placeholder="Nhập tên của bạn" required class={inputCls} />
+        <input type="text" name="name" autocomplete="name" placeholder="Nhập tên của bạn" required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="label">Email <em class="not-italic text-accent">*</em></span>
-        <input type="email" name="email" placeholder="Email Address" required class={inputCls} />
+        <input type="email" name="email" autocomplete="email" placeholder="Địa chỉ email" required class={inputCls} />
       </label>
       <label class="flex flex-col gap-2">
         <span class="label">Bạn biết đến chúng tôi từ đâu?</span>
@@ -41,7 +41,7 @@ Nếu cần hỗ trợ cụ thể hơn bạn có thể email đến: Sofia_phan@
       <label class="flex flex-col gap-2">
         <span class="label">Công ty / dự án của bạn đang ở giai đoạn nào? <em class="not-italic text-accent">*</em></span>
         <select name="stage" required class={inputCls}>
-          <option value="">Select one</option>
+          <option value="">Chọn một</option>
           <option>Early stage startup</option>
           <option>Mid stage startup</option>
           <option>Late stage startup</option>
@@ -50,11 +50,11 @@ Nếu cần hỗ trợ cụ thể hơn bạn có thể email đến: Sofia_phan@
       </label>
       <label class="flex flex-col gap-2">
         <span class="label">Lời nhắn <em class="not-italic text-accent">*</em></span>
-        <textarea name="message" rows="5" placeholder="Your message here" required class="border border-black/40 bg-transparent p-3 text-base focus:outline-none focus:border-accent"></textarea>
+        <textarea name="message" rows="5" placeholder="Nội dung tin nhắn" required class="border border-black/40 bg-transparent p-3 text-base focus:outline-none focus:border-accent"></textarea>
       </label>
       <label class="flex items-center gap-3 cursor-pointer">
         <input type="checkbox" name="confirm" required class="w-4 h-4 accent-[#5E0ED7]" />
-        <span class="label">Tôi đã đọc và đồng ý về các điều khoản.</span>
+        <span class="label">Tôi đã đọc và đồng ý về các <a href="/vi/privacy" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-accent">điều khoản</a>.</span>
       </label>
       <button type="submit" class="self-start bg-ink text-white label !text-[13px] px-12 py-4 border-0 cursor-pointer hover:bg-accent transition-colors">Gửi</button>
     </form>

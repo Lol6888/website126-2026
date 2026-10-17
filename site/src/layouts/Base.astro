@@ -40,6 +40,7 @@ const ogImage = new URL(image, site).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
     <title>{title}</title>
     <meta name="description" content={desc} />
     {noindex && <meta name="robots" content="noindex" />}
@@ -131,13 +132,13 @@ const ogImage = new URL(image, site).href;
         ? {
             sending: 'Đang gửi…',
             ok: 'Cảm ơn bạn! Chúng tôi đã nhận được thông tin và sẽ phản hồi sớm nhất.',
-            err: 'Rất tiếc, gửi chưa thành công. Vui lòng thử lại hoặc email tới 126verse@gmail.com.',
+            err: 'Rất tiếc, gửi chưa thành công. Vui lòng thử lại hoặc email tới sofia_phan@126verse.com.',
             big: 'Tổng dung lượng file đính kèm vượt quá 4MB. Vui lòng nén file hoặc gửi link (Google Drive, Dropbox…).',
           }
         : {
             sending: 'Sending…',
             ok: "Thank you! We've received your message and will be in touch shortly.",
-            err: 'Sorry, something went wrong. Please try again or email 126verse@gmail.com.',
+            err: 'Sorry, something went wrong. Please try again or email sofia_phan@126verse.com.',
             big: 'Attachments exceed 4MB in total. Please compress your files or share a link (Google Drive, Dropbox…).',
           };
       // Vercel giới hạn body request 4.5MB — chặn trước ở client để báo lỗi rõ ràng.
