@@ -1,0 +1,38 @@
+---
+// Ảnh hoặc video (GIF nặng đã chuyển sang .mp4 + poster .jpg cùng tên).
+// - width/height đọc từ tên file s-{w}x{h}_… để trình duyệt giữ chỗ, tránh giật layout.
+// - Video không autoplay sẵn: Base.astro chỉ phát khi cuộn tới (và không phát nếu prefers-reduced-motion).
+interface Props {
+  src: string;
+  alt?: string;
+  class?: string;
+  style?: string;
+  loading?: 'eager' | 'lazy';
+}
+const { src, alt = '', class: cls, style, loading = 'lazy' } = Astro.props;
+const m = src.match(/s-(\d+)x(\d+)/);
+const w = m ? +m[1] : undefined;
+const h = m ? +m[2] : undefined;
+const isVideo = src.endsWith('.mp4');
+---
+
+{isVideo ? (
+  <video
+    src={src}
+    poster={src.replace(/\.mp4$/, '.jpg')}
+    class={cls}
+    style={style}
+    width={w}
+    height={h}
+    muted
+    loop
+    playsinline
+    preload={loading === 'eager' ? 'auto' : 'none'}
+    data-autoplay
+    role={alt ? 'img' : undefined}
+    aria-label={alt || undefined}
+    aria-hidden={alt ? undefined : 'true'}
+  ></video>
+) : (
+  <img src={src} alt={alt} class={cls} style={style} width={w} height={h} loading={loading} decoding="async" />
+)}

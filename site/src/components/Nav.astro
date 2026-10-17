@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 interface Props {
   lang?: 'en' | 'vi';
   alt?: string; // đường dẫn trang tương ứng ở ngôn ngữ còn lại
@@ -24,11 +26,8 @@ const links =
 ---
 
 <nav class="flex items-center justify-between px-5 sm:px-8 md:px-12 py-4 md:py-5">
-  <a href={p + '/'} class="fd flex items-center gap-3" style="animation-delay:0s" aria-label="126VERSE">
-    <span class="w-8 h-8 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
-      <span class="w-2.5 h-2.5 rounded-full bg-accent block"></span>
-    </span>
-    <span class="label !text-[13px]">126VERSE<sup class="text-accent">®</sup></span>
+  <a href={p + '/'} class="fd flex items-center" style="animation-delay:0s" aria-label={lang === 'vi' ? '126Verse – Trang chủ' : '126Verse – Home'}>
+    <Logo class="h-8 md:h-9 w-auto" />
   </a>
 
   <div class="hidden md:flex gap-8 lg:gap-10">

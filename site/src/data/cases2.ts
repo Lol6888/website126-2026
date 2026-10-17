@@ -12,7 +12,7 @@ export const cases2: CaseStudy[] = [
     pageTitle: 'Mars Cats Voyage | 126Verse',
     dark: true,
     meta: { typeLabel: 'Project Type', type: 'Creative, hand-draw', stageLabel: 'Stage', stage: 'Partner', deliverLabel: 'Deliverables', deliver: 'NFTs design' },
-    hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.gif'), alt: 'Mars Cats Voyage' }],
+    hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
     sections: [
       { label: 'Introduction', lead: 'Our team was brought together to create the Mars Alien Cats collection - one of six Mars Cats Voyage collections.' },
       { text: 'Mars Cats Voyage Collection :\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
@@ -32,7 +32,7 @@ export const cases2: CaseStudy[] = [
         cols: 1,
       },
       { label: 'Every idea in sight holds potential.', lead: 'MCV aims for an extensively detailed collection with distinctiveness among each NFT. Achieving creativity for such a vast array demands the collective high imagination of each member and meticulous calculation of the required layers for every NFT. This ensures a satisfying collection delivered within the shortest timeframe possible.' },
-      { images: [{ src: A('s-1152x648_35c807f3-679b-46f8-8c3f-0dae764a1590.gif') }], cols: 1 },
+      { images: [{ src: A('s-1152x648_35c807f3-679b-46f8-8c3f-0dae764a1590.mp4') }], cols: 1 },
       {
         images: [
           { src: A('s-285x657_v-fs_webp_dfb88da1-49da-4956-96a3-2c8355b858a0.png') },
@@ -64,7 +64,7 @@ export const cases2: CaseStudy[] = [
     pageTitle: 'Mars Cats Voyage | 126Verse',
     dark: true,
     meta: { typeLabel: 'Loại dự án', type: 'Sáng tạo, vẽ tay', stageLabel: 'Vai trò', stage: 'Nhóm thiết kế mở rộng', deliverLabel: 'Bàn giao', deliver: 'Bộ sưu tập NFTs' },
-    hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.gif'), alt: 'Mars Cats Voyage' }],
+    hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
     sections: [
       { label: 'Bối cảnh', lead: 'Nhóm chúng tôi đã được hợp tác để tạo ra bộ sưu tập Mars Alien Cats - là một trong sáu bộ sưu tập của Mars Cats Voyage.' },
       { text: 'Bộ sưu tập Mars Cats Voyage :\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
@@ -84,7 +84,7 @@ export const cases2: CaseStudy[] = [
         cols: 1,
       },
       { label: 'Mọi thứ trước mắt đều là một ý tưởng tốt', lead: 'MCV muốn 1 bộ sưu tập thật chi tiết và tính độc lập giữa mỗi NFT, nên tính sáng tạo cho số lượng lớn NFT như vậy đòi hỏi khả năng tưởng tượng cao của mỗi thành viên và tính toán cẩn thận số lượng layer cần có trên mỗi NFT để có được bộ sưu tập ưng ý với thời gian hoàn thành sớm nhất.' },
-      { images: [{ src: A('s-1152x648_35c807f3-679b-46f8-8c3f-0dae764a1590.gif') }], cols: 1 },
+      { images: [{ src: A('s-1152x648_35c807f3-679b-46f8-8c3f-0dae764a1590.mp4') }], cols: 1 },
       {
         images: [
           { src: A('s-285x657_v-fs_webp_dfb88da1-49da-4956-96a3-2c8355b858a0.png') },
@@ -115,7 +115,7 @@ export const cases2: CaseStudy[] = [
     name: 'Knowledge',
     pageTitle: 'Knowlegd JP | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Improve UI-UX', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX design and planing' },
-    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.gif'), alt: 'Knowledge' }],
+    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge' }],
     sections: [
       { label: 'Introduction', lead: 'KNOWLEDGE wanted to find a way to create a fresh look that truly reflected its brand values. Their goal is to improve the image and enhance the user experience in line with these values.' },
       { text: "KNOWLEDGE is a web application empowering users to create, write, read, and purchase books, while also providing a platform for selling their own literary creations. The previous iteration of the product was criticized for its challenging interface, inefficient image processing, and subpar content delivery, failing to showcase the true value of authors' works." },
@@ -191,7 +191,7 @@ export const cases2: CaseStudy[] = [
     name: 'Knowledge',
     pageTitle: 'Knowlegd JP | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Cải thiện UI UX', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Bản thiết kế UI UX, Kế hoạch định hướng hình ảnh mới' },
-    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.gif'), alt: 'Knowledge' }],
+    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge' }],
     sections: [
       { label: 'Bối cảnh', lead: 'KNOWLEDGE muốn mang đến một giao diện mới phản ánh đúng giá trị thương hiệu của mình, họ muốn thiết kế lại hình ảnh và trải nghiệm người dùng của mình cho phù hợp.' },
       { text: 'KNOWLEDGE là một ứng dụng web, nơi mọi người có thể sáng tác, viết sách, đọc - mua tác phẩm của người khác cũng như bán các tác phẩm của chính mình. Sản phẩm trước đó được biết đến với giao diện khó sử dụng, cách xử lý hình ảnh và truyền đạt nội dung không phản ánh đúng giá trị tác phẩm của tác giả.' },

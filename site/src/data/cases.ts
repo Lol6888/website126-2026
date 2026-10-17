@@ -88,7 +88,7 @@ export const cases: CaseStudy[] = [
           { label: 'Persistence', text: 'Yamaha Music hosts annual events, complemented by fresh promotions, workshops, and support initiatives for franchise partners. Our commitment is to remain steadfast, consistently refreshing designs with creative flair that aligns seamlessly with Yamaha Music\'s "Make Waves" commitment.' },
         ],
       },
-      { images: [{ src: A('s-1152x648_58eae38e-6b52-46b7-9a6c-ffbfbbf10f71.gif') }], cols: 1 },
+      { images: [{ src: A('s-1152x648_58eae38e-6b52-46b7-9a6c-ffbfbbf10f71.mp4') }], cols: 1 },
     ],
     next: { label: 'Next case study', name: 'DAESANG', href: '/work/daesang', img: A('s-1000x1000_v-fs_webp_d837f0bf-8686-46ab-92df-a94d59a68539.png') },
   },
@@ -147,7 +147,7 @@ export const cases: CaseStudy[] = [
           { label: 'Tính bền bỉ', text: 'Những sự kiện của Yamaha Music diễn ra mang tính thường niên, cùng với các chương trình khuyến mãi mới, workshop và các hoạt động hỗ trợ cho đối tác nhượng quyền. Chúng tôi luôn cần giữ tập trung và cập nhật liên tục các thiết kế mới đi kèm sáng tạo đúng với lời hứa “Make Waves” của Yamaha Music.' },
         ],
       },
-      { images: [{ src: A('s-1152x648_58eae38e-6b52-46b7-9a6c-ffbfbbf10f71.gif') }], cols: 1 },
+      { images: [{ src: A('s-1152x648_58eae38e-6b52-46b7-9a6c-ffbfbbf10f71.mp4') }], cols: 1 },
     ],
     next: { label: 'Tiếp theo', name: 'DAESANG', href: '/vi/work/daesang', img: A('s-1000x1000_v-fs_webp_d837f0bf-8686-46ab-92df-a94d59a68539.png') },
   },
@@ -158,7 +158,7 @@ export const cases: CaseStudy[] = [
     name: 'DAESANG',
     pageTitle: 'DAESANG | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Brand marketing', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM products, Social media posts, Video ads' },
-    hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.gif'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
+    hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
       { label: 'Introduction', lead: "Daesang is revolutionizing the health food industry network by creating products and imagery that are readily accessible, promote engagement, and instill trust within the health-conscious community. We work hand in hand with DAESANG's internal teams, collaborating on product design, branding, strategy, and engineering to elevate their digital presence and service offerings." },
       { images: [{ src: A('s-2400x2400_v-frms_webp_fe5fb210-28bf-48b2-bb67-5336f10dd527.png'), alt: 'campaign 01' }], cols: 1 },
@@ -170,7 +170,7 @@ export const cases: CaseStudy[] = [
         images: [
           { src: A('s-1152x648_c6e00156-b010-4520-ad9b-fafdc182343b.gif') },
           { src: A('s-1152x648_c86d224f-b014-437c-a0db-8dbb0b531087.gif') },
-          { src: A('s-1152x648_603b9cb6-74c1-4b81-bd9f-469adbca1572.gif') },
+          { src: A('s-1152x648_603b9cb6-74c1-4b81-bd9f-469adbca1572.mp4') },
         ],
         cols: 3,
       },
@@ -183,7 +183,7 @@ export const cases: CaseStudy[] = [
         cols: 2,
       },
       { label: 'Nhiều sản phẩm, một thương hiệu', lead: "A versatile brand that seamlessly integrates all of DAESANG's services, offering customers a beautifully crafted, customer-centered wellness experience." },
-      { images: [{ src: A('s-800x800_0445dacb-1d07-471f-96cf-b22fcbb76a07.gif') }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png') }], cols: 2, bg: '#fff4e9' },
+      { images: [{ src: A('s-800x800_0445dacb-1d07-471f-96cf-b22fcbb76a07.mp4') }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png') }], cols: 2, bg: '#fff4e9' },
       {
         title: 'Expand & Share',
         text: "Intending to accompany users' health, DAESANG always tries to be a strategic partner of sports activities and organizations - the image of exercise and health!\n\nWe went along and designed the milestones. Always ensure the brand's image and respect for partners - something that makes us always proud.",
@@ -207,7 +207,7 @@ export const cases: CaseStudy[] = [
       {
         title: "126Verse's approach",
         text: 'All images for the communication plan are detailed in terms of the emotions of the users of the product itself, hand sketches will have to be approved before finalization.\n\nIn this way, we always complete the work smoothly and on schedule.',
-        images: [{ src: A('s-800x800_b8a9b78a-9620-4c2d-aeec-c048c142f322.gif') }],
+        images: [{ src: A('s-800x800_b8a9b78a-9620-4c2d-aeec-c048c142f322.mp4') }],
         cols: 1,
         bg: 'rgba(255, 237, 157, 0.47)',
       },
@@ -232,7 +232,7 @@ export const cases: CaseStudy[] = [
     name: 'DAESANG',
     pageTitle: 'DAESANG | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Các sản phẩm POSM, Social post, Video quảng cáo' },
-    hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.gif'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
+    hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
       { label: 'Bối cảnh', lead: 'Daesang đang cách mạng hóa ngành thực phẩm sức khỏe bằng cách xây dựng sản phẩm và hình ảnh dễ tiếp cận, mang lại sự tác động và lòng tin với cộng đồng yêu sức khỏe. Chúng tôi đã cộng tác chặt chẽ với các nhóm nội bộ của Daesang về thiết kế sản phẩm, thương hiệu, chiến lược và kỹ thuật để nâng cao hình ảnh và dịch vụ kỹ thuật số của họ.' },
       { images: [{ src: A('s-2400x2400_v-frms_webp_fe5fb210-28bf-48b2-bb67-5336f10dd527.png'), alt: 'campaign 01' }], cols: 1 },
@@ -244,7 +244,7 @@ export const cases: CaseStudy[] = [
         images: [
           { src: A('s-1152x648_c6e00156-b010-4520-ad9b-fafdc182343b.gif') },
           { src: A('s-1152x648_c86d224f-b014-437c-a0db-8dbb0b531087.gif') },
-          { src: A('s-1152x648_603b9cb6-74c1-4b81-bd9f-469adbca1572.gif') },
+          { src: A('s-1152x648_603b9cb6-74c1-4b81-bd9f-469adbca1572.mp4') },
         ],
         cols: 3,
       },
@@ -257,7 +257,7 @@ export const cases: CaseStudy[] = [
         cols: 2,
       },
       { label: 'Nhiều sản phẩm, một thương hiệu', lead: 'Một thương hiệu linh hoạt tập hợp tất cả các dịch vụ của Daesang thành một trải nghiệm đẹp đẽ, lấy sức khỏe khách hàng làm trung tâm.' },
-      { images: [{ src: A('s-800x800_0445dacb-1d07-471f-96cf-b22fcbb76a07.gif') }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png') }], cols: 2, bg: '#fff4e9' },
+      { images: [{ src: A('s-800x800_0445dacb-1d07-471f-96cf-b22fcbb76a07.mp4') }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png') }], cols: 2, bg: '#fff4e9' },
       {
         title: 'Mở rộng và Chia sẽ',
         text: 'Với mục tiêu đồng hành cùng sức khỏe của người dùng, Daesang luôn cố gắng là đối tác chiến lược của các hoạt động, tổ chức thể thao - hình ảnh của sự tập luyện và sức khỏe!\n\nChúng tôi đã đi cùng và thiết kế các cột mốc quan trọng. Luôn đảm bảo tính hình ảnh của thương hiệu và tôn trọng đối tác - điều làm chúng tôi luôn tự hào.',
@@ -281,7 +281,7 @@ export const cases: CaseStudy[] = [
       {
         title: 'Cách tiếp cận của 126Verse',
         text: 'Tất cả các hình ảnh cho kế hoạch truyền thông đều được chi tiết về mặt cảm xúc của người dùng chính sản phẩm đó, các bản phác thảo bằng tay sẽ phải được thông qua trước khi hoàn thiện.\n\nCùng cách này chúng tôi luôn hoàn thành công việc 1 cách suôn sẻ và đúng dự định.',
-        images: [{ src: A('s-800x800_b8a9b78a-9620-4c2d-aeec-c048c142f322.gif') }],
+        images: [{ src: A('s-800x800_b8a9b78a-9620-4c2d-aeec-c048c142f322.mp4') }],
         cols: 1,
         bg: 'rgba(255, 237, 157, 0.46)',
       },

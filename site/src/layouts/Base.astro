@@ -104,12 +104,26 @@ const ogImage = new URL(image, site).href;
       document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
 
       // Tôn trọng giảm chuyển động: dừng video nền autoplay
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
         document.querySelectorAll('video[autoplay]').forEach((v) => {
           v.removeAttribute('autoplay');
           v.pause();
         });
       }
+      // Video thay GIF (components/Media.astro): chỉ tải & phát khi gần vào màn hình.
+      // Khai báo ở cấp module để observer không bị garbage-collect.
+      const vio = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            const v = e.target as HTMLVideoElement;
+            if (e.isIntersecting) v.play().catch(() => {});
+            else v.pause();
+          }
+        },
+        { rootMargin: '200px 0px' }
+      );
+      if (!reduceMotion) document.querySelectorAll('video[data-autoplay]').forEach((v) => vio.observe(v));
 
       // ─── Gửi form qua /api/submit (không tải lại trang) ──────────────────
       const isVI = document.documentElement.lang === 'vi';

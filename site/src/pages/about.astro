@@ -1,4 +1,5 @@
 ---
+import Media from '../components/Media.astro';
 import Base from '../layouts/Base.astro';
 
 const stats = [
@@ -17,11 +18,11 @@ const logos = [
 ];
 
 const gallery = [
-  '/img/a/s-1152x648_18da1484-842f-477e-ab1b-bff908670989.gif',
+  '/img/a/s-1152x648_18da1484-842f-477e-ab1b-bff908670989.mp4',
   '/img/a/s-2400x1600_v-frms_webp_08dbed17-57c5-4e3f-847e-de1e690c0f8c.jpg',
-  '/img/a/s-1152x648_b7ee7941-baee-45af-ac45-d342490898a5.gif',
+  '/img/a/s-1152x648_b7ee7941-baee-45af-ac45-d342490898a5.mp4',
   '/img/a/s-1604x2400_v-frms_webp_4be14636-603b-45e3-a026-73ba0de2a718.jpg',
-  '/img/a/s-1152x648_e9008ef6-be1f-40e8-a59b-c77d23dfec34.gif',
+  '/img/a/s-1152x648_e9008ef6-be1f-40e8-a59b-c77d23dfec34.mp4',
   '/img/a/s-2400x1600_v-frms_webp_2e704a1f-7f96-45fb-b28f-cbb55fb31c36.jpg',
 ];
 
@@ -89,7 +90,7 @@ const roles = [
     </div>
     <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4" data-reveal>
       {gallery.map((g) => (
-        <img src={g} alt="" class="img-shadow w-full h-48 md:h-64 object-cover" loading="lazy" />
+        <Media src={g} class="img-shadow w-full h-48 md:h-64 object-cover" />
       ))}
     </div>
   </section>

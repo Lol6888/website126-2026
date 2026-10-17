@@ -37,7 +37,7 @@ const contactHref = `${p}/contact`;
 <!-- HERO: dải video phía trên, tiêu đề trên nền đen phía dưới -->
 <section class="bg-ink text-white">
   <div class="relative w-full overflow-hidden h-[42vh] sm:h-[48vh] lg:h-[58vh]">
-    <video class="absolute inset-0 w-full h-full object-cover" src="/media/pricing-hero.mp4" autoplay loop muted playsinline></video>
+    <video class="absolute inset-0 w-full h-full object-cover" src="/media/pricing-hero.mp4" poster="/media/pricing-hero.jpg" autoplay loop muted playsinline></video>
   </div>
   <div class="px-5 sm:px-8 md:px-12 pt-12 md:pt-16 pb-16 md:pb-24">
     <p class="fu text-base md:text-lg leading-relaxed text-white/60 max-w-2xl" style="animation-delay:0.25s;white-space:pre-line">{hero.announce}</p>
@@ -102,7 +102,7 @@ const contactHref = `${p}/contact`;
     ))}
   </div>
   <div class="mt-20 bg-ink text-white rounded-lg p-10 md:p-16 relative overflow-hidden" data-reveal>
-    <video class="absolute inset-0 w-full h-full object-cover opacity-40" src="/media/pricing-marquee.mp4" autoplay loop muted playsinline></video>
+    <video class="absolute inset-0 w-full h-full object-cover opacity-40" src="/media/pricing-marquee.mp4" poster="/media/pricing-marquee.jpg" autoplay loop muted playsinline></video>
     <div class="relative z-10">
       <p class="display text-[clamp(1.6rem,4.5vw,4rem)] max-w-4xl" style="line-height:1.08">{testimonials.midMarquee}</p>
       <a href="/audit" target="_blank" class="cta-link text-base sm:text-xl mt-8" style="color:#a855f7">{testimonials.midCta}<Fragment set:html={arrow} /></a>

@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 // Menu overlay toàn màn — render ở cấp body (NGOÀI <header>) để position:fixed
 // không bị backdrop-filter của header tạo containing block làm hỏng.
 interface Props {
@@ -53,11 +54,8 @@ const hiring = lang === 'vi'
 
 <div id="nav-menu" class="hidden fixed inset-0 z-[60] bg-white flex-col overflow-y-auto" aria-hidden="true">
   <div class="flex items-center justify-between px-5 py-4 sm:px-8 md:px-12 md:py-5">
-    <a href={p + '/'} class="flex items-center gap-3" aria-label="126VERSE">
-      <span class="w-8 h-8 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
-        <span class="w-2.5 h-2.5 rounded-full bg-accent block"></span>
-      </span>
-      <span class="label !text-[13px]">126VERSE<sup class="text-accent">®</sup></span>
+    <a href={p + '/'} class="flex items-center text-ink" aria-label={lang === 'vi' ? '126Verse – Trang chủ' : '126Verse – Home'}>
+      <Logo class="h-8 md:h-9 w-auto" />
     </a>
     <button id="nav-close" class="w-9 h-9 rounded-full bg-accent border-0 cursor-pointer text-white flex items-center justify-center" aria-label={lang === 'vi' ? 'Đóng menu' : 'Close menu'}>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>

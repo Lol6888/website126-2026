@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 interface Props {
   lang?: 'en' | 'vi';
   hideCta?: boolean;
@@ -71,6 +72,6 @@ const bottom =
         <a href={l.href} class={'label no-underline hover:text-accent transition-colors ' + (dark ? 'text-white' : 'text-ink')} target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noopener' : undefined}>{l.label}</a>
       ))}
     </div>
-    <p class="display text-[clamp(3rem,12vw,11rem)] mt-10 text-center select-none" aria-hidden="true">126VERSE</p>
+    <Logo variant="word" class="block w-full max-w-[1100px] h-auto mx-auto mt-12" />
   </section>
 </footer>
