@@ -11,7 +11,7 @@ export interface CaseSection {
   images?: CaseImage[];
   cols?: number;
   quote?: { quote: string; name: string; role: string; img?: string };
-  stats?: { num: string; label: string }[];
+  stats?: { num: string; label: string; prefix?: string }[]; // prefix mặc định "+"; "" cho điểm đánh giá
   iframe?: string;      // src của iframe nhúng
   iframeRatio?: string; // vd '16/9'
   bg?: string;          // nền section (giữ đúng màu bản cũ: #EEEEEE, #fff4e9, #fdf9f0, ...)
@@ -27,7 +27,7 @@ export interface CaseStudy {
   meta: { typeLabel: string; type: string; stageLabel: string; stage: string; deliverLabel: string; deliver: string };
   hero: CaseImage[];
   sections: CaseSection[];
-  next: { label: string; name: string; href: string; img: string };
+  next: { label: string }; // tên/link/ảnh case kế tiếp lấy từ data/caseList.ts
 }
 
 const A = (f: string) => '/img/a/' + f;
@@ -66,8 +66,8 @@ export const cases: CaseStudy[] = [
       },
       {
         images: [
-          { src: A('s-1699x2400_v-frms_webp_19b756c6-9bbb-444d-b3b0-d4b1840cf8c4.webp'), alt: 'seqtrak1' },
-          { src: A('s-1697x2400_v-frms_webp_fc802a97-f6cd-4ae8-a00e-a78e7fc8d41d.webp'), alt: 'seqtrak2' },
+          { src: A('s-1699x2400_v-frms_webp_19b756c6-9bbb-444d-b3b0-d4b1840cf8c4.webp') },
+          { src: A('s-1697x2400_v-frms_webp_fc802a97-f6cd-4ae8-a00e-a78e7fc8d41d.webp') },
           { src: A('s-900x400_8f7b2b97-d9b2-4033-bcb4-3040b448750b.gif'), alt: 'SEQTRAK animated banner' },
         ],
         cols: 3,
@@ -90,7 +90,7 @@ export const cases: CaseStudy[] = [
       },
       { images: [{ src: A('s-1152x648_58eae38e-6b52-46b7-9a6c-ffbfbbf10f71.mp4') }], cols: 1 },
     ],
-    next: { label: 'Next case study', name: 'DAESANG', href: '/work/daesang', img: A('s-1000x1000_v-fs_webp_d837f0bf-8686-46ab-92df-a94d59a68539.png') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ YAMAHA MUSIC — VI
   {
@@ -109,7 +109,7 @@ export const cases: CaseStudy[] = [
       { src: A('s-1221x2400_v-frms_webp_80387e47-bf0b-4354-a7fa-28a755c4ab47.webp') },
     ],
     sections: [
-      { label: 'Bối cảnh', lead: 'Tạo ra cầu nối hằng đầu cho người yêu âm nhạc, xứng đáng là một trong những thương hiệu mang tính biểu tượng. Chúng tôi hợp tác với Yamaha Music để nâng cao hình ảnh thương hiệu và xây dựng trải nghiệm kỹ thuật số của họ bằng tư duy và kinh nghiệm của mình.' },
+      { label: 'Bối cảnh', lead: 'Tạo ra cầu nối hàng đầu cho người yêu âm nhạc, xứng đáng là một trong những thương hiệu mang tính biểu tượng. Chúng tôi hợp tác với Yamaha Music để nâng cao hình ảnh thương hiệu và xây dựng trải nghiệm kỹ thuật số của họ bằng tư duy và kinh nghiệm của mình.' },
       { images: [{ src: A('s-2400x1600_v-frms_webp_5b56c433-d180-4e91-ae2b-cd774829d464.jpg') }], cols: 1 },
       { title: '"Make Waves" - Lời hứa thương hiệu mới của Yamaha', text: 'Khái niệm "Make Waves" ghi lại khoảnh khắc "bùng cháy" hào hứng, phấn khích của khách hàng. Yamaha muốn trở thành một công ty truyền cảm hứng cho niềm đam mê của khách hàng và giúp họ mạnh mẽ hơn để thể hiện cá tính, cảm xúc và sự sáng tạo của mình.' },
       { label: 'Tầm nhìn', lead: 'Tạo ra những hình ảnh đáp ứng kết hợp liền mạch giữa thương hiệu và thương mại.' },
@@ -119,15 +119,15 @@ export const cases: CaseStudy[] = [
           { src: A('s-704x145_v-fs_webp_51deaaa3-4bec-4347-a82d-9ef35f126062.png'), alt: 'SEQTRAK' },
           { src: A('s-665x236_v-fs_webp_f9a0db63-e43d-43a4-a9ea-6072dcafc179.png') },
           { src: A('s-666x235_v-fs_webp_dcd1c547-a03e-456a-a357-585f7be86406.png') },
-          { src: A('s-160x600_0c8a3fcb-cb5f-451a-a34d-abcde1f8576b.gif'), alt: 'SEQTRAK web banner' },
+          { src: A('s-160x600_0c8a3fcb-cb5f-451a-a34d-abcde1f8576b.gif'), alt: 'Banner web SEQTRAK' },
         ],
         cols: 4,
       },
       {
         images: [
-          { src: A('s-1699x2400_v-frms_webp_19b756c6-9bbb-444d-b3b0-d4b1840cf8c4.webp'), alt: 'seqtrak1' },
-          { src: A('s-1697x2400_v-frms_webp_fc802a97-f6cd-4ae8-a00e-a78e7fc8d41d.webp'), alt: 'seqtrak2' },
-          { src: A('s-900x400_8f7b2b97-d9b2-4033-bcb4-3040b448750b.gif'), alt: 'SEQTRAK animated banner' },
+          { src: A('s-1699x2400_v-frms_webp_19b756c6-9bbb-444d-b3b0-d4b1840cf8c4.webp') },
+          { src: A('s-1697x2400_v-frms_webp_fc802a97-f6cd-4ae8-a00e-a78e7fc8d41d.webp') },
+          { src: A('s-900x400_8f7b2b97-d9b2-4033-bcb4-3040b448750b.gif'), alt: 'Banner động SEQTRAK' },
         ],
         cols: 3,
       },
@@ -143,13 +143,13 @@ export const cases: CaseStudy[] = [
       {
         title: 'Đồng hành & Trách nhiệm',
         items: [
-          { label: 'Sự tác động', text: 'Trong quá trình hợp tác, chúng tôi đã giúp cung cấp hằng trăm thiết kế nổi bật cho Yamaha Music, tác động đến hàng triệu khách hàng tiềm năng và tạo ra hàng tỷ doanh thu.' },
+          { label: 'Sự tác động', text: 'Trong quá trình hợp tác, chúng tôi đã giúp cung cấp hàng trăm thiết kế nổi bật cho Yamaha Music, tác động đến hàng triệu khách hàng tiềm năng và tạo ra hàng tỷ doanh thu.' },
           { label: 'Tính bền bỉ', text: 'Những sự kiện của Yamaha Music diễn ra mang tính thường niên, cùng với các chương trình khuyến mãi mới, workshop và các hoạt động hỗ trợ cho đối tác nhượng quyền. Chúng tôi luôn cần giữ tập trung và cập nhật liên tục các thiết kế mới đi kèm sáng tạo đúng với lời hứa “Make Waves” của Yamaha Music.' },
         ],
       },
       { images: [{ src: A('s-1152x648_58eae38e-6b52-46b7-9a6c-ffbfbbf10f71.mp4') }], cols: 1 },
     ],
-    next: { label: 'Tiếp theo', name: 'DAESANG', href: '/vi/work/daesang', img: A('s-1000x1000_v-fs_webp_d837f0bf-8686-46ab-92df-a94d59a68539.png') },
+    next: { label: 'Tiếp theo' },
   },
   // ============================================================ DAESANG — EN
   {
@@ -161,7 +161,7 @@ export const cases: CaseStudy[] = [
     hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
       { label: 'Introduction', lead: "Daesang is revolutionizing the health food industry network by creating products and imagery that are readily accessible, promote engagement, and instill trust within the health-conscious community. We work hand in hand with DAESANG's internal teams, collaborating on product design, branding, strategy, and engineering to elevate their digital presence and service offerings." },
-      { images: [{ src: A('s-2400x2400_v-frms_webp_fe5fb210-28bf-48b2-bb67-5336f10dd527.webp'), alt: 'campaign 01' }], cols: 1 },
+      { images: [{ src: A('s-2400x2400_v-frms_webp_fe5fb210-28bf-48b2-bb67-5336f10dd527.webp') }], cols: 1 },
       {
         title: 'The company fosters a bright future through a culture centered around healthy eating',
         text: "Established in 2002, Daesang Wellife has emerged as a prominent name in the healthcare product industry. What's less known is their unparalleled ability to facilitate self-care in the most convenient manner possible.",
@@ -182,7 +182,7 @@ export const cases: CaseStudy[] = [
         ],
         cols: 2,
       },
-      { label: 'Nhiều sản phẩm, một thương hiệu', lead: "A versatile brand that seamlessly integrates all of DAESANG's services, offering customers a beautifully crafted, customer-centered wellness experience." },
+      { label: 'Many products, one brand', lead: "A versatile brand that seamlessly integrates all of DAESANG's services, offering customers a beautifully crafted, customer-centered wellness experience." },
       { images: [{ src: A('s-800x800_0445dacb-1d07-471f-96cf-b22fcbb76a07.mp4') }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png') }], cols: 2, bg: '#fff4e9' },
       {
         title: 'Expand & Share',
@@ -223,7 +223,7 @@ export const cases: CaseStudy[] = [
         cols: 1,
       },
     ],
-    next: { label: 'Next case study', name: 'Mars Cats Voyage', href: '/work/mars-cats-voyage', img: A('s-643x471_v-fs_webp_188155c0-fa96-4b20-b860-5c94072f9d3d.png') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ DAESANG — VI
   {
@@ -235,10 +235,10 @@ export const cases: CaseStudy[] = [
     hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
       { label: 'Bối cảnh', lead: 'Daesang đang cách mạng hóa ngành thực phẩm sức khỏe bằng cách xây dựng sản phẩm và hình ảnh dễ tiếp cận, mang lại sự tác động và lòng tin với cộng đồng yêu sức khỏe. Chúng tôi đã cộng tác chặt chẽ với các nhóm nội bộ của Daesang về thiết kế sản phẩm, thương hiệu, chiến lược và kỹ thuật để nâng cao hình ảnh và dịch vụ kỹ thuật số của họ.' },
-      { images: [{ src: A('s-2400x2400_v-frms_webp_fe5fb210-28bf-48b2-bb67-5336f10dd527.webp'), alt: 'campaign 01' }], cols: 1 },
+      { images: [{ src: A('s-2400x2400_v-frms_webp_fe5fb210-28bf-48b2-bb67-5336f10dd527.webp') }], cols: 1 },
       {
         title: 'Công ty tạo ra một tương lai hạnh phúc với văn hóa thực phẩm lành mạnh',
-        text: 'Xuất hiện từ 2002, hiện nay Daesang Welllife là một trong những sản phẩm hàng đầu về chăm sóc sức khỏe. Điều bạn có thể chưa biết là chúng có thể giúp bạn chăm sóc bản thân bằng cách tiện lợi nhất.',
+        text: 'Xuất hiện từ 2002, hiện nay Daesang Wellife là một trong những sản phẩm hàng đầu về chăm sóc sức khỏe. Điều bạn có thể chưa biết là chúng có thể giúp bạn chăm sóc bản thân bằng cách tiện lợi nhất.',
       },
       {
         images: [
@@ -259,7 +259,7 @@ export const cases: CaseStudy[] = [
       { label: 'Nhiều sản phẩm, một thương hiệu', lead: 'Một thương hiệu linh hoạt tập hợp tất cả các dịch vụ của Daesang thành một trải nghiệm đẹp đẽ, lấy sức khỏe khách hàng làm trung tâm.' },
       { images: [{ src: A('s-800x800_0445dacb-1d07-471f-96cf-b22fcbb76a07.mp4') }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png') }], cols: 2, bg: '#fff4e9' },
       {
-        title: 'Mở rộng và Chia sẽ',
+        title: 'Mở rộng và Chia sẻ',
         text: 'Với mục tiêu đồng hành cùng sức khỏe của người dùng, Daesang luôn cố gắng là đối tác chiến lược của các hoạt động, tổ chức thể thao - hình ảnh của sự tập luyện và sức khỏe!\n\nChúng tôi đã đi cùng và thiết kế các cột mốc quan trọng. Luôn đảm bảo tính hình ảnh của thương hiệu và tôn trọng đối tác - điều làm chúng tôi luôn tự hào.',
       },
       {
@@ -292,11 +292,11 @@ export const cases: CaseStudy[] = [
       },
       {
         title: 'Kết quả lâu dài',
-        text: 'Với chất lượng đi kèm với sự tin tưởng. Một khi khách hàng bị thuyết phục về những lợi ích của lối sống sức khỏe, họ có thể coi Daesang wellife là công cụ trợ giúp họ trên hành trình của mình. Từ đó, vấn đề chỉ là làm nổi bật hình ảnh thương hiệu xuyên suốt để khuyến khích mọi người chuyển từ sự hiểu biết sang hành động bằng cách sử dụng sản phẩm của Daesang welllfie.',
+        text: 'Với chất lượng đi kèm với sự tin tưởng. Một khi khách hàng bị thuyết phục về những lợi ích của lối sống sức khỏe, họ có thể coi Daesang Wellife là công cụ trợ giúp họ trên hành trình của mình. Từ đó, vấn đề chỉ là làm nổi bật hình ảnh thương hiệu xuyên suốt để khuyến khích mọi người chuyển từ sự hiểu biết sang hành động bằng cách sử dụng sản phẩm của Daesang Wellife.',
         images: [{ src: A('s-500x500_f62e74d7-cfb9-42e3-bead-d1c87c02716d.mp4') }],
         cols: 1,
       },
     ],
-    next: { label: 'Tiếp theo', name: 'Mars Cats Voyage', href: '/vi/work/mars-cats-voyage', img: A('s-643x471_v-fs_webp_188155c0-fa96-4b20-b860-5c94072f9d3d.png') },
+    next: { label: 'Tiếp theo' },
   },
 ];

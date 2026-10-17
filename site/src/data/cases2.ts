@@ -15,13 +15,13 @@ export const cases2: CaseStudy[] = [
     hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
     sections: [
       { label: 'Introduction', lead: 'Our team was brought together to create the Mars Alien Cats collection - one of six Mars Cats Voyage collections.' },
-      { text: 'Mars Cats Voyage Collection :\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
+      { text: 'Mars Cats Voyage Collection:\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
       {
         images: [
-          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.webp'), alt: 'cat3' },
-          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.webp'), alt: 'cat2' },
+          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.webp') },
+          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.webp') },
           { src: A('s-720x720_v-fs_webp_dec173ab-8fb4-47a8-ad66-c6c5a0cae97d.webp') },
-          { src: A('s-500x500_webp_4a915d7c-be0d-4294-bd76-06cc766bedf5.png'), alt: 'catt' },
+          { src: A('s-500x500_webp_4a915d7c-be0d-4294-bd76-06cc766bedf5.png') },
         ],
         cols: 4,
       },
@@ -48,13 +48,13 @@ export const cases2: CaseStudy[] = [
       },
       {
         stats: [
-          { num: '22,1', label: 'Thousand followers on X' },
+          { num: '22.1', label: 'Thousand followers on X' },
           { num: '3,462', label: 'NFTs Owners' },
           { num: '2,954', label: 'ETH Total volume' },
         ],
       },
     ],
-    next: { label: 'Next case study', name: 'Knowlegd JP', href: '/work/knowledge-japan', img: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ MARS CATS VOYAGE — VI
   {
@@ -67,13 +67,13 @@ export const cases2: CaseStudy[] = [
     hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
     sections: [
       { label: 'Bối cảnh', lead: 'Nhóm chúng tôi đã được hợp tác để tạo ra bộ sưu tập Mars Alien Cats - là một trong sáu bộ sưu tập của Mars Cats Voyage.' },
-      { text: 'Bộ sưu tập Mars Cats Voyage :\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
+      { text: 'Bộ sưu tập Mars Cats Voyage:\n- OG Mars Cats\n- Mars Cats in Spacesuits\n- Mars Alien Cats\n- Mars Cats Specials\n- Mars Cats Collabs\n- MCV Honorary Members' },
       {
         images: [
-          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.webp'), alt: 'cat3' },
-          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.webp'), alt: 'cat2' },
+          { src: A('s-700x700_v-fs_webp_d7e7491e-078a-44c4-af57-e1df4793d9e1.webp') },
+          { src: A('s-700x700_v-fs_webp_afecadaf-2ff2-4c11-8d11-5a76d16e1104.webp') },
           { src: A('s-720x720_v-fs_webp_dec173ab-8fb4-47a8-ad66-c6c5a0cae97d.webp') },
-          { src: A('s-500x500_webp_4a915d7c-be0d-4294-bd76-06cc766bedf5.png'), alt: 'catt' },
+          { src: A('s-500x500_webp_4a915d7c-be0d-4294-bd76-06cc766bedf5.png') },
         ],
         cols: 4,
       },
@@ -101,21 +101,21 @@ export const cases2: CaseStudy[] = [
       {
         stats: [
           { num: '22,1', label: 'Nghìn người theo dõi trên X' },
-          { num: '3,462', label: 'Người sở hữu NFT' },
-          { num: '2,954', label: 'ETH giá trị giao dịch' },
+          { num: '3.462', label: 'Người sở hữu NFT' },
+          { num: '2.954', label: 'ETH giá trị giao dịch' },
         ],
       },
     ],
-    next: { label: 'Tiếp theo', name: 'Knowlegd JP', href: '/vi/work/knowledge-japan', img: A('s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp') },
+    next: { label: 'Tiếp theo' },
   },
   // ============================================================ KNOWLEDGE JAPAN — EN
   {
     slug: 'knowledge-japan',
     lang: 'en',
-    name: 'Knowledge',
-    pageTitle: 'Knowlegd JP | 126Verse',
+    name: 'Knowledge Japan',
+    pageTitle: 'Knowledge Japan | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Improve UI-UX', stageLabel: 'Stage', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX design and planing' },
-    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge' }],
+    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge Japan' }],
     sections: [
       { label: 'Introduction', lead: 'KNOWLEDGE wanted to find a way to create a fresh look that truly reflected its brand values. Their goal is to improve the image and enhance the user experience in line with these values.' },
       { text: "KNOWLEDGE is a web application empowering users to create, write, read, and purchase books, while also providing a platform for selling their own literary creations. The previous iteration of the product was criticized for its challenging interface, inefficient image processing, and subpar content delivery, failing to showcase the true value of authors' works." },
@@ -182,16 +182,16 @@ export const cases2: CaseStudy[] = [
         ],
       },
     ],
-    next: { label: 'Next case study', name: 'Cheer', href: '/work/cheer', img: A('s-936x936_v-fs_webp_3d487d9b-a7ab-43f5-ae80-4b8b065989f4.png') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ KNOWLEDGE JAPAN — VI
   {
     slug: 'knowledge-japan',
     lang: 'vi',
-    name: 'Knowledge',
-    pageTitle: 'Knowlegd JP | 126Verse',
+    name: 'Knowledge Japan',
+    pageTitle: 'Knowledge Japan | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Cải thiện UI UX', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Bản thiết kế UI UX, Kế hoạch định hướng hình ảnh mới' },
-    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge' }],
+    hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge Japan' }],
     sections: [
       { label: 'Bối cảnh', lead: 'KNOWLEDGE muốn mang đến một giao diện mới phản ánh đúng giá trị thương hiệu của mình, họ muốn thiết kế lại hình ảnh và trải nghiệm người dùng của mình cho phù hợp.' },
       { text: 'KNOWLEDGE là một ứng dụng web, nơi mọi người có thể sáng tác, viết sách, đọc - mua tác phẩm của người khác cũng như bán các tác phẩm của chính mình. Sản phẩm trước đó được biết đến với giao diện khó sử dụng, cách xử lý hình ảnh và truyền đạt nội dung không phản ánh đúng giá trị tác phẩm của tác giả.' },
@@ -252,12 +252,12 @@ export const cases2: CaseStudy[] = [
         cols: 4,
       },
       {
-        title: 'Nổ lực xứng đáng',
+        title: 'Nỗ lực xứng đáng',
         items: [
-          { label: 'Kết quả', text: 'Sau sự hợp tác của chúng tôi, Knowledge JP đã chứng kiến ​​sự tăng trưởng vượt bậc trong cả năm về cả người dùng và doanh thu. Có vẻ như khoản đầu tư của họ đã được đền đáp.' },
+          { label: 'Kết quả', text: 'Sau sự hợp tác của chúng tôi, Knowledge JP đã chứng kiến sự tăng trưởng vượt bậc qua từng năm về cả người dùng và doanh thu. Có vẻ như khoản đầu tư của họ đã được đền đáp.' },
         ],
       },
     ],
-    next: { label: 'Tiếp theo', name: 'Cheer', href: '/vi/work/cheer', img: A('s-936x936_v-fs_webp_3d487d9b-a7ab-43f5-ae80-4b8b065989f4.png') },
+    next: { label: 'Tiếp theo' },
   },
 ];

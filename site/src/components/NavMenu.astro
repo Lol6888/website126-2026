@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import { caseList } from '../data/caseList';
 // Menu overlay toàn màn — render ở cấp body (NGOÀI <header>) để position:fixed
 // không bị backdrop-filter của header tạo containing block làm hỏng.
 interface Props {
@@ -23,28 +24,10 @@ const links =
         { label: 'About Us', href: '/about' },
       ];
 
-const cases =
-  lang === 'vi'
-    ? [
-        { label: 'Web Design', href: '/work/web-design' },
-        { label: 'Human First Time', href: '/vi/work/human-first-time' },
-        { label: 'FamiPay', href: '/vi/work/famipay' },
-        { label: 'Knowlegd Japan', href: '/vi/work/knowledge-japan' },
-        { label: 'Mars Cats Voyage', href: '/vi/work/mars-cats-voyage' },
-        { label: 'CHEER', href: '/vi/work/cheer' },
-        { label: 'Daesang', href: '/vi/work/daesang' },
-        { label: 'Yamaha Music', href: '/vi/work/yamaha-music' },
-      ]
-    : [
-        { label: 'Web Design', href: '/work/web-design' },
-        { label: 'Human First Time', href: '/work/human-first-time' },
-        { label: 'FamiPay', href: '/work/famipay' },
-        { label: 'Knowlegd Japan', href: '/work/knowledge-japan' },
-        { label: 'Mars Cats Voyage', href: '/work/mars-cats-voyage' },
-        { label: 'CHEER', href: '/work/cheer' },
-        { label: 'Daesang', href: '/work/daesang' },
-        { label: 'Yamaha Music', href: '/work/yamaha-music' },
-      ];
+const cases = [
+  { label: 'Web Design', href: '/work/web-design' },
+  ...caseList(lang).map((c) => ({ label: c.name, href: c.href })),
+];
 
 const contact = lang === 'vi' ? { label: 'Liên hệ', href: '/vi/contact' } : { label: 'Get in Touch', href: '/contact' };
 const hiring = lang === 'vi'

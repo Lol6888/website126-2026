@@ -1,16 +1,11 @@
 ---
+import { caseList } from '../../data/caseList';
 import Media from '../../components/Media.astro';
 import Base from '../../layouts/Base.astro';
 
 const items = [
   { name: 'Web Design', tag: "Selected Websites We've Crafted", href: '/work/web-design', img: '/img/a/s-1231x884_v-fms_webp_c9d174ed-82ab-4aaa-91c1-b4164d885a4c.webp' },
-  { name: 'Yamaha Music', tag: 'Brand marketing', href: '/work/yamaha-music', img: '/img/a/s-960x540_v-fs_webp_64bac0da-d9f2-4c7e-859e-21167dffb7f0.jpg' },
-  { name: 'CHEER', tag: 'Application Design', href: '/work/cheer', img: '/img/a/s-936x936_v-fs_webp_3d487d9b-a7ab-43f5-ae80-4b8b065989f4.png' },
-  { name: 'Mars Cats Voyage', tag: 'Creative, hand-draw', href: '/work/mars-cats-voyage', img: '/img/a/s-643x471_v-fs_webp_188155c0-fa96-4b20-b860-5c94072f9d3d.png' },
-  { name: 'DAESANG', tag: 'Brand marketing', href: '/work/daesang', img: '/img/a/s-1000x1000_v-fs_webp_d837f0bf-8686-46ab-92df-a94d59a68539.png' },
-  { name: 'Human First Time', tag: 'Application Design', href: '/work/human-first-time', img: '/img/a/s-480x480_ade8ef34-d7e2-47f8-b833-563eb7bcbc96.gif' },
-  { name: 'FamiPay', tag: 'Application Design', href: '/work/famipay', img: '/img/a/s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.webp' },
-  { name: 'Knowledge Japan', tag: 'Improve UI-UX', href: '/work/knowledge-japan', img: '/img/a/s-1437x1019_v-fms_webp_800c7d6a-bc16-42be-9dce-8bd2d5b43d4d.webp' },
+  ...caseList('en').map((c) => ({ name: c.name, tag: c.type, href: c.href, img: c.img })),
 ];
 ---
 

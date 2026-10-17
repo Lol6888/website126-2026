@@ -6,6 +6,7 @@
 //   (kích thước thật đọc từ tên file s-{w}x{h}_...), căn giữa — gọn mà không cắt xén ảnh
 import type { CaseStudy, CaseSection } from '../data/cases';
 import Media from './Media.astro';
+import { nextCase } from '../data/caseList';
 
 interface Props { cs: CaseStudy }
 const { cs } = Astro.props;
@@ -26,6 +27,13 @@ const altFor = (s: CaseSection | null, i: number, total: number) => {
   const base = ctx ? `${cs.name} – ${ctx}` : cs.name;
   return total > 1 ? `${base} (${i + 1})` : base;
 };
+
+// logo = ảnh nhỏ dạng dải ngang (vd 415x176); ảnh vuông nhỏ (linh vật, icon minh hoạ) KHÔNG phải logo
+const isLogoDim = (d: { w: number; h: number } | null) => d != null && d.w < 600 && d.h < 400 && d.w / d.h >= 1.8;
+// không phóng ảnh to hơn kích thước gốc (tránh mờ)
+const capW = (d: { w: number; h: number } | null) => (d ? `max-width:min(100%, ${d.w}px)` : '');
+
+const nx = nextCase(cs.slug, cs.lang);
 
 const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.text || s.items);
 ---
@@ -60,7 +68,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
       >
         {cs.hero.map((im, i) => {
           const d = dim(im.src);
-          const isLogo = d != null && d.w < 600 && d.h < 400;
+          const isLogo = isLogoDim(d);
           return (
             <Media
               src={im.src}
@@ -78,13 +86,13 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
       {cs.hero.map((im, i) => {
         const d = dim(im.src);
         const ratio = d ? d.w / d.h : 1.6;
-        const isLogo = d != null && d.w < 600 && d.h < 400;
+        const isLogo = isLogoDim(d);
         return (
           <Media
             src={im.src}
             alt={im.alt ?? altFor(null, i, cs.hero.length)}
             class={isLogo ? 'h-10 md:h-12 w-auto object-contain' : ratio < 0.9 ? 'w-auto max-w-full object-contain' : 'w-full h-auto'}
-            style={!isLogo && ratio < 0.9 ? 'max-height:560px' : ''}
+            style={isLogo ? '' : ratio < 0.9 ? 'max-height:560px' : capW(d)}
             loading={i === 0 ? 'eager' : 'lazy'}
           />
         );
@@ -135,7 +143,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
       {s.images && (s.cols ?? 1) > 1 && (
         <div class={'flex flex-wrap items-center justify-center gap-4 md:gap-6 ' + (hasTextBefore(s) ? 'mt-10' : '')}>
           {s.images.map((im, i) => (
-            <Media src={im.src} alt={im.alt ?? altFor(s, i, s.images!.length)} class={rowH(s.cols) + ' w-auto max-w-full object-contain'} />
+            <Media src={im.src} alt={im.alt ?? altFor(s, i, s.images!.length)} class={rowH(s.cols) + ' w-auto max-w-full object-contain'} style={capW(dim(im.src))} />
           ))}
         </div>
       )}
@@ -157,7 +165,7 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
         <div class="flex flex-col">
           {s.stats.map((st, i) => (
             <div class={'py-8 md:py-10 flex items-baseline gap-6 md:gap-10 ' + (i > 0 ? 'hairline' : '')}>
-              <p class="text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-none m-0"><span class="num-accent">+</span>{st.num}</p>
+              <p class="text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-none m-0"><span class="num-accent">{st.prefix ?? '+'}</span>{st.num}</p>
               <p class="label opacity-60 m-0">{st.label}</p>
             </div>
           ))}
@@ -188,9 +196,9 @@ const hasTextBefore = (s: CaseSection) => !!(s.label || s.lead || s.title || s.t
   <!-- ===== NEXT CASE ===== -->
   <section class="px-5 sm:px-8 md:px-12 py-16 md:py-24 hairline" data-reveal>
     <p class="label opacity-60">{cs.next.label}</p>
-    <a href={cs.next.href} class={'group mt-8 grid grid-cols-[1fr_auto] md:grid-cols-[1fr_300px_auto] gap-6 md:gap-10 items-center no-underline ' + (cs.dark ? 'text-white' : 'text-ink')}>
-      <span class="display text-[clamp(1.8rem,6vw,5rem)] group-hover:text-accent transition-colors">{cs.next.name}</span>
-      <Media src={cs.next.img} alt={cs.next.name} class="img-shadow hidden md:block w-full h-44 object-cover" />
+    <a href={nx.href} class={'group mt-8 grid grid-cols-[1fr_auto] md:grid-cols-[1fr_300px_auto] gap-6 md:gap-10 items-center no-underline ' + (cs.dark ? 'text-white' : 'text-ink')}>
+      <span class="display text-[clamp(1.8rem,6vw,5rem)] group-hover:text-accent transition-colors">{nx.name}</span>
+      <Media src={nx.img} alt={nx.name} class="img-shadow hidden md:block w-full h-44 object-cover" />
       <svg class="w-8 h-8 md:w-12 md:h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
     </a>
   </section>

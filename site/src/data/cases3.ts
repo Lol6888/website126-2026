@@ -73,7 +73,7 @@ export const cases3: CaseStudy[] = [
         },
       },
     ],
-    next: { label: 'Next case study', name: 'Human First Time', href: '/work/human-first-time', img: A('s-480x480_ade8ef34-d7e2-47f8-b833-563eb7bcbc96.gif') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ CHEER — VI
   {
@@ -85,7 +85,7 @@ export const cases3: CaseStudy[] = [
     hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.webp'), alt: 'CHEER' }],
     sections: [
       { label: 'Bối cảnh', lead: 'CHEER yêu cầu chúng tôi có một chút khác thường. Thay vì yêu cầu chúng tôi giải quyết toàn bộ sản phẩm hoặc phụ trách một bộ tính năng xác định, họ muốn chúng tôi hoạt động như một phần mở rộng của nhóm thiết kế nội bộ của họ để có thể thử thách dẫn dắt suy nghĩ của họ và đưa ra những góc nhìn mới mẻ.' },
-      { text: 'Họ muốn Thiết kế đơn giản và khả năng hoạt động dễ hiểu giúp người dùng dễ dàng thực hiện mọi tác vụ.' },
+      { text: 'Họ muốn thiết kế đơn giản và khả năng hoạt động dễ hiểu giúp người dùng dễ dàng thực hiện mọi tác vụ.' },
       {
         images: [
           { src: A('s-376x808_v-fs_webp_654ef25f-bbb2-48a4-966c-381c6dd9bdeb.png') },
@@ -95,7 +95,7 @@ export const cases3: CaseStudy[] = [
         ],
         cols: 4,
       },
-      { label: 'Tầm nhìn', lead: 'Xuất phát từ việc muốn giúp các nhà đầu tư nội địa có thể dễ dàng thực hiện các giao dịch chứng khoáng Hoa Kỳ và quỹ ETF Hoa Kỳ thời gian thực cũng như các giao dịch nội địa với số tiền nhỏ nhất chỉ từ 500 yên.\n\nCHEER muốn phục vụ hầu hết các nhóm khách hàng từ những nhà nội trợ cho đến các nhà đầu tư chuyên nghiệp.' },
+      { label: 'Tầm nhìn', lead: 'Xuất phát từ việc muốn giúp các nhà đầu tư nội địa có thể dễ dàng thực hiện các giao dịch chứng khoán Hoa Kỳ và quỹ ETF Hoa Kỳ thời gian thực cũng như các giao dịch nội địa với số tiền nhỏ nhất chỉ từ 500 yên.\n\nCHEER muốn phục vụ hầu hết các nhóm khách hàng từ những nhà nội trợ cho đến các nhà đầu tư chuyên nghiệp.' },
       {
         images: [
           { src: A('s-1152x648_e9a9d481-8de8-4cee-880f-89ab5951721e.gif') },
@@ -106,7 +106,7 @@ export const cases3: CaseStudy[] = [
       },
       {
         title: 'Dễ dàng bắt đầu và dễ dàng tiếp tục',
-        text: 'Để tìm hiểu cốt lõi nguyên nhân khiến phần mềm giao dịch trở nên khó chịu và khó bắt đầu, chúng tôi đã yêu cầu bốn nhóm trọng điểm gồm các nhà tư vấn, nhà phân tích, doanh nhân và nhà thiết kế viết ra những khó khăn của họ. Từ thu thập này, chúng tôi biết được rằng mọi người không thất vọng về chức năng cốt lõi cũng như về tổng thể các bộ phận, mà chính là khả năng hiển thị trực quan, việc tối ưu hóa các tác vụ và tính nhất quán của ứng dụng.\n\nNếu muốn tạo ra sự chuyển đổi, chúng tôi phải nâng cấp các công cụ này quen thuộc theo cách phù hợp và khác biệt một cách mới mẻ theo những cách mang lại cảm giác trực quan và vô hình.',
+        text: 'Để tìm hiểu cốt lõi nguyên nhân khiến phần mềm giao dịch trở nên khó chịu và khó bắt đầu, chúng tôi đã yêu cầu bốn nhóm trọng điểm gồm các nhà tư vấn, nhà phân tích, doanh nhân và nhà thiết kế viết ra những khó khăn của họ. Từ thu thập này, chúng tôi biết được rằng mọi người không thất vọng về chức năng cốt lõi cũng như về tổng thể các bộ phận, mà chính là khả năng hiển thị trực quan, việc tối ưu hóa các tác vụ và tính nhất quán của ứng dụng.\n\nMuốn tạo ra sự chuyển đổi, chúng tôi phải tái hình dung những công cụ quen thuộc này theo cách vừa phù hợp vừa mới mẻ, khác biệt — để chúng mang lại cảm giác trực quan và liền mạch khi sử dụng.',
       },
       {
         images: [
@@ -137,14 +137,14 @@ export const cases3: CaseStudy[] = [
       },
       {
         quote: {
-          quote: '"Tôi đã học được rất nhiều điều về quy trình thiết kế sản phẩm đẳng cấp thông qua dự án của chúng tôi với 126VERSE "',
+          quote: '"Tôi đã học được rất nhiều điều về quy trình thiết kế sản phẩm đẳng cấp thông qua dự án của chúng tôi với 126VERSE."',
           name: 'Nobuyuki Kobayashi',
           role: 'Giám đốc đại diện và Chủ tịch CHEER Securities Inc.',
           img: A('s-800x800_367a1eb3-53c8-4f5f-a26c-0b462c56f9fe.mp4'),
         },
       },
     ],
-    next: { label: 'Tiếp theo', name: 'Human First Time', href: '/vi/work/human-first-time', img: A('s-480x480_ade8ef34-d7e2-47f8-b833-563eb7bcbc96.gif') },
+    next: { label: 'Tiếp theo' },
   },
   // ============================================================ H1T — EN
   {
@@ -195,7 +195,7 @@ export const cases3: CaseStudy[] = [
         },
       },
     ],
-    next: { label: 'Next case study', name: 'FamiPay', href: '/work/famipay', img: A('s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.webp') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ H1T — VI
   {
@@ -225,7 +225,7 @@ export const cases3: CaseStudy[] = [
       },
       {
         title: 'Mở đường mới cho nhu cầu mới',
-        text: 'Cách bạn làm việc và cả những người bạn làm việc cùng đã thay đổi nhanh chóng. Vậy nơi làm việc của bạn thì sao? Nhiều lúc suy nghĩ của bạn không nằm ở nơi làm việc hay thậm chí không có ở nhà. Nếu có thể thoát khỏi điều này, chúng ta sẽ có thể làm việc tự do hơn. Nó không bị ràng buộc bởi môi trường, không gian hay thời gian.\n\nCác bản thiết kế cũng được đảm bảo mang đến sự tinh gọn cho việc đặt chỗ, tinh thần thỏa mái vui vẻ tiếp cận được đặt lên hàng đầu.',
+        text: 'Cách bạn làm việc và cả những người bạn làm việc cùng đã thay đổi nhanh chóng. Vậy nơi làm việc của bạn thì sao? Nhiều lúc suy nghĩ của bạn không nằm ở nơi làm việc hay thậm chí không có ở nhà. Nếu có thể thoát khỏi điều này, chúng ta sẽ có thể làm việc tự do hơn. Nó không bị ràng buộc bởi môi trường, không gian hay thời gian.\n\nCác bản thiết kế cũng được đảm bảo mang đến sự tinh gọn cho việc đặt chỗ, tinh thần thoải mái vui vẻ tiếp cận được đặt lên hàng đầu.',
       },
       {
         images: [
@@ -235,18 +235,18 @@ export const cases3: CaseStudy[] = [
         ],
         cols: 3,
       },
-      { label: 'Tầm nhìn', lead: 'Không giống như các nền tảng đặt chỗ làm việc hiện có, H1T tập trung vào những gì mọi người có thể đạt được từ một nơi làm việc thỏa mái, năng lượng và tiện nghi. Không gian này sẽ tạo ra thời gian quý giá mới cho người làm việc.' },
+      { label: 'Tầm nhìn', lead: 'Không giống như các nền tảng đặt chỗ làm việc hiện có, H1T tập trung vào những gì mọi người có thể đạt được từ một nơi làm việc thoải mái, năng lượng và tiện nghi. Không gian này sẽ tạo ra thời gian quý giá mới cho người làm việc.' },
       { images: [{ src: A('s-1144x290_v-fs_webp_ac9d7e81-91f7-4d4b-b21f-fb6760b65802.jpg') }], cols: 1 },
       {
         quote: {
-          quote: '" Thật vui khi được làm việc với 126VERSE. Họ thực sự đam mê những gì họ làm và họ mang đến nhiều kinh nghiệm và kiến ​​thức chuyên môn. "',
+          quote: '" Thật vui khi được làm việc với 126VERSE. Họ thực sự đam mê những gì họ làm và họ mang đến nhiều kinh nghiệm và kiến thức chuyên môn. "',
           name: 'Yuki Sakai',
           role: 'Head of marketing department (H1T)',
           img: A('s-371x480_4be4e71c-df10-4764-97e2-1c14df714054.mp4'),
         },
       },
     ],
-    next: { label: 'Tiếp theo', name: 'FamiPay', href: '/vi/work/famipay', img: A('s-1051x765_v-fs_webp_0c4e4b8f-a20a-4451-bb09-587256a8c340.webp') },
+    next: { label: 'Tiếp theo' },
   },
   // ============================================================ FAMIPAY — EN
   {
@@ -301,7 +301,7 @@ export const cases3: CaseStudy[] = [
       {
         title: 'Design key steps as a navigational tool to establish expectations and guide users through their journey from discovery to coupon fulfillment.',
         images: [
-          { src: A('s-1920x1080_301a82ea-1c6f-4586-8a86-4e5deda1d615.webp'), alt: 'KV' },
+          { src: A('s-1920x1080_301a82ea-1c6f-4586-8a86-4e5deda1d615.webp') },
           { src: A('s-453x982_v-fs_webp_1e1e3bc7-aefb-4320-9265-bd20bd32c12f.png') },
           { src: A('s-452x978_v-fs_webp_c11eda79-d7d5-4c59-a0e1-c7b58d69c127.png') },
         ],
@@ -315,13 +315,13 @@ export const cases3: CaseStudy[] = [
       },
       {
         stats: [
-          { num: '5', label: 'Milion Downloads' },
-          { num: '4,3', label: 'point on Appstore and CHplay' },
+          { num: '5', label: 'Million Downloads' },
+          { num: '4.3', label: 'point on Appstore and CHplay', prefix: '' },
           { num: '63', label: 'Thousand reviews' },
         ],
       },
     ],
-    next: { label: 'Next case study', name: 'YAMAHA Music', href: '/work/yamaha-music', img: A('s-960x540_v-fs_webp_64bac0da-d9f2-4c7e-859e-21167dffb7f0.jpg') },
+    next: { label: 'Next case study' },
   },
   // ============================================================ FAMIPAY — VI
   {
@@ -332,7 +332,7 @@ export const cases3: CaseStudy[] = [
     meta: { typeLabel: 'Loại dự án', type: 'Ứng dụng di động', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-840x400_v-fs_webp_f524ecdf-b5f5-4b04-97ba-b88dc21b7a15.jpg'), alt: 'FamiPay' }, { src: A('s-240x240_webp_2ab18cb0-4bdd-448c-aaeb-5efe44cfcfea.png') }],
     sections: [
-      { label: 'Bối cảnh', lead: 'Chúng tôi hợp tác để cùng phát triển giao diện cho ứng dụng thanh toán FamiPay cho hơn 17.000 của hàng FamilyMart trên toàn quốc, các hiệu thuốc và các nhà bán lẻ đồ điện tử gia dụng trong khu vực. FamilyMart cần những gì tinh túy nhất của chúng tôi trong dự án này.' },
+      { label: 'Bối cảnh', lead: 'Chúng tôi hợp tác để cùng phát triển giao diện cho ứng dụng thanh toán FamiPay cho hơn 17.000 cửa hàng FamilyMart trên toàn quốc, các hiệu thuốc và các nhà bán lẻ đồ điện tử gia dụng trong khu vực. FamilyMart cần những gì tinh túy nhất của chúng tôi trong dự án này.' },
       {
         images: [
           { src: A('s-1060x795_v-fs_webp_f383385c-bc10-40f6-87b7-069f30814d12.jpg') },
@@ -344,7 +344,7 @@ export const cases3: CaseStudy[] = [
         bg: '#EEEEEE',
       },
       {
-        title: 'Chức năng chính ở FamiPay :',
+        title: 'Chức năng chính ở FamiPay:',
         text: '- Dịch vụ thanh toán trên điện thoại. Việc thanh toán có thể được thực hiện không chỉ tại FamilyMart mà còn tại các cửa hàng và cửa hàng trực tuyến khác.\n\n- Kiểm tra lịch sử mua hàng.\n\n- Các chức năng của phiếu giảm giá FamiPay, tích điểm.',
         images: [{ src: A('s-1051x765_v-fs_webp_a34296bc-8654-4a31-87ca-a17e97d0acd7.webp') }],
         cols: 1,
@@ -376,7 +376,7 @@ export const cases3: CaseStudy[] = [
       {
         title: 'Thiết kế các bước quan trọng như một công cụ điều hướng nhằm đặt ra kỳ vọng và hướng dẫn người thanh toán thực hiện kế hoạch của họ từ khi khám phá đến thực hiện đơn hàng với phiếu giảm giá.',
         images: [
-          { src: A('s-1920x1080_301a82ea-1c6f-4586-8a86-4e5deda1d615.webp'), alt: 'KV' },
+          { src: A('s-1920x1080_301a82ea-1c6f-4586-8a86-4e5deda1d615.webp') },
           { src: A('s-453x982_v-fs_webp_1e1e3bc7-aefb-4320-9265-bd20bd32c12f.png') },
           { src: A('s-452x978_v-fs_webp_c11eda79-d7d5-4c59-a0e1-c7b58d69c127.png') },
         ],
@@ -391,11 +391,11 @@ export const cases3: CaseStudy[] = [
       {
         stats: [
           { num: '5', label: 'Triệu lượt tải' },
-          { num: '4,3', label: 'Điểm đánh giá trên CHplay và Appstore' },
+          { num: '4,3', label: 'Điểm đánh giá trên CHplay và Appstore', prefix: '' },
           { num: '63', label: 'Nghìn lượt đánh giá' },
         ],
       },
     ],
-    next: { label: 'Tiếp theo', name: 'YAMAHA Music', href: '/vi/work/yamaha-music', img: A('s-960x540_v-fs_webp_64bac0da-d9f2-4c7e-859e-21167dffb7f0.jpg') },
+    next: { label: 'Tiếp theo' },
   },
 ];
