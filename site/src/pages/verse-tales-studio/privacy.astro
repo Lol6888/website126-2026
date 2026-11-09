@@ -1,0 +1,62 @@
+---
+// Privacy policy of the Verse Tales Studio app, written for Google's OAuth consent screen and the Google API
+// Services User Data Policy (what is accessed, why, where it is kept, Limited Use, how to revoke).
+import Base from '../../layouts/Base.astro';
+
+const sections = [
+  {
+    h: 'Effective date',
+    html: 'November 9, 2026.',
+  },
+  {
+    h: 'Who we are',
+    html: 'Verse Tales Studio (“the app”) is operated by Onetwentysix VERSE Ltd. (“126VERSE”). This policy covers the app and the Google user data it handles. The <a href="/privacy">126VERSE Privacy Policy</a> covers our website.',
+  },
+  {
+    h: 'Google user data the app accesses',
+    html: 'When an authorized 126VERSE operator signs in with Google, the app receives an OAuth access token and refresh token for the YouTube channel the operator selects. With the scopes <code>youtube.upload</code> and <code>youtube.force-ssl</code>, the app can upload videos to that channel and read and update the details of those videos: titles, descriptions, tags, thumbnails and captions. The app does not request or read the operator’s email, contacts, files, viewing history or any viewer’s personal data.',
+  },
+  {
+    h: 'How the data is used',
+    html: 'Only to publish and maintain Verse Tales videos on the channel: uploading videos as private with a scheduled publish time, setting their thumbnails, updating descriptions with links between related videos, and confirming which channel is connected. The data is not used for advertising, profiling or analytics.',
+  },
+  {
+    h: 'Storage and security',
+    html: 'The tokens are stored only on the computer that runs the app, in a local file of the operator’s user account. They are never sent to 126VERSE servers or to any third party. The app talks to Google only over encrypted HTTPS connections.',
+  },
+  {
+    h: 'Sharing',
+    html: '126VERSE does not sell, share or transfer Google user data to anyone.',
+  },
+  {
+    h: 'Limited Use',
+    html: 'Verse Tales Studio’s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.',
+  },
+  {
+    h: 'Retention and deletion',
+    html: 'The tokens are kept until the operator disconnects the app. Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>; deleting the app’s local token file removes all Google data the app stores.',
+  },
+  {
+    h: 'Changes',
+    html: 'We will post any change to this policy on this page and update the effective date.',
+  },
+  {
+    h: 'Contact',
+    html: '<a href="mailto:sofia_phan@126verse.com">sofia_phan@126verse.com</a>',
+  },
+];
+---
+
+<Base title="Verse Tales Studio Privacy Policy | 126Verse" description="How Verse Tales Studio, 126VERSE's internal YouTube publishing tool, accesses, uses, stores and protects Google user data." lang="en" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-16 max-w-4xl">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2rem,6vw,5.5rem)]" style="animation-delay:0.2s">Verse Tales Studio Privacy Policy</span></h1>
+    <div class="mt-12 prose-plain">
+      {sections.map((s) => (
+        <div data-reveal>
+          <h2>{s.h}</h2>
+          <p set:html={s.html} />
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

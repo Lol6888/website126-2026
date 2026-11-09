@@ -1,0 +1,38 @@
+---
+// Home page of the Verse Tales Studio app (126VERSE's internal tool that publishes to the Verse Tales YouTube
+// channel). Google's OAuth consent screen links here; the privacy policy is ./privacy.
+import Base from '../../layouts/Base.astro';
+
+const sections = [
+  {
+    h: 'What it is',
+    html: 'Verse Tales Studio is an internal production tool built and operated by Onetwentysix VERSE Ltd. (“126VERSE”) for its YouTube channel <a href="https://www.youtube.com/@VerseTalesToons">Verse Tales</a>. It turns researched, fact-checked true stories into short animated videos and schedules them on the channel.',
+  },
+  {
+    h: 'How it uses Google',
+    html: 'The tool signs in with Google only to manage the Verse Tales channel that 126VERSE owns. Through the YouTube Data API v3 it uploads videos as private with a scheduled publish time, sets their titles, descriptions, tags and thumbnails, and links related videos to each other. It does not access other channels, viewers’ data or any other Google service.',
+  },
+  {
+    h: 'Who can use it',
+    html: 'Verse Tales Studio is not offered to the public. Only 126VERSE staff who operate the Verse Tales channel sign in to it.',
+  },
+  {
+    h: 'Privacy and contact',
+    html: 'How the tool handles Google user data is described in the <a href="/verse-tales-studio/privacy">Verse Tales Studio Privacy Policy</a>. Questions: <a href="mailto:sofia_phan@126verse.com">sofia_phan@126verse.com</a>.',
+  },
+];
+---
+
+<Base title="Verse Tales Studio | 126Verse" description="Verse Tales Studio is 126VERSE's internal tool that produces and schedules animated true-story videos for the Verse Tales YouTube channel." lang="en" hideFooterCta>
+  <section class="px-5 sm:px-8 md:px-12 pt-16 md:pt-24 pb-16 max-w-4xl">
+    <h1 class="word-line"><span class="word-up display text-[clamp(2rem,6vw,5.5rem)]" style="animation-delay:0.2s">Verse Tales Studio</span></h1>
+    <div class="mt-12 prose-plain">
+      {sections.map((s) => (
+        <div data-reveal>
+          <h2>{s.h}</h2>
+          <p set:html={s.html} />
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
