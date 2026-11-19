@@ -44,7 +44,7 @@ const jobLd = {
   employmentType: /intern/i.test(j.title) ? ['INTERN', 'FULL_TIME'] : 'FULL_TIME',
   hiringOrganization: {
     '@type': 'Organization',
-    name: '126Verse',
+    name: 'Onetwentysix Verse',
     legalName: 'Onetwentysix Verse Co.,ltd',
     sameAs: 'https://www.126verse.com',
     logo: 'https://www.126verse.com/logo.png',
@@ -58,7 +58,7 @@ const jobLd = {
 };
 ---
 
-<Base title={shortTitle + ' | Careers | 126Verse'} description={metaDesc} lang="en" hideFooterCta>
+<Base title={shortTitle + ' | Onetwentysix Verse'} description={metaDesc} lang="en" hideFooterCta>
   <script type="application/ld+json" set:html={JSON.stringify(jobLd)} />
   <section class="bg-ink text-white px-5 sm:px-8 md:px-12 py-20 md:py-28">
     <p class="fu label text-white/60" style="animation-delay:0.1s">{j.location}</p>

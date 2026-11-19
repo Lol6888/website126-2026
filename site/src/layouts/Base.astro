@@ -63,7 +63,8 @@ const jsonLd = noindex
           {
             '@type': 'Organization',
             '@id': ORG_ID,
-            name: '126Verse',
+            name: 'Onetwentysix Verse',
+            alternateName: '126Verse',
             legalName: 'Onetwentysix Verse Co.,ltd',
             url: abs('/'),
             logo: abs('/logo.png'),
@@ -71,7 +72,7 @@ const jsonLd = noindex
             description: DEFAULT_DESC.en,
             sameAs: ['https://www.linkedin.com/company/126verse', 'https://www.facebook.com/126verse', 'https://twitter.com/126Verse'],
           },
-          { '@type': 'WebSite', '@id': abs('/') + '#website', name: '126Verse', url: abs('/'), inLanguage: ['en', 'vi'], publisher: { '@id': ORG_ID } },
+          { '@type': 'WebSite', '@id': abs('/') + '#website', name: 'Onetwentysix Verse', alternateName: '126Verse', url: abs('/'), inLanguage: ['en', 'vi'], publisher: { '@id': ORG_ID } },
         ],
       }
     : {
@@ -99,7 +100,7 @@ const jsonLd = noindex
       </>
     )}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="126Verse" />
+    <meta property="og:site_name" content="Onetwentysix Verse" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
@@ -108,7 +109,7 @@ const jsonLd = noindex
       <>
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="126Verse: We build what brands run on" />
+        <meta property="og:image:alt" content="Onetwentysix Verse: We build what brands run on" />
       </>
     )}
     <meta property="og:locale" content={lang === 'vi' ? 'vi_VN' : 'en_US'} />
