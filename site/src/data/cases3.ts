@@ -106,7 +106,7 @@ export const cases3: CaseStudy[] = [
       },
       {
         title: 'Dễ dàng bắt đầu và dễ dàng tiếp tục',
-        text: 'Để tìm hiểu cốt lõi nguyên nhân khiến phần mềm giao dịch trở nên khó chịu và khó bắt đầu, chúng tôi đã yêu cầu bốn nhóm trọng điểm gồm các nhà tư vấn, nhà phân tích, doanh nhân và nhà thiết kế viết ra những khó khăn của họ. Từ thu thập này, chúng tôi biết được rằng mọi người không thất vọng về chức năng cốt lõi cũng như về tổng thể các bộ phận, mà chính là khả năng hiển thị trực quan, việc tối ưu hóa các tác vụ và tính nhất quán của ứng dụng.\n\nMuốn tạo ra sự chuyển đổi, chúng tôi phải tái hình dung những công cụ quen thuộc này theo cách vừa phù hợp vừa mới mẻ, khác biệt — để chúng mang lại cảm giác trực quan và liền mạch khi sử dụng.',
+        text: 'Để tìm hiểu cốt lõi nguyên nhân khiến phần mềm giao dịch trở nên khó chịu và khó bắt đầu, chúng tôi đã yêu cầu bốn nhóm trọng điểm gồm các nhà tư vấn, nhà phân tích, doanh nhân và nhà thiết kế viết ra những khó khăn của họ. Từ thu thập này, chúng tôi biết được rằng mọi người không thất vọng về chức năng cốt lõi cũng như về tổng thể các bộ phận, mà chính là khả năng hiển thị trực quan, việc tối ưu hóa các tác vụ và tính nhất quán của ứng dụng.\n\nMuốn tạo ra sự chuyển đổi, chúng tôi phải tái hình dung những công cụ quen thuộc này theo cách vừa phù hợp vừa mới mẻ, khác biệt, để chúng mang lại cảm giác trực quan và liền mạch khi sử dụng.',
       },
       {
         images: [
