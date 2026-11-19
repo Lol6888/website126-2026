@@ -34,6 +34,17 @@ function spamReason(request: Request, form: FormData): string | null {
   if (form.get('_js') !== '1') return 'no-js';
   const age = Date.now() - Number(form.get('_ts'));
   if (!(age >= MIN_FILL_MS)) return 'too-fast:' + age;
+
+  // Spam chào hàng điền tay / bằng trình duyệt thật (mẫu thực tế 10–11/2026) — lọc theo nội dung.
+  const email = String(form.get('email') || form.get('work_email') || '').trim().toLowerCase();
+  const domain = email.split('@')[1] || '';
+  // Khách thật không bao giờ điền email @126verse.com; spammer giả làm "người nội bộ".
+  if (domain === '126verse.com' || domain.endsWith('.126verse.com')) return 'own-domain-email';
+  if (/lead-?gen/.test(domain)) return 'leadgen-domain:' + domain;
+  const text = Array.from(form.values()).filter((v) => typeof v === 'string').join('\n');
+  if (/unsubscribe|opt[\s-]?out|your contact form|used your (contact )?form/i.test(text)) return 'marketing-phrase';
+  // Tự chào giá dịch vụ của họ: "Our videos cost just $195…"
+  if (/\b(our|my) (videos?|services?|packages?|prices?|rates?)\b[^.\n]{0,40}\b(costs?|starts?|from|only|just)\b[^.\n]{0,20}\$\s?\d/i.test(text)) return 'sales-pitch';
   return null;
 }
 
@@ -79,7 +90,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   const spam = spamReason(request, form);
   if (spam) {
-    console.warn('[spam blocked]', spam, String(form.get('_form') || ''));
+    // Kèm email người gửi để soát lại nếu nghi chặn nhầm khách thật.
+    console.warn('[spam blocked]', spam, String(form.get('_form') || ''), String(form.get('email') || form.get('work_email') || ''));
     return json({ success: true, message: 'OK' });
   }
 
