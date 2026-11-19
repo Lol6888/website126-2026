@@ -15,7 +15,27 @@ const FROM = import.meta.env.MAIL_FROM || '126Verse Website <onboarding@resend.d
 const MAX_TOTAL_ATTACHMENT = 18 * 1024 * 1024; // 18 MB
 
 // Các field nội bộ không đưa vào nội dung email.
-const INTERNAL_FIELDS = new Set(['_form', '_lang', 'botcheck', 'confirm']);
+const INTERNAL_FIELDS = new Set(['_form', '_lang', '_js', '_ts', 'botcheck', 'confirm']);
+
+// ─── Chống spam ─────────────────────────────────────────────────────────────
+// Request bị loại vẫn nhận "thành công" giả (bot không biết bị chặn); lý do ghi log để xem trên Vercel.
+const ALLOWED_HOSTS = new Set(['www.126verse.com', '126verse.com', 'localhost']);
+const MIN_FILL_MS = 3000; // người thật không điền xong form trong < 3 giây
+
+function spamReason(request: Request, form: FormData): string | null {
+  if (form.get('botcheck')) return 'honeypot';
+  // Trình duyệt luôn gửi Origin (hoặc Referer) khi POST; script gửi thẳng thường không có / sai.
+  let host = '';
+  try {
+    host = new URL(request.headers.get('origin') || request.headers.get('referer') || '').hostname;
+  } catch {}
+  if (!ALLOWED_HOSTS.has(host) && !host.endsWith('.vercel.app')) return 'origin:' + (host || 'none');
+  // _js/_ts chỉ được gắn bởi handler JS trong Base.astro → thiếu = không gửi qua trang web.
+  if (form.get('_js') !== '1') return 'no-js';
+  const age = Date.now() - Number(form.get('_ts'));
+  if (!(age >= MIN_FILL_MS)) return 'too-fast:' + age;
+  return null;
+}
 
 // Nhãn đẹp cho một số field hay gặp; field khác sẽ tự "humanize".
 const LABELS: Record<string, string> = {
@@ -57,8 +77,9 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ success: false, message: 'Dữ liệu form không hợp lệ.' }, 400);
   }
 
-  // Honeypot: bot thường điền field ẩn này → giả vờ thành công, không gửi mail.
-  if (form.get('botcheck')) {
+  const spam = spamReason(request, form);
+  if (spam) {
+    console.warn('[spam blocked]', spam, String(form.get('_form') || ''));
     return json({ success: true, message: 'OK' });
   }
 

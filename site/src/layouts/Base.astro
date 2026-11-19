@@ -143,6 +143,8 @@ const ogImage = new URL(image, site).href;
           };
       // Vercel giới hạn body request 4.5MB — chặn trước ở client để báo lỗi rõ ràng.
       const MAX_UPLOAD = 4 * 1024 * 1024;
+      // Thời điểm mở trang — server dùng để loại request gửi thẳng không qua trình duyệt / gửi quá nhanh.
+      const loadedAt = Date.now();
 
       const showError = (f: HTMLFormElement, text: string) => {
         const btn = f.querySelector('button[type="submit"]');
@@ -180,13 +182,16 @@ const ogImage = new URL(image, site).href;
           }
 
           try {
-            const res = await fetch('/api/submit', { method: 'POST', body: new FormData(f) });
+            const fd = new FormData(f);
+            fd.set('_js', '1');
+            fd.set('_ts', String(loadedAt));
+            const res = await fetch('/api/submit', { method: 'POST', body: fd });
             const data = await res.json().catch(() => ({ success: false }));
 
             if (res.ok && data.success) {
               const box = document.createElement('div');
               box.setAttribute('role', 'status');
-              box.style.cssText = 'border:1px solid var(--accent,#5E0ED7);border-left-width:3px;padding:22px 24px;background:#f6f4fb;color:#15131a';
+              box.style.cssText = 'border:1px solid var(--accent,#5E0ED7);border-radius:10px;padding:22px 24px;background:#f6f4fb;color:#15131a';
               box.innerHTML =
                 '<p style="font-weight:600;font-size:17px;margin:0 0 6px">✓ ' +
                 (isVI ? 'Đã gửi thành công' : 'Sent successfully') +
