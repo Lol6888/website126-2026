@@ -20,7 +20,6 @@ export interface CaseStudy {
   slug: string;
   lang: 'en' | 'vi';
   name: string;
-  pageTitle: string;
   dark?: boolean;
   heroBg?: string;      // nền khối hero (Yamaha: #EEEEEE)
   heroBgImage?: string; // ảnh texture nền hero (Yamaha: lưới kẻ ô)
@@ -38,7 +37,6 @@ export const cases: CaseStudy[] = [
     slug: 'yamaha-music',
     lang: 'en',
     name: 'Yamaha Music',
-    pageTitle: 'Yamaha Music | 126Verse',
     heroBg: '#EEEEEE',
     heroBgImage: A('s-2400x1202_v-frms_webp_dd2155bb-6464-496a-8542-b35bb77df04e.webp'),
     meta: { typeLabel: 'Project Type', type: 'Brand Marketing', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM Products, Social Media Posts, Video Ads' },
@@ -97,7 +95,6 @@ export const cases: CaseStudy[] = [
     slug: 'yamaha-music',
     lang: 'vi',
     name: 'Yamaha Music',
-    pageTitle: 'Yamaha Music | 126Verse',
     heroBg: '#EEEEEE',
     heroBgImage: A('s-2400x1202_v-frms_webp_dd2155bb-6464-496a-8542-b35bb77df04e.webp'),
     meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Sản phẩm POSM, Social post, Video quảng cáo' },
@@ -156,7 +153,6 @@ export const cases: CaseStudy[] = [
     slug: 'daesang',
     lang: 'en',
     name: 'DAESANG',
-    pageTitle: 'DAESANG | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Brand Marketing', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'POSM Products, Social Media Posts, Video Ads' },
     hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [
@@ -230,7 +226,6 @@ export const cases: CaseStudy[] = [
     slug: 'daesang',
     lang: 'vi',
     name: 'DAESANG',
-    pageTitle: 'DAESANG | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Thương hiệu sản phẩm', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Sản phẩm POSM, Social post, Video quảng cáo' },
     hero: [{ src: A('s-1152x648_ae57d16a-04f7-4e4d-87c0-e383c47c24b0.mp4'), alt: 'DAESANG' }, { src: A('s-415x176_webp_0080bc92-e5d9-4424-a22d-048a114bc6f2.png'), alt: 'Wellife' }],
     sections: [

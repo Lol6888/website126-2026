@@ -33,6 +33,52 @@ const canonical = abs(Astro.url.pathname);
 const enHref = abs(lang === 'en' ? Astro.url.pathname : alt || '/');
 const viHref = alt || lang === 'vi' ? abs(lang === 'vi' ? Astro.url.pathname : alt!) : undefined;
 const ogImage = new URL(image, site).href;
+
+// ─── Dữ liệu có cấu trúc (JSON-LD) ───
+// Trang chủ: Organization + WebSite. Trang con: BreadcrumbList (Home › mục cha › trang).
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isHome = path === '/' || path === '/vi';
+const prefix = lang === 'vi' ? '/vi' : '';
+const ORG_ID = abs('/') + '#organization';
+// Các trang cha có thật (trang không tồn tại, vd /careers, thì không đưa vào breadcrumb)
+const PARENTS: Record<string, { en: string; vi: string }> = {
+  work: { en: 'Case Studies', vi: 'Dự án' },
+  'work/web-design': { en: 'Web Design', vi: 'Web Design' },
+  contact: { en: 'Work together', vi: 'Liên hệ công việc' },
+  'verse-tales-studio': { en: 'Verse Tales Studio', vi: 'Verse Tales Studio' },
+};
+const segs = path.replace(/^\/vi(?=\/|$)/, '').split('/').filter(Boolean);
+const crumbs = [{ name: lang === 'vi' ? 'Trang chủ' : 'Home', url: abs(prefix + '/') }];
+for (let i = 1; i < segs.length; i++) {
+  const key = segs.slice(0, i).join('/');
+  if (PARENTS[key]) crumbs.push({ name: PARENTS[key][lang], url: abs(prefix + '/' + key) });
+}
+crumbs.push({ name: title.split(' | ')[0], url: canonical });
+const jsonLd = noindex
+  ? null
+  : isHome
+    ? {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': ORG_ID,
+            name: '126Verse',
+            legalName: 'Onetwentysix VERSE Ltd.',
+            url: abs('/'),
+            logo: abs('/logo.png'),
+            email: 'sofia_phan@126verse.com',
+            description: DEFAULT_DESC.en,
+            sameAs: ['https://www.linkedin.com/company/126verse', 'https://www.facebook.com/126verse', 'https://twitter.com/126Verse'],
+          },
+          { '@type': 'WebSite', '@id': abs('/') + '#website', name: '126Verse', url: abs('/'), inLanguage: ['en', 'vi'], publisher: { '@id': ORG_ID } },
+        ],
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+      };
 ---
 
 <!doctype html>
@@ -58,7 +104,15 @@ const ogImage = new URL(image, site).href;
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    {image === '/og.png' && (
+      <>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="126Verse: We build what brands run on" />
+      </>
+    )}
     <meta property="og:locale" content={lang === 'vi' ? 'vi_VN' : 'en_US'} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@126Verse" />
     <meta name="theme-color" content="#5E0ED7" />

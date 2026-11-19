@@ -9,7 +9,6 @@ export const cases3: CaseStudy[] = [
     slug: 'cheer',
     lang: 'en',
     name: 'CHEER',
-    pageTitle: 'CHEER | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.webp'), alt: 'CHEER' }],
     sections: [
@@ -80,7 +79,6 @@ export const cases3: CaseStudy[] = [
     slug: 'cheer',
     lang: 'vi',
     name: 'CHEER',
-    pageTitle: 'CHEER | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Ứng dụng di động', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-2400x1291_v-frms_webp_5631e05d-136c-4582-b892-dab3271a6b24.webp'), alt: 'CHEER' }],
     sections: [
@@ -151,7 +149,6 @@ export const cases3: CaseStudy[] = [
     slug: 'human-first-time',
     lang: 'en',
     name: 'Human First Time',
-    pageTitle: 'Human First Time | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.webp'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.mp4') }],
     sections: [
@@ -202,7 +199,6 @@ export const cases3: CaseStudy[] = [
     slug: 'human-first-time',
     lang: 'vi',
     name: 'Human First Time',
-    pageTitle: 'Human First Time | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Ứng dụng di động', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-1404x644_v-fms_webp_941c09ea-5a75-4c9a-82e6-e30ac087ded2.webp'), alt: 'Human First Time' }, { src: A('s-1080x2336_f68f3db8-7b98-43bf-96d4-a34d549bb2de.mp4') }],
     sections: [
@@ -253,7 +249,6 @@ export const cases3: CaseStudy[] = [
     slug: 'famipay',
     lang: 'en',
     name: 'FamiPay',
-    pageTitle: 'FamiPay | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'Application Design', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-840x400_v-fs_webp_f524ecdf-b5f5-4b04-97ba-b88dc21b7a15.jpg'), alt: 'FamiPay' }, { src: A('s-240x240_webp_2ab18cb0-4bdd-448c-aaeb-5efe44cfcfea.png') }],
     sections: [
@@ -328,7 +323,6 @@ export const cases3: CaseStudy[] = [
     slug: 'famipay',
     lang: 'vi',
     name: 'FamiPay',
-    pageTitle: 'FamiPay | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Ứng dụng di động', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'UI-UX Design, UI Library, Framework' },
     hero: [{ src: A('s-840x400_v-fs_webp_f524ecdf-b5f5-4b04-97ba-b88dc21b7a15.jpg'), alt: 'FamiPay' }, { src: A('s-240x240_webp_2ab18cb0-4bdd-448c-aaeb-5efe44cfcfea.png') }],
     sections: [

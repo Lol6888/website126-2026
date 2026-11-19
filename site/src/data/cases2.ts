@@ -9,7 +9,6 @@ export const cases2: CaseStudy[] = [
     slug: 'mars-cats-voyage',
     lang: 'en',
     name: 'Mars Cats Voyage',
-    pageTitle: 'Mars Cats Voyage | 126Verse',
     dark: true,
     meta: { typeLabel: 'Project Type', type: 'Creative, Hand-drawn', stageLabel: 'Role', stage: 'Partner', deliverLabel: 'Deliverables', deliver: 'NFT Design' },
     hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
@@ -61,7 +60,6 @@ export const cases2: CaseStudy[] = [
     slug: 'mars-cats-voyage',
     lang: 'vi',
     name: 'Mars Cats Voyage',
-    pageTitle: 'Mars Cats Voyage | 126Verse',
     dark: true,
     meta: { typeLabel: 'Loại dự án', type: 'Sáng tạo, vẽ tay', stageLabel: 'Vai trò', stage: 'Nhóm thiết kế mở rộng', deliverLabel: 'Bàn giao', deliver: 'Bộ sưu tập NFT' },
     hero: [{ src: A('s-1152x648_5dbd8d4f-e336-49d9-be7b-e62ba4d6926c.mp4'), alt: 'Mars Cats Voyage' }],
@@ -113,7 +111,6 @@ export const cases2: CaseStudy[] = [
     slug: 'knowledge-japan',
     lang: 'en',
     name: 'Knowledge Japan',
-    pageTitle: 'Knowledge Japan | 126Verse',
     meta: { typeLabel: 'Project Type', type: 'UI-UX Improvement', stageLabel: 'Role', stage: 'Leader', deliverLabel: 'Deliverables', deliver: 'UI-UX Design & Planning' },
     hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge Japan' }],
     sections: [
@@ -189,7 +186,6 @@ export const cases2: CaseStudy[] = [
     slug: 'knowledge-japan',
     lang: 'vi',
     name: 'Knowledge Japan',
-    pageTitle: 'Knowledge Japan | 126Verse',
     meta: { typeLabel: 'Loại dự án', type: 'Cải thiện UI-UX', stageLabel: 'Vai trò', stage: 'Trưởng nhóm', deliverLabel: 'Bàn giao', deliver: 'Bản thiết kế UI-UX, Kế hoạch định hướng hình ảnh mới' },
     hero: [{ src: A('s-1152x648_20c95c05-8dfb-41d5-92af-e28e7795f99f.mp4'), alt: 'Knowledge Japan' }],
     sections: [
