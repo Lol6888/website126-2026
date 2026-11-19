@@ -4,7 +4,7 @@ export const privacyEn = {
   sections: [
     {
       h: 'Overview',
-      text: 'Onetwentysix VERSE Ltd. (“126VERSE”, “we”, “us” or “our”) is committed to protecting the privacy of personal information (i.e., any information relating to an identified or identifiable natural person) who visit the 126verse.com website (the “Site”). Amendments to this Privacy Policy will be posted to the Site and will be effective when posted. Your continued use of the Site following the posting of any amendment to this Privacy Policy shall constitute your acceptance of such amendment.',
+      text: 'Onetwentysix Verse Co.,ltd (“126VERSE”, “we”, “us” or “our”) is committed to protecting the privacy of personal information (i.e., any information relating to an identified or identifiable natural person) who visit the 126verse.com website (the “Site”). Amendments to this Privacy Policy will be posted to the Site and will be effective when posted. Your continued use of the Site following the posting of any amendment to this Privacy Policy shall constitute your acceptance of such amendment.',
     },
     {
       h: 'Your Consent',

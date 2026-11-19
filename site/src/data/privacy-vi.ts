@@ -4,7 +4,7 @@ export const privacyVi = {
   sections: [
     {
       h: 'Tổng quan',
-      text: 'Onetwentysix VERSE Ltd. (“126VERSE”, “chúng tôi”, “chúng tôi” hoặc “của chúng tôi”) cam kết bảo vệ quyền riêng tư của thông tin cá nhân (tức là bất kỳ thông tin nào liên quan đến một thể nhân được nhận dạng hoặc có thể nhận dạng) truy cập 126verse.com trang web (“Trang web”). Các sửa đổi đối với Chính sách quyền riêng tư này sẽ được đăng lên Trang web và sẽ có hiệu lực khi được đăng. Việc bạn tiếp tục sử dụng Trang web sau khi đăng bất kỳ sửa đổi nào đối với Chính sách quyền riêng tư này sẽ cấu thành sự chấp nhận của bạn đối với sửa đổi đó.',
+      text: 'Onetwentysix Verse Co.,ltd (“126VERSE”, “chúng tôi”, “chúng tôi” hoặc “của chúng tôi”) cam kết bảo vệ quyền riêng tư của thông tin cá nhân (tức là bất kỳ thông tin nào liên quan đến một thể nhân được nhận dạng hoặc có thể nhận dạng) truy cập 126verse.com trang web (“Trang web”). Các sửa đổi đối với Chính sách quyền riêng tư này sẽ được đăng lên Trang web và sẽ có hiệu lực khi được đăng. Việc bạn tiếp tục sử dụng Trang web sau khi đăng bất kỳ sửa đổi nào đối với Chính sách quyền riêng tư này sẽ cấu thành sự chấp nhận của bạn đối với sửa đổi đó.',
     },
     {
       h: 'Sự đồng ý của bạn',
