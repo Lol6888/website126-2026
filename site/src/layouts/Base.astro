@@ -24,7 +24,8 @@ const DEFAULT_DESC = {
   vi: '126Verse thiết kế và xây dựng phần mềm quản lý, nền tảng web và công cụ nội bộ, tức là hệ thống đứng sau việc vận hành. Cùng năng lực thương hiệu đã đồng hành FamilyMart, Yamaha, Daesang.',
 };
 // Gộp khoảng trắng và cắt ~160 ký tự theo ranh giới từ (trang có thể truyền nguyên đoạn văn).
-const clean = (description || DEFAULT_DESC[lang]).replace(/\s+/g, ' ').trim();
+// Tên hiển thị bên ngoài là "Onetwentysix Verse" (Felix chốt 2026-11-19): đổi trong mọi mô tả, trước khi cắt độ dài.
+const clean = (description || DEFAULT_DESC[lang]).replace(/126Verse/g, 'Onetwentysix Verse').replace(/\s+/g, ' ').trim();
 const desc = clean.length > 160 ? clean.slice(0, 157).replace(/\s+\S*$/, '') + '…' : clean;
 const site = Astro.site!;
 // URL chuẩn: không có "/" cuối (trừ trang gốc) — khớp link nội bộ và sitemap.
