@@ -19,6 +19,9 @@ const metaDesc = paras.find((p) => p.toLowerCase().includes(roleName)) ?? paras.
 // Ngày đăng / hạn / phạm vi remote do Felix chốt 2026-11-19. Hết hạn hoặc tuyển đủ → cập nhật JOB_* hoặc gỡ.
 const JOB_POSTED = '2026-11-19';
 const JOB_VALID_THROUGH = '2026-12-31T23:59:59+07:00';
+// Google không nhận "remote toàn cầu": phải liệt kê quốc gia, và mô tả hiển thị cũng phải nêu rõ (Felix chọn 2026-11-19)
+const REMOTE_COUNTRIES = ['Vietnam', 'Singapore', 'Japan', 'South Korea', 'Australia', 'United Kingdom', 'Germany', 'France', 'United States', 'Canada', 'Thailand', 'Philippines'];
+const remoteNote = 'Remote applicants are welcome from: ' + REMOTE_COUNTRIES.join(', ') + '.';
 const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // Mô tả HTML dựng từ đúng nội dung hiển thị trên trang (giới thiệu + các mục)
 const listOrPara = (text: string) => {
@@ -29,7 +32,7 @@ const listOrPara = (text: string) => {
   }
   return lines.map((l) => '<p>' + esc(l) + '</p>').join('');
 };
-const jobDescription = paras.map((p) => '<p>' + esc(p.trim()) + '</p>').join('') +
+const jobDescription = '<p>' + esc(remoteNote) + '</p>' + paras.map((p) => '<p>' + esc(p.trim()) + '</p>').join('') +
   j.sections.map((s) => '<p><strong>' + esc(s.h) + '</strong></p>' + listOrPara(s.text)).join('');
 const jobLd = {
   '@context': 'https://schema.org',
@@ -46,9 +49,10 @@ const jobLd = {
     sameAs: 'https://www.126verse.com',
     logo: 'https://www.126verse.com/logo.png',
   },
-  // Văn phòng TP.HCM + nhận ứng viên làm từ xa ở mọi quốc gia
+  // Văn phòng TP.HCM + nhận ứng viên làm từ xa ở các nước trong REMOTE_COUNTRIES
   jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'VN' } },
   jobLocationType: 'TELECOMMUTE',
+  applicantLocationRequirements: REMOTE_COUNTRIES.map((name) => ({ '@type': 'Country', name })),
   directApply: true,
   url: new URL('/careers/' + j.slug, Astro.site).href,
 };
@@ -67,6 +71,7 @@ const jobLd = {
 
   <section class="px-5 sm:px-8 md:px-12 py-16">
     <p class="copy-sm max-w-3xl" style="white-space:pre-line" data-reveal>{j.intro}</p>
+    <p class="copy-sm max-w-3xl mt-5 font-medium" data-reveal>{remoteNote}</p>
     {j.sections.map((s) => (
       <div class="mt-14" data-reveal>
         <h2 class="display text-xl md:text-2xl">{s.h}</h2>
