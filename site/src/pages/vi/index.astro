@@ -1,4 +1,5 @@
 ---
+import HeroValley from '../../components/HeroValley.astro';
 import { caseList } from '../../data/caseList';
 import Media from '../../components/Media.astro';
 import Base from '../../layouts/Base.astro';
@@ -47,26 +48,26 @@ const featured = ['yamaha-music', 'cheer', 'famipay'].map((slug) => {
 ---
 
 <Base
-  title="126Verse | Chúng tôi làm Thương Hiệu"
-  description="126Verse chuyên cung cấp dịch vụ thiết kế sáng tạo, xây dựng thương hiệu, cải thiện UI/UX, phát triển E-learning và thiết kế đồ họa cho doanh nghiệp toàn cầu."
+  title="126Verse | Xây nền tảng cho doanh nghiệp"
+  description="126Verse thiết kế và xây dựng phần mềm quản lý, nền tảng web và công cụ nội bộ, tức là hệ thống đứng sau việc vận hành. Cùng năng lực thương hiệu đã đồng hành FamilyMart, Yamaha, Daesang."
   lang="vi"
   alt="/"
   navOverlay
 >
   <!-- ===== HERO ===== -->
   <section class="relative flex flex-col overflow-hidden bg-ink text-white" style="min-height:100vh;min-height:100dvh">
-    <video class="absolute inset-0 w-full h-full object-cover opacity-80" src="/media/hero-bg.mp4" poster="/media/hero-bg.jpg" autoplay loop muted playsinline></video>
+    <HeroValley />
     <div class="absolute inset-0 z-[1] pointer-events-none" style="background:linear-gradient(to top, rgba(8,8,10,0.92) 0%, rgba(8,8,10,0.4) 50%, rgba(8,8,10,0.6) 100%)"></div>
     <div class="relative z-10 flex flex-col grow px-5 sm:px-8 md:px-12 pt-28 pb-12 md:pb-16" style="min-height:100vh;min-height:100dvh">
       <div class="grow"></div>
-      <p class="fu eyebrow text-white/70" style="animation-delay:0.4s">Agency Thiết kế Sáng tạo &amp; Thương hiệu</p>
+      <p class="fu eyebrow text-white/70" style="animation-delay:0.4s">Studio phần mềm &amp; hệ thống</p>
       <h1 class="mt-5">
-        {['Chúng tôi làm', 'Thương Hiệu'].map((line, li) => (
-          <span class="word-line"><span class="word-up display text-[clamp(2.4rem,9vw,8rem)]" style={`animation-delay:${0.4 + li * 0.12}s`}>{line}</span></span>
+        {['Xây nền tảng', 'cho doanh nghiệp'].map((line, li) => (
+          <span class="word-line"><span class="word-up display whitespace-nowrap text-[clamp(1.5rem,8.2vw,8rem)]" style={`animation-delay:${0.4 + li * 0.12}s`}>{line}</span></span>
         ))}
       </h1>
       <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-        <p class="fu text-lg md:text-2xl leading-relaxed text-white/85 max-w-2xl" style="animation-delay:0.7s">126Verse chuyên cung cấp dịch vụ thiết kế sáng tạo, xây dựng thương hiệu, cải thiện UI/UX, phát triển E-learning và thiết kế đồ họa cho doanh nghiệp toàn cầu.</p>
+        <p class="fu text-lg md:text-2xl leading-relaxed text-white/85 max-w-2xl" style="animation-delay:0.7s">126Verse thiết kế và xây dựng phần mềm quản lý, nền tảng web và công cụ nội bộ, tức là hệ thống đứng sau việc vận hành. Cùng năng lực thương hiệu đã đồng hành FamilyMart, Yamaha, Daesang.</p>
         <div class="fu flex flex-col gap-3 shrink-0" style="animation-delay:0.8s">
           <a href="/vi/work" class="cta-link text-lg sm:text-xl" style="color:#a855f7">Xem dự án<Fragment set:html={arrow} /></a>
           <a href="/vi/contact" class="cta-link text-lg sm:text-xl" style="color:#a855f7">Liên hệ<Fragment set:html={arrow} /></a>
