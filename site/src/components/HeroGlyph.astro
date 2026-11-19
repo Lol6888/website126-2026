@@ -1,0 +1,39 @@
+---
+// Nền hero trang chủ: đàn thú vẽ bằng ký tự (src/scripts/glyph-field.js).
+// Mặc định chọn ngẫu nhiên 1 trong 7 loài mỗi lần vào trang.
+// Di chuột qua hero: đàn phản ứng nhẹ + vệt sáng theo con trỏ; bấm: xua mạnh (rùa: thả mồi).
+interface Props {
+  species?: 'random' | 'moths' | 'rabbits' | 'turtles' | 'squid' | 'owls' | 'flyingfish' | 'eagles';
+}
+const { species = 'random' } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600&display=swap" rel="stylesheet" />
+<canvas
+  id="hero-glyph"
+  data-species={species}
+  class="absolute inset-0 w-full h-full"
+  style={'font-family:"Geist Mono", ui-monospace, Menlo, monospace'}
+  aria-hidden="true"
+></canvas>
+
+<script>
+  import { initGlyphField } from '../scripts/glyph-field.js';
+
+  const SPECIES = ['moths', 'rabbits', 'turtles', 'squid', 'owls', 'flyingfish', 'eagles'];
+  const canvas = document.getElementById('hero-glyph') as HTMLCanvasElement;
+  const pick = canvas.dataset.species;
+  const species = pick && pick !== 'random' ? pick : SPECIES[Math.floor(Math.random() * SPECIES.length)];
+  const field = initGlyphField(canvas, { species });
+
+  // Lớp chữ hero nằm đè lên canvas → bắt sự kiện ở cả section
+  const hero = canvas.closest('section');
+  hero?.addEventListener('pointermove', (e) => {
+    if (e.pointerType === 'mouse') field.hover(e.clientX, e.clientY);
+  });
+  hero?.addEventListener('pointerdown', (e) => {
+    if ((e.target as HTMLElement).closest('a, button')) return;
+    field.poke(e.clientX, e.clientY);
+  });
+</script>
